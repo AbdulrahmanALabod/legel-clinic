@@ -1,0 +1,502 @@
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<style>
+	:root{
+    --form-height:750px;
+    --form-width: 900px;
+    --form-991-width: 450px;
+    --form-991-height: 950px;
+  }
+  .papage-wraper {
+   transition: 0.5s; 
+  }
+  .container{
+    width: var(--form-width);
+    height: var(--form-height);
+    position: relative;
+    margin: auto;
+    /* border-radius: 10px; */
+    padding: 0;
+  }
+/* overlay */
+.overlay{
+    width: 100%;
+    position: absolute;
+    top: 125px;
+    height: 470px;
+    /* z-index: 100; */
+    /* border-radius: 10px ; */
+    background:var(--background-gradient) ;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 10px 40px rgba(22,20,19,0.4);
+}
+.overlay .box{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 50px;
+  text-align: center;
+}
+
+.overlay h2, .overlay p{
+    margin-bottom: 1rem ;
+}
+
+/* switch buttons */
+.switch-button,.control-button{
+    background-color: transparent;
+    border-radius: 25px;
+    border: 1px solid var(--white);
+    font-size: 1.3rem;
+    padding: 0.6rem 2rem;
+    color: var(--white);
+    margin: 1rem 0;
+}
+.switch-button:hover{
+    color: var(--white);
+}
+
+/* form */
+.form{
+  width: 50%; 
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  /* border-radius: 10px; */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  background-color: var(--bg-color);
+  box-shadow: 2px 10px 40px rgba(22,20,19,0.4);
+  overflow: hidden;
+}
+.form.active{
+  left: 0%;
+}
+.form .sign-in , .form .sign-up ,.form .forget-pass{
+  --padding: 50px;
+  width: calc(var(--form-width) - 285px - var(--padding) * 2);
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px var(--padding);
+  text-align: center;
+  transition: 0.5s ease-in-out;
+  animation-duration: .4s;
+  animation-name: animate-login;
+}
+
+@keyframes animate-login{
+  0%{
+    transform: scale(1,1);
+  }
+  50%{
+    transform: scale(1.1,1.1);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+} 
+
+.form .sign-in{
+  left: 100%;
+  transition-delay: 0s;
+}
+.form.active .sign-in{
+  left: auto;
+  animation-duration: .4s;
+  animation-name: animate-login;
+
+}
+.form .sign-up{
+  transition-delay: 0s;
+}
+.form.form.active .sign-up{
+  left: -150%;
+  animation-name: animate-login;
+  animation-duration: .4s;
+}
+
+.form h2{
+    color: var(--main-color); 
+    /* padding-bottom: 1rem; */
+}
+.form p a{
+    color: var(--sec-color);
+    font-weight: 400;
+    margin: 10px;
+}
+.form p a:hover{
+  /* color: var(--main-color); */
+  color: #DD4B39;
+}
+.social-media-buttons {
+  margin: 15px;
+}
+.social-media-buttons .icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #dadada;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 7px;
+}
+.social-media-buttons .icon svg {
+  width: 25px;
+  height: 25px;
+}
+.social-media-buttons .icon:nth-child(1):hover svg path{
+  fill: #4267B2;
+}
+.social-media-buttons .icon:nth-child(1):hover{
+  border-color: #4267B2;
+}
+.social-media-buttons .icon:nth-child(2):hover svg path{
+  fill: #DD4B39;
+}
+.social-media-buttons .icon:nth-child(2):hover{
+  border-color: #DD4B39;
+}
+.social-media-buttons .icon:nth-child(3):hover svg path{
+  fill: #0072b1;
+}
+.social-media-buttons .icon:nth-child(3):hover{
+  border-color: #0072b1;
+}
+#sign-in-form input, #sign-up-form input {
+  margin: 12px 0;
+  font-size: 14px;
+  padding: 15px;
+  font-weight: 300;
+  border: none;
+  background-color: #e4e4e494;
+  letter-spacing: 1.5px;
+  padding-left: 20px;
+}
+
+#sign-in-form input:focus, #sign-up-form input:focus , .btn:focus{
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+}
+.control-button.up , .control-button.in{
+  background-color: var(--main-color);
+  color: var(--white);
+  width: fit-content;
+  font-size: 1rem;
+}
+
+/* at max width : 991 */
+@media screen and (max-width: 991.5px) {
+  .container{
+    width: var(--form-991-width);
+    height: var(--form-991-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 5% auto; */
+  }
+  .container .overlay{
+    top: 0;
+    height: 100%;
+  }
+  .form{
+    width: 100%;
+    height: 700px;
+    top: 0;
+    left: 0;
+  }
+  .overlay .box{
+    position: absolute;
+    width: 100%;
+    height: 220px;
+    bottom: 0;
+  }
+  .box.sign-up{
+    top: 0;
+  }
+  .form.form.active{
+    top: 250px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .px-5,.py-5{
+    padding: 3.5rem !important;
+  }
+} 
+.backtohome{
+  color:  #A49EAC;
+}
+#forgetpass{
+  display: none;
+}
+</style>
+<h1>test</h1>
+    <div class="page-wraper d-flex  min-vh-100 justify-content-content align-items-center">
+        <div class="container">
+          <!-- <div class="row g-0"> -->
+              <div class="overlay" id="overlay">
+                <!-- <div class="overlay" id="overlay"> -->
+                  <div class="sign-in box" id="sign-in">
+                    <div class="pt-3 pb-3">
+                      <h2>Welcome Back!</h2>
+                      <p>To keep connected with us please login with your personal info</p>
+                      <button class="switch-button btn" id="slide-right-button">Sign In</button>
+                    </div>
+                  </div>
+                  <div class="sign-up box" id="sign-up">
+                    <div class="pt-3 pb-3">
+                      <h2>Hello, Friend!</h2>
+                      <p>Enter your personal details and start a journey with us</p>
+                      <button class="switch-button btn" id="slide-left-button">Sign Up</button>
+                    </div>
+                  </div>
+                <!-- </div> -->
+              </div>
+              <div class="form">
+                    <!-- <div class="form"> -->
+                        <div class="sign-in" id="sign-in-info">
+                            <div class="px-5 py-5">
+                              <h2>Sign In</h2>
+
+							<?php echo form_open($this->uri->uri_string(), array('class' => 'row gx-0', 'id' => 'sign-in-form')); ?>
+      						<?php hooks()->do_action('clients_login_form_start'); ?>
+								  
+                              <div class="col-12">
+                                <input type="email" autofocus="true" class="form-control" placeholder="<?php echo _l('clients_login_email'); ?>" name="email" id="email"/>
+								  <?php echo form_error('email'); ?>
+                              </div> 
+                              <div class="col-12">
+                                <input type="password" class="form-control" placeholder="<?php echo _l('clients_login_password'); ?>" name="password" id="password"/>
+								  <?php echo form_error('password'); ?>
+                              </div>
+                              <p class="forgot-password"><a href="<?php echo site_url('authentication/forgot_password'); ?>"><?php echo _l('customer_forgot_password'); ?></a></p>
+                              <div class="12">
+                                <button class="control-button in btn" type="submit" id="btnSignin">Sign In</button>
+                              </div>
+                                       <?php hooks()->do_action('clients_login_form_end'); ?>
+            <?php echo form_close(); ?>
+                            <a href="index.html" class="backtohome"> Back to Home &gt;&gt; </a>
+                            </div>
+                        </div>
+                        <div class="forget-pass" id="forgetpass">
+                          <div class="px-5 py-5">
+                            <h2>Forgot your password?</h2>
+                          
+                          <form id="sign-in-form" class="row gx-0">     
+                            <div class="col-12">
+                              <input type="email" class="form-control" placeholder="Email"/>
+                            </div> 
+                           <!-- <div class="col-12">
+                              <input type="password" class="form-control" placeholder="Password"/>
+                            </div> -->
+                            <p class="forgot-password">If you’ve forgotten your password, please enter
+                              your registered email address.We’ll send you a link to reset your password.</p> 
+                            <div class="12">
+                              <button class="control-button in btn" type="submit">Continue</button>
+                            </div>
+                            <span class="login__account">Remember your password?</span>
+                              <a href="#" onclick="backtosignin()">Sign In</a>
+                          </form>
+                          <a href="index.html" class="backtohome">Back to Home &gt;&gt;</a>
+                          </div>
+                      </div> 
+                          <div class="sign-up" id="sign-up-info">
+                           <div class="px-5 py-5">
+                            <h2>Create Account</h2>
+                        
+                            <form id="sign-up-form" class="row gx-0">
+                              <div class="col-6 " style="padding-right: .5rem;">
+                                <input type="text" class="form-control" placeholder="First Name" id="inputFname"/>
+                              </div>
+                              <div class="col-6 ">
+                                <input type="text" class="form-control" placeholder="Last Name" id="inputLname"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="email" class="form-control" placeholder="Email" id="inputEmail"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Phone" id="inputPhone"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Company" id="inputComp"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="password" class="form-control" placeholder="Password" id="inputPass"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="password" class="form-control" placeholder="Confirm Password" id="inputConfPass"/>
+                              </div>
+                              <div class="col-12">
+                                <button class="control-button up btn" type="submit" id="btnSignup">Sign Up</button>
+                              </div>
+                            </form>
+                            <a href="index.html" class="backtohome">Back to Home &gt;&gt;</a>
+                           </div>
+                          </div>  
+              </div> 
+              <!-- </div> -->
+          <!-- </div> -->
+        </div>
+    </div>
+     <!--js links-->
+	     <script>
+      
+      let emailPattern = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
+      let phonePattern = /1?-?\.?\(?\d{3}[\-\)\.\s]?\d{3}[\-\.\s]?\d{4}/;
+      const signinbtn = document.querySelector('#slide-right-button');
+      const signupbtn = document.querySelector('#slide-left-button');
+      const formbox = document.querySelector('.form');
+
+      const btnSignup = document.getElementById('btnSignup');
+      const btnSignin = document.getElementById('btnSignin');
+      const signupform = document.getElementById('sign-up-form');
+
+      const inputFname = document.getElementById('inputFname');
+      const inputLname = document.getElementById('inputLname');
+      const inputEmail = document.getElementById('inputEmail');
+      const inputPhone = document.getElementById('inputPhone');
+      const inputComp = document.getElementById('inputComp');
+      const inputPass = document.getElementById('inputPass');
+      const inputConfPass = document.getElementById('inputConfPass');
+      const emailSignin = document.getElementById('emailSignin');
+      const passSignin = document.getElementById('passSignin');
+
+
+      const forgetpass = document.getElementById('forgetpass');
+      const signininfo = document.getElementById('sign-in-info');
+
+      signinbtn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        formbox.classList.add('active');
+        forgetpass.style.display = 'none';
+        signininfo.style.display = 'flex';
+      });
+
+      signupbtn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        formbox.classList.remove('active');
+        forgetpass.style.display = 'none';
+      });
+      function getforget(){
+        signininfo.style.display = 'none';
+        forgetpass.style.display = 'flex';
+      }
+      function backtosignin(){
+        signininfo.style.display = 'flex';
+        forgetpass.style.display = 'none';
+      }
+
+      btnSignup.addEventListener('click',(e)=>{
+        e.preventDefault();
+        formValidation();
+      });
+
+      btnSignin.addEventListener('click',(e)=>{
+        e.preventDefault();
+        signinValidation();
+      })
+      function formValidation(){
+        let arrayValid = [];
+        if(inputFname.value == ''){
+          inputFname.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          inputFname.style.border = "none";
+          arrayValid.push(true); 
+        }
+        if(inputLname.value == ''){
+          inputLname.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          inputLname.style.border = "none";
+          arrayValid.push(true); 
+        }
+        if(inputEmail.value == ''){
+          inputEmail.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(!(emailPattern.test(inputEmail.value))){
+            inputEmail.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputEmail.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        if(inputPhone.value == ''){
+          inputPhone.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(!(phonePattern.test(inputPhone.value))){
+            inputPhone.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputPhone.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        if(inputComp.value == ''){
+          inputComp.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          inputComp.style.border = "none";
+          arrayValid.push(true); 
+        }
+        if(inputPass.value == ''){
+          inputPass.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(inputPass.value.length < 5){
+            inputPass.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputPass.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        if(inputConfPass.value == ''){
+          inputConfPass.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(inputConfPass.value !== inputPass.value){
+            inputConfPass.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputConfPass.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        // console.log(arrayValid);
+      }
+      function signinValidation(){
+        arrsigninValid = [];
+        if(emailSignin.value == ''){
+          emailSignin.style.border = "1px solid red";
+          arrsigninValid.push(false);
+        }else{
+          emailSignin.style.border = "none";
+          arrsigninValid.push(true); 
+        }
+        if(passSignin.value == ''){
+          passSignin.style.border = "1px solid red";
+          arrsigninValid.push(false);
+        }else{
+          passSignin.style.border = "none";
+          arrsigninValid.push(true); 
+        }
+      }
+    </script>

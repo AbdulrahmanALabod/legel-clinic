@@ -1,0 +1,284 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The-Legal-clinic</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body onload="fnBrowserDetect()">
+    <div class="page-wraper d-flex  min-vh-100 justify-content-content align-items-center">
+        <div class="container">
+          <!-- <div class="row g-0"> -->
+              <div class="overlay" id="overlay">
+                <!-- <div class="overlay" id="overlay"> -->
+                  <div class="sign-in box" id="sign-in">
+                    <div class="pt-3 pb-3">
+                      <h2>Welcome Back!</h2>
+                      <p>To keep connected with us please login with your personal info</p>
+                      <button class="switch-button btn" id="slide-right-button">Sign In</button>
+                    </div>
+                  </div>
+                  <div class="sign-up box" id="sign-up">
+                    <div class="pt-5 pb-3">
+                      <h2>Hello, Friend!</h2>
+                      <p>Enter your personal details and start a journey with us</p>
+                      <button class="switch-button btn" id="slide-left-button">Sign Up</button>
+                    </div>
+                  </div>
+                <!-- </div> -->
+              </div>
+              <div class="form">
+                    <!-- <div class="form"> -->
+                        <div class="sign-in" id="sign-in-info">
+                            <div class="px-5 py-5">
+                              <h2>Sign In</h2>
+
+                            <form id="sign-in-form" class="row gx-0">     
+                              <div class="col-12">
+                                <input type="email" class="form-control" placeholder="Email" id="emailSignin"/>
+                              </div> 
+                              <div class="col-12">
+                                <input type="password" class="form-control" placeholder="Password" id="passSignin"/>
+                              </div>
+                              <p class="forgot-password"><a href="#" onclick="getforget()">Forgot your password?</a></p>
+                              <div class="12">
+                                <button class="control-button in btn" type="submit" id="btnSignin">Sign In</button>
+                              </div>
+                            </form>
+                            <a href="index.html" class="backtohome"> Back to Home &gt;&gt; </a>
+                            </div>
+                        </div>
+                        <div class="forget-pass" id="forgetpass">
+                          <div class="px-5 py-5">
+                            <h2>Forgot your password?</h2>
+                          
+                          <form id="sign-in-form" class="row gx-0">     
+                            <div class="col-12">
+                              <input type="email" class="form-control" placeholder="Email"/>
+                            </div> 
+                           <!-- <div class="col-12">
+                              <input type="password" class="form-control" placeholder="Password"/>
+                            </div> -->
+                            <p class="forgot-password">If you’ve forgotten your password, please enter
+                              your registered email address.We’ll send you a link to reset your password.</p> 
+                            <div class="12">
+                              <button class="control-button in btn" type="submit">Continue</button>
+                            </div>
+                            <span class="login__account">Remember your password?</span>
+                              <a href="#" onclick="backtosignin()">Sign In</a>
+                          </form>
+                          <a href="index.html" class="backtohome">Back to Home &gt;&gt;</a>
+                          </div>
+                      </div> 
+                          <div class="sign-up" id="sign-up-info">
+                           <div class="px-5 py-5">
+                            <h2>Create Account</h2>
+                        
+                            <form id="sign-up-form" class="row gx-0">
+                              <div class="col-6 " style="padding-right: .5rem;">
+                                <input type="text" class="form-control" placeholder="First Name" id="inputFname"/>
+                              </div>
+                              <div class="col-6 ">
+                                <input type="text" class="form-control" placeholder="Last Name" id="inputLname"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="email" class="form-control" placeholder="Email" id="inputEmail"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Phone" id="inputPhone"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Company" id="inputComp"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="password" class="form-control" placeholder="Password" id="inputPass"/>
+                              </div>
+                              <div class="col-12">
+                                <input type="password" class="form-control" placeholder="Confirm Password" id="inputConfPass"/>
+                              </div>
+                              <div class="col-12">
+                                <button class="control-button up btn" type="submit" id="btnSignup">Sign Up</button>
+                              </div>
+                            </form>
+                            <a href="index.html" class="backtohome">Back to Home &gt;&gt;</a>
+                           </div>
+                          </div>  
+              </div> 
+              <!-- </div> -->
+          <!-- </div> -->
+        </div>
+    </div>
+     <!--js links-->
+     <script src="js/jquery.js"></script>
+     <script src="js/popper.js"></script>
+     <script src="css/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+     <!-- <script src="js/index.js"></script> -->
+    <script>
+      let emailPattern = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
+      let phonePattern = /1?-?\.?\(?\d{3}[\-\)\.\s]?\d{3}[\-\.\s]?\d{4}/;
+      const signinbtn = document.querySelector('#slide-right-button');
+      const signupbtn = document.querySelector('#slide-left-button');
+      const formbox = document.querySelector('.form');
+
+      const btnSignup = document.getElementById('btnSignup');
+      const btnSignin = document.getElementById('btnSignin');
+      const signupform = document.getElementById('sign-up-form');
+
+      const inputFname = document.getElementById('inputFname');
+      const inputLname = document.getElementById('inputLname');
+      const inputEmail = document.getElementById('inputEmail');
+      const inputPhone = document.getElementById('inputPhone');
+      const inputComp = document.getElementById('inputComp');
+      const inputPass = document.getElementById('inputPass');
+      const inputConfPass = document.getElementById('inputConfPass');
+      const emailSignin = document.getElementById('emailSignin');
+      const passSignin = document.getElementById('passSignin');
+
+
+      const forgetpass = document.getElementById('forgetpass');
+      const signininfo = document.getElementById('sign-in-info');
+
+      signinbtn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        formbox.classList.add('active');
+        forgetpass.style.display = 'none';
+        signininfo.style.display = 'flex';
+      });
+
+      signupbtn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        formbox.classList.remove('active');
+        forgetpass.style.display = 'none';
+      });
+      function getforget(){
+        signininfo.style.display = 'none';
+        forgetpass.style.display = 'flex';
+      }
+      function backtosignin(){
+        signininfo.style.display = 'flex';
+        forgetpass.style.display = 'none';
+      }
+
+      btnSignup.addEventListener('click',(e)=>{
+        e.preventDefault();
+        formValidation();
+      });
+
+      btnSignin.addEventListener('click',(e)=>{
+        e.preventDefault();
+        signinValidation();
+      })
+      function formValidation(){
+        let arrayValid = [];
+        if(inputFname.value == ''){
+          inputFname.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          inputFname.style.border = "none";
+          arrayValid.push(true); 
+        }
+        if(inputLname.value == ''){
+          inputLname.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          inputLname.style.border = "none";
+          arrayValid.push(true); 
+        }
+        if(inputEmail.value == ''){
+          inputEmail.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(!(emailPattern.test(inputEmail.value))){
+            inputEmail.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputEmail.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        if(inputPhone.value == ''){
+          inputPhone.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(!(phonePattern.test(inputPhone.value))){
+            inputPhone.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputPhone.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        if(inputComp.value == ''){
+          inputComp.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          inputComp.style.border = "none";
+          arrayValid.push(true); 
+        }
+        if(inputPass.value == ''){
+          inputPass.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(inputPass.value.length < 5){
+            inputPass.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputPass.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        if(inputConfPass.value == ''){
+          inputConfPass.style.border = "1px solid red";
+          arrayValid.push(false);
+        }else{
+          if(inputConfPass.value !== inputPass.value){
+            inputConfPass.style.border = "1px solid red";
+            arrayValid.push(false);
+          }else{
+            inputConfPass.style.border = "none";
+            arrayValid.push(true); 
+          }
+        }
+        // console.log(arrayValid);
+      }
+      function signinValidation(){
+        arrsigninValid = [];
+        if(emailSignin.value == ''){
+          emailSignin.style.border = "1px solid red";
+          arrsigninValid.push(false);
+        }else{
+          emailSignin.style.border = "none";
+          arrsigninValid.push(true); 
+        }
+        if(passSignin.value == ''){
+          passSignin.style.border = "1px solid red";
+          arrsigninValid.push(false);
+        }else{
+          passSignin.style.border = "none";
+          arrsigninValid.push(true); 
+        }
+      }
+       function fnBrowserDetect(){
+         let userAgent = navigator.userAgent;
+         let browserName;
+         if(userAgent.match(/safari/i)){
+           browserName = "safari";
+           document.querySelector('body').style.fontFamily  = 'Roboto, sans-serif';
+          } else{
+          document.querySelector('body').style.fontFamily  = 'Gotham, sans-serif';
+         }
+          if (window.navigator.userAgent.indexOf("Mac") != -1) {
+            // console.log("OS is Mac/iOS");
+            document.querySelector('body').style.fontFamily  = 'Roboto, sans-serif';
+          } else{
+          document.querySelector('body').style.fontFamily  = 'Gotham, sans-serif';
+         }
+        }
+    </script>
+</body>
+</html>
