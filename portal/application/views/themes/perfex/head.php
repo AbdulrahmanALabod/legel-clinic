@@ -9,6 +9,7 @@
 	<?php echo compile_theme_css(); ?>
 	<script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
 	<?php app_customers_head(); ?>
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap-5/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/signup.css'); ?>">
 </head>

@@ -4,10 +4,14 @@
     --form-991-width: 450px;
     --form-991-height: 950px;
   }
-  .papage-wraper {
+  .page-wraper {
    transition: 0.5s; 
+   display: flex;
+   min-height: 100vh;
+   justify-content: center;
+   align-items: center;
   }
-  .container{
+  .container-signup{
     width: var(--form-width);
     height: var(--form-height);
     position: relative;
@@ -20,7 +24,7 @@
     width: 100%;
     position: absolute;
     top: 125px;
-    height: 470;
+    height: 470px;
     /* z-index: 100; */
     /* border-radius: 10px ; */
     background:var(--background-gradient) ;

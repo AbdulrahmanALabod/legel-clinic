@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-<div class="page-wraper d-flex  min-vh-100 justify-content-content align-items-center">
-   <div class="container">
+<div class="page-wraper d-flex  min-vh-100 justify-content-center align-items-center">
+   <div class="container-signup">
       <div class="overlay-signup" id="overlay">
          <div class="sign-in box" id="sign-in">
             <div class="pt-3 pb-3">
@@ -23,59 +23,67 @@
             <div class="px-5 py-5">
                <h2>Sign In</h2>
 
-               <form action="<?php echo $this->uri->uri_string() ?>" id="sign-in-form" class="row gx-0">
+               <?php echo form_open($this->uri->uri_string(), array('class' => 'row gx-0')); ?>
                   <?php hooks()->do_action('clients_login_form_start'); ?>
                   <div class="col-12">
-                     <input type="email" class="form-control" placeholder="Email" id="emailSignin" />
+                     <input type="email" autofocus="true" class="form-control" placeholder="Email" name="email" id="emailSignin">
+
                   </div>
                   <div class="col-12">
-                     <input type="password" class="form-control" placeholder="Password" id="passSignin" />
+                     <input type="password" class="form-control" name="password" id="passSignin" placeholder="Password">
                   </div>
-                  <p class="forgot-password"><a href="#" onclick="getforget()">Forgot your password?</a></p>
                   <div class="12">
-                     <button class="control-button in btn" type="submit" id="btnSignin">Sign In</button>
+                     <button type="submit"  class="btn btn-info btn-block"><?php echo _l('Sign In'); ?></button>
+
                   </div>
                   <?php hooks()->do_action('clients_login_form_end'); ?>
-               </form>
-               <a href="index.html" class="backtohome"> Back to Home &gt;&gt; </a>
-            </div>
-         </div>
-         <div class="forget-pass" id="forgetpass">
-            <div class="px-5 py-5">
-               <a href="<?php echo site_url('authentication/forgot_password'); ?>">Forgot your password?</h2>
+                  <?php echo form_close(); ?>
+               <a href="<?php echo base_url('/'); ?>" class="backtohome"> Back to Home &gt;&gt; </a>
             </div>
          </div>
          <div class="sign-up" id="sign-up-info">
             <div class="px-5 py-5">
                <h2>Create Account</h2>
+               <?php echo form_open('authentication/register', ['id' => 'register-form' ,'class'=>"row gx-0"]); ?>
 
-               <form id="sign-up-form" class="row gx-0">
                   <div class="col-6 " style="padding-right: .5rem;">
-                     <input name="email" type="text" class="form-control" placeholder="First Name" id="inputFname" />
+                     <input type="text" class="form-control" name="<?php echo $fields['firstname']; ?>"
+                       value="<?php echo set_value($fields['firstname']); ?>"
+                      placeholder="First Name" id="inputFname">
                   </div>
                   <div class="col-6 ">
-                     <input name="email" type="text" class="form-control" placeholder="Last Name" id="inputLname" />
+                     <input type="text" class="form-control" name="<?php echo $fields['lastname']; ?>"
+                      placeholder="Last Name"  id="inputLname"
+                       value="<?php echo set_value($fields['lastname']); ?>">
+
                   </div>
                   <div class="col-12">
-                     <input name="email" type="email" class="form-control" placeholder="Email" id="inputEmail" />
+                     <input type="email" class="form-control" name="<?php echo $fields['email']; ?>"
+                      value="<?php echo set_value($fields['email']); ?>" placeholder="Email" id="inputEmail">
                   </div>
                   <div class="col-12">
-                     <input name="email" type="text" class="form-control" placeholder="Phone" id="inputPhone" />
+                     <input type="text" class="form-control" name="phonenumber" placeholder="Phone"
+                       value="<?php echo set_value('phonenumber'); ?>" id="inputPhone">
+
                   </div>
                   <div class="col-12">
-                     <input name="email" type="text" class="form-control" placeholder="Company" id="inputComp" />
+                     <input type="text" class="form-control" placeholder="Company" name="<?php echo $fields['company']; ?>"
+                     value="<?php echo set_value($fields['company']); ?>" id="inputComp">
                   </div>
                   <div class="col-12">
-                     <input name="email" type="password" class="form-control" placeholder="Password" id="inputPass" />
+                     <input type="password" class="form-control" name="password" placeholder="Password" 
+                     id="inputPass">
+
                   </div>
                   <div class="col-12">
-                     <input name="email" type="password" class="form-control" placeholder="Confirm Password" id="inputConfPass" />
+                     <input type="password" class="form-control" name="passwordr"  placeholder="Confirm Password"
+                     id="inputConfPass">
                   </div>
                   <div class="col-12">
-                     <button class="control-button up btn" type="submit" id="btnSignup">Sign Up</button>
+                     <button class="control-button up btn" type="submit">Sign Up</button>
                   </div>
-               </form>
-               <a href="index.html" class="backtohome">Back to Home &gt;&gt;</a>
+                  <?php echo form_close(); ?>
+               <a href="<?php echo site_url('')?>" class="backtohome">Back to Home &gt;&gt;</a>
             </div>
          </div>
       </div>

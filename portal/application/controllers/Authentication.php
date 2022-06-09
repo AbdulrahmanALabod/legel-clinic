@@ -30,6 +30,15 @@ class Authentication extends ClientsController
 		$this->use_head = false;
 		$this->add_scripts = false;
 		$this->use_navigation = false;
+
+        $honeypot = get_option('enable_honeypot_spam_validation') == 1;
+
+        $fields = [
+            'firstname' => $honeypot ? 'firstnamemjxw' : 'firstname',
+            'lastname'  => $honeypot ? 'lastnamemjxw' : 'lastname',
+            'email'     => $honeypot ? 'emailmjxw' : 'email',
+            'company'   => $honeypot ? 'companymjxw' : 'company',
+        ];
 		/*
 		var_dump(is_client_logged_in());
 		var_dump($_REQUEST);
@@ -85,6 +94,9 @@ class Authentication extends ClientsController
             $data['title'] = _l('clients_login_heading_no_register');
         }
         $data['bodyclass'] = 'customers_login';
+        $data['honeypot']  = $honeypot;
+        $data['fields']    = $fields;
+        $this->data($data);
 
         $this->data($data);
         $this->view('login');
@@ -157,51 +169,51 @@ class Authentication extends ClientsController
 
         if ($this->input->post()) {
             if ($honeypot &&
-                count(array_filter($this->input->post(['email', 'firstname', 'lastname', 'company']))) > 0) {
+            count(array_filter($this->input->post(['email', 'firstname', 'lastname', 'company']))) > 0) {
                 show_404();
             }
-
-            if ($this->form_validation->run() !== false) {
+           
+            // if ($this->form_validation->run() !== false) {
                 $data      = $this->input->post();
-                $countryId = is_numeric($data['country']) ? $data['country'] : 0;
+                // $countryId = is_numeric($data['country']) ? $data['country'] : 0;
 
-                if (is_automatic_calling_codes_enabled()) {
-                    $customerCountry = get_country($countryId);
+                // if (is_automatic_calling_codes_enabled()) {
+                //     $customerCountry = get_country($countryId);
 
-                    if ($customerCountry) {
-                        $callingCode = '+' . ltrim($customerCountry->calling_code, '+');
+                //     if ($customerCountry) {
+                //         $callingCode = '+' . ltrim($customerCountry->calling_code, '+');
 
-                        if (startsWith($data['contact_phonenumber'], $customerCountry->calling_code)) { // with calling code but without the + prefix
-                            $data['contact_phonenumber'] = '+' . $data['contact_phonenumber'];
-                        } elseif (!startsWith($data['contact_phonenumber'], $callingCode)) {
-                            $data['contact_phonenumber'] = $callingCode . $data['contact_phonenumber'];
-                        }
-                    }
-                }
+                //         if (startsWith($data['contact_phonenumber'], $customerCountry->calling_code)) { // with calling code but without the + prefix
+                //             $data['contact_phonenumber'] = '+' . $data['contact_phonenumber'];
+                //         } elseif (!startsWith($data['contact_phonenumber'], $callingCode)) {
+                //             $data['contact_phonenumber'] = $callingCode . $data['contact_phonenumber'];
+                //         }
+                //     }
+                // }
 
                 define('CONTACT_REGISTERING', true);
 
                 $clientid = $this->clients_model->add([
-                      'billing_street'      => $data['address'],
-                      'billing_city'        => $data['city'],
-                      'billing_state'       => $data['state'],
-                      'billing_zip'         => $data['zip'],
-                      'billing_country'     => $countryId,
+                    //   'billing_street'      => $data['address'],
+                    //   'billing_city'        => $data['city'],
+                    //   'billing_state'       => $data['state'],
+                    //   'billing_zip'         => $data['zip'],
+                    //   'billing_country'     => $countryId,
                       'firstname'           => $data[$fields['firstname']],
                       'lastname'            => $data[$fields['lastname']],
                       'email'               => $data[$fields['email']],
-                      'contact_phonenumber' => $data['contact_phonenumber'] ,
-                      'website'             => $data['website'],
-                      'title'               => $data['title'],
+                    //   'contact_phonenumber' => $data['contact_phonenumber'] ,
+                    //   'website'             => $data['website'],
+                    //   'title'               => $data['title'],
                       'password'            => $data['passwordr'],
                       'company'             => $data[$fields['company']],
                       'vat'                 => isset($data['vat']) ? $data['vat'] : '',
                       'phonenumber'         => $data['phonenumber'],
-                      'country'             => $data['country'],
-                      'city'                => $data['city'],
-                      'address'             => $data['address'],
-                      'zip'                 => $data['zip'],
-                      'state'               => $data['state'],
+                    //   'country'             => $data['country'],
+                    //   'city'                => $data['city'],
+                    //   'address'             => $data['address'],
+                    //   'zip'                 => $data['zip'],
+                    //   'state'               => $data['state'],
                       'custom_fields'       => isset($data['custom_fields']) && is_array($data['custom_fields']) ? $data['custom_fields'] : [],
                       'default_language'    => (get_contact_language() != '') ? get_contact_language() : get_option('active_language'),
                 ], true);
@@ -238,7 +250,7 @@ class Authentication extends ClientsController
 
                     send_customer_registered_email_to_administrators($clientid);
                     redirect($redUrl);
-                }
+                // }
             }
         }
 
@@ -247,7 +259,7 @@ class Authentication extends ClientsController
         $data['honeypot']  = $honeypot;
         $data['fields']    = $fields;
         $this->data($data);
-        $this->view('register');
+        $this->view('login');
         $this->layout();
     }
 
