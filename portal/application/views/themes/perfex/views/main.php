@@ -34,7 +34,8 @@
                   <nav class="navbar navbar-expand-lg nav-style bg-style navbar-text-light pt-4">
                     <div class="col-auto col-lg-2"> 
                         <!-- Logo --> 
-                        <a class="logo pt-4" href="index.html" title="legal-clinic-logo"><img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="" width="100%"></a>  
+                        <a class="logo pt-4" href="index.html" title="legal-clinic-logo">
+                          <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="" width="100%"></a>  
                         <!-- Logo End --> 
                       </div>
                       <div class="col col-lg-8  align-self-start">
@@ -68,7 +69,8 @@
                     <div class="social-icons col-auto col-lg-2 d-flex justify-content-end">
                       <div class=" social-icons-light mb-0 d-flex">
                         <!-- <li></li> -->
-                        <a href="#" class="search-toggler align-self-center" style="margin-right: 4rem;"><img src="<?php echo base_url('assets/images/main/search-icon.svg')?>" alt=""></a>
+                        <a href="#" class="search-toggler align-self-center" style="margin-right: 4rem;">
+                        <img src="<?php echo base_url('assets/images/main/search-icon.svg')?>" alt=""></a>
                         <!-- <li> -->
                           <div class="dropdown">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
@@ -398,7 +400,8 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="d-flex justify-content-end">
-              <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><img src="<?php echo base_url('assets/images/main/ant-design_close-circle-outlined.svg')?>" alt=""></button>
+              <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                <img src="<?php echo base_url('assets/images/main/ant-design_close-circle-outlined.svg')?>" alt=""></button>
             </div>
             <div class="modal-header">
               <h5 class="modal-title text-center" id="exampleModalLabel">Please fill out the form below to inquire about our work</h5>
@@ -592,17 +595,17 @@
                 <ul class="list-unstyled footer-widget__contact">
                   <li class="">
                     <!-- <i class="fa-solid fa-phone-volume"></i> -->
-                    <i><img src="<?php echo base_url('assets/images/main/carbon_phone')?>" alt="carbon_phone"></i>
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg')?>" alt="carbon_phone"></i>
                     <a href="tel:666-888-0000">01000358970</a>
                   </li>
                   <li  class="">
                     <!-- <i class="fa-solid fa-location-dot"></i> -->
-                    <i><img src="<?php echo base_url('assets/images/main/akar-icons_location')?>" alt="akar-icons_location"></i>
+                    <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
                     <a href="#">Cairo, EGYPT</a>
                   </li>
                   <li  class="">
                     <!-- <i class="fa-solid fa-envelope"></i> -->
-                    <i><img src="<?php echo base_url('assets/images/main/carbon_email (1)')?>" alt="carbon_email"></i>
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg')?>" alt="carbon_email"></i>
                     <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
                   </li>
                 </ul>
@@ -612,10 +615,10 @@
                 <h3 class="footer-widget__title">Follow us</h3>
                 <div class="mc-form__response"></div>
                   <div class="footer__social pt-1">
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook')?>" alt="brandico_facebook"></a>
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/Frame')?>" alt="Frame"></a>
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter')?>" alt="foundation_social-twitter"></a>
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin')?>" alt="foundation_social-linkedin"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
                   </div>
                   <p class="work-time">Work Time<br>
                     Sun- Thu: 9:00 - 18:00<br>
@@ -645,7 +648,7 @@
     <!--js links-->
     <script src="<?php echo base_url('assets/js/jquery.js')?>"></script>
     <script src="<?php echo base_url('assets/js/popper.js')?>"></script>
-    <script src="<?php echo base_url('assets/css/bootstrap-5/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/css/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')?>"></script>
     <script src="<?php echo base_url('assets/js/swiper.js')?>"></script>
     <script src="<?php echo base_url('assets/js/jquery-ajaxchimp')?>"></script>
     <script src="<?php echo base_url('assets/js/magnific-popup')?>"></script>
