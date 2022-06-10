@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The-Legal-clinic</title>
     <!-- css link -->
-    <link rel="stylesheet" href="css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome-free-6.1.1-web/css/all.min.css">
-    <link rel="stylesheet" href="css/swiper.css">
-    <link rel="stylesheet" href="css/jarallax.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/bootstrap-select.css">
-    <link rel="stylesheet" href="css/nouislider.css">
-    <link rel="stylesheet" href="css/jquery-nouislider.css">
-    <link rel="stylesheet" href="css/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-5.0.2-dist/css/bootstrap.min.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/fontawesome-free-6.1.1-web/css/all.min.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/swiper.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/jarallax.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/magnific-popup.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-select.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/nouislider.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-nouislider.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/animate.css')?>">
     
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/about.css')?>">
 </head>
 <body onload="fnBrowserDetect()">
     <div class="page-wrapper">
@@ -30,7 +30,7 @@
             <nav class="navbar navbar-expand-lg nav-style bg-style navbar-text-light pt-4">
               <div class="col-auto col-lg-2"> 
                   <!-- Logo --> 
-                  <a class="logo pt-4" href="index.html" title="legal-clinic-logo"><img src="images/logo-nav.svg" alt="" width="100%"></a>  
+                  <a class="logo pt-4" href="<?php echo site_url('')?>" title="legal-clinic-logo"><img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="" width="100%"></a>  
                   <!-- Logo End --> 
                 </div>
                 <div class="col col-lg-8  align-self-start">
@@ -41,8 +41,8 @@
                   </button>
                   <div id="header-nav" class="collapse navbar-collapse justify-content-center">
                     <ul class="navbar-nav">
-                      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                      <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/')?>">Home</a></li>
+                      <li class="nav-item"><a class="nav-link active" href="<?php echo site_url('index/about')?>">About</a></li>
                       <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                       <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
                       <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
@@ -55,7 +55,11 @@
                           <ul style="display: none;" id="ul-menu-profile">
                             <li class="current"><a href="#"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
                             <li><a href="#"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                            <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                            <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                      <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                    <?php } else { ?>
+                      <li><a class="dropdown-item"  href="<?php echo base_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                    <?php } ?>
                           </ul>
                       </li>
                     </ul>
@@ -64,20 +68,23 @@
               <div class="social-icons col-auto col-lg-2 d-flex justify-content-end">
                 <div class=" social-icons-light mb-0 d-flex">
                   <!-- <li></li> -->
-                  <a href="#" class="search-toggler align-self-center" style="padding-right: 4rem;"><img src="images/search-icon.svg" alt=""></a>
+                  <a href="#" class="search-toggler align-self-center" style="padding-right: 4rem;"><img src="<?php echo base_url('assets/images/main/search-icon.svg')?>" alt=""></a>
                   <!-- <li> -->
                     <div class="dropdown">
                       <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-                        <img src="images/profile.svg" alt="">
+                        <img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt="">
                       </a>
                       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
-                      </ul>
+                        <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                      <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                    <?php } else { ?>
+                      <li><a class="dropdown-item"  href="<?php echo base_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                    <?php } ?>                      </ul>
                     </div>
                   <!-- </li> -->
-                  <!-- <a href="#"><img src="images/profile.svg" alt=""></a> -->
+                  <!-- <a href="#"><img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt=""></a> -->
                   </div>
               </div>
           </nav>
@@ -119,16 +126,16 @@
     <!-- shapes -->
      <!-- <div class="shapes"> -->
       <span class="lines-about">
-        <img src="images/aboutlines.svg" alt="aboutlines">
+        <img src="<?php echo base_url('assets/images/main/aboutlines.svg')?>" alt="aboutlines">
       </span>
       <span class="xshades-about">
-        <img src="images/xshadowsmall.svg" alt="xshadowsmall">
+        <img src="<?php echo base_url('assets/images/main/xshadowsmall.svg')?>" alt="xshadowsmall">
       </span>
       <span class="circles-about">
-        <img src="images/circlelines.svg" alt="circlelines">
+        <img src="<?php echo base_url('assets/images/main/circlelines.svg')?>" alt="circlelines">
       </span>
       <span class="circleshadow-about">
-        <img src="images/circleshadow.svg" alt="circleshadow">
+        <img src="<?php echo base_url('assets/images/main/circleshadow.svg')?>" alt="circleshadow">
       </span>
     <!-- </div>  -->
     
@@ -139,10 +146,10 @@
             <h2>About Us</h2>
           </div> -->
           <span class="quotes">
-            <img src="images/quote.svg" alt="quote">
+            <img src="<?php echo base_url('assets/images/main/quote.svg')?>" alt="quote">
           </span>
           <span class="dotscircle">
-            <img src="images/dotscircles.svg" alt="dotscircles">
+            <img src="<?php echo base_url('assets/images/main/dotscircles.svg')?>" alt="dotscircles">
           </span>
           <div class="content">
           <div class="container">
@@ -165,52 +172,52 @@
           </div>
         </div>
         <span class="linesbreak">
-          <img src="images/linesbreak.svg" alt="linesbreak">
+          <img src="<?php echo base_url('assets/images/main/linesbreak.svg')?>" alt="linesbreak">
         </span>
       </section>
       <!-- our partners -->
       <section class="our-partner">
           <span class="linesbreak-two">
-            <img src="images/linesbreak.svg" alt="linesbreak">
+            <img src="<?php echo base_url('assets/images/main/linesbreak.svg')?>" alt="linesbreak">
           </span>
         <div class="container">
           <div class="d-flex flex-wrap justify-content-center">
             <div class="partner text-center">
-              <img src="images/partnericon.svg" alt="partnericon">
+              <img src="<?php echo base_url('assets/images/main/partnericon.svg')?>" alt="partnericon">
               <h2>Our Partner</h2>
             </div>
           </div>
           <div class="row justify-content-center">
             <div class="row justify-content-evenly align-items-center">
               <div class="col-12 col-sm-6 col-md-6 col-lg-2 d-flex justify-content-center">
-                <img src="images/edventures.svg" alt="edventures">
+                <img src="<?php echo base_url('assets/images/main/edventures.svg')?>" alt="edventures">
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-2 d-flex justify-content-center">
-                <img src="images/flux.svg" alt="flux">
+                <img src="<?php echo base_url('assets/images/main/flux.svg')?>" alt="flux">
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-2 d-flex justify-content-center">
-                <img src="images/icealex.svg" alt="icealex">
+                <img src="<?php echo base_url('assets/images/main/icealex.svg')?>" alt="icealex">
               </div>
             </div>
             <div class="row  justify-content-between align-items-center">
               <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-2 d-flex justify-content-center">
-                <img src="images/creativehub.svg" alt="creativehub">
+                <img src="<?php echo base_url('assets/images/main/creativehub.svg')?>" alt="creativehub">
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-2 d-flex justify-content-center">
-                <img src="images/khanfounda.svg" alt="khanfounda">
+                <img src="<?php echo base_url('assets/images/main/khanfounda.svg')?>" alt="khanfounda">
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-2 d-flex justify-content-center">
-                <img src="images/hultprize.svg" alt="hultprize">
+                <img src="<?php echo base_url('assets/images/main/hultprize.svg')?>" alt="hultprize">
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-2 d-flex justify-content-center">
-                <img src="images/genegypt.svg" alt="genegypt">
+                <img src="<?php echo base_url('assets/images/main/genegypt.svg')?>" alt="genegypt">
               </div>
             </div>
           </div>
           
           </div>
           <span class="dotscircle-two">
-            <img src="images/dotscircles.svg" alt="dotscircles">
+            <img src="<?php echo base_url('assets/images/main/dotscircles.svg')?>" alt="dotscircles">
           </span>
       </section>
       <!-- our goal -->
@@ -220,7 +227,7 @@
             <div class="row justify-content-center">
               <div class="col-12 col-lg-7">
                 <div class="text-center title-goal">
-                  <img src="images/ourgoal.svg" alt="ourgoal">
+                  <img src="<?php echo base_url('assets/images/main/ourgoal.svg')?>" alt="ourgoal">
                   <h2>Our Goal</h2>
                   <p>Our goal is to increase startups and entrepreneurs legal awareness and benefit the whole ecosystem, ensuring that they are in the right track to prevent any legal struggles they might have.</p>
                 </div>
@@ -232,7 +239,7 @@
       <!-- logo -->
       <section class="logo">
         <div class="d-flex justify-content-center logo-padding">
-          <img src="images/logo.svg" alt="logo" class="img-logo">
+          <img src="<?php echo base_url('assets/images/main/logo.svg')?>" alt="logo" class="img-logo">
         </div>
       </section>
       <!-- footer -->
@@ -242,7 +249,7 @@
             <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
               <div class="footer-widget">
                 <a href="" class="footer-widget__Logo">
-                  <img src="images/logofooter.svg" alt="" loading="lazy"/>
+                  <img src="<?php echo base_url('assets/images/main/logofooter.svg')?>" alt="" loading="lazy"/>
                 </a>
                
               </div>
@@ -252,7 +259,7 @@
               <h3 class="footer-widget__title">Company</h3>
               <ul class="list-unstyled footer-widget__contact">
                 <li>
-                  <a href="">About Us</a>
+                  <a href="<?php echo site_url('index/about')?>">About Us</a>
                 </li>
                 <li>
                   <a href="">Login</a>
@@ -277,17 +284,17 @@
               <ul class="list-unstyled footer-widget__contact">
                 <li class="">
                   <!-- <i class="fa-solid fa-phone-volume"></i> -->
-                  <i><img src="images/carbon_phone.svg" alt="carbon_phone"></i>
+                  <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg')?>" alt="carbon_phone"></i>
                   <a href="tel:666-888-0000">01000358970</a>
                 </li>
                 <li  class="">
                   <!-- <i class="fa-solid fa-location-dot"></i> -->
-                  <i><img src="images/akar-icons_location.svg" alt="akar-icons_location"></i>
+                  <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
                   <a href="#">Cairo, EGYPT</a>
                 </li>
                 <li  class="">
                   <!-- <i class="fa-solid fa-envelope"></i> -->
-                  <i><img src="images/carbon_email (1).svg" alt="carbon_email"></i>
+                  <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg')?>" alt="carbon_email"></i>
                   <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
                 </li>
               </ul>
@@ -297,10 +304,10 @@
               <h3 class="footer-widget__title">Follow us</h3>
               <div class="mc-form__response"></div>
                 <div class="footer__social pt-1">
-                  <a href="#"><img src="images/brandico_facebook.svg" alt="brandico_facebook"></a>
-                  <a href="#"><img src="images/Frame.svg" alt="Frame"></a>
-                  <a href="#"><img src="images/foundation_social-twitter.svg" alt="foundation_social-twitter"></a>
-                  <a href="#"><img src="images/foundation_social-linkedin.svg" alt="foundation_social-linkedin"></a>
+                  <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                  <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                  <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                  <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
                 </div>
                 <p class="work-time">Work Time<br>
                   Sun- Thu: 9:00 - 18:00<br>
@@ -327,23 +334,23 @@
       <i class="fa fa-angle-up"></i>
     </a>
      <!--js links-->
-     <script src="js/jquery.js"></script>
-     <script src="js/popper.js"></script>
-     <script src="css/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-     <script src="js/swiper.js"></script>
-     <script src="js/jquery-ajaxchimp"></script>
-     <script src="js/magnific-popup"></script>
-     <script src="js/jquery-validate.js"></script>
-     <script src="js/bootstrap-select.js"></script>
-     <script src="js/wow.js"></script>
-     <script src="js/jquery-appear.js"></script>
-     <script src="js/jarallax.js"></script>
-     <script src="js/circle-progress.js"></script>
-     <script src="css/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-     <script src="js/wNumb.js"></script>
-     <script src="js/nouislider.js"></script>
-     <script src="js/isotope.js"></script>
-     <script src="js/index.js"></script>
+     <script src="<?php echo base_url('assets/js/jquery.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/popper.js')?>"></script>
+     <script src="<?php echo base_url('assets/css/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/swiper.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/jquery-ajaxchimp')?>"></script>
+     <script src="<?php echo base_url('assets/js/magnific-popup')?>"></script>
+     <script src="<?php echo base_url('assets/js/jquery-validate.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/bootstrap-select.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/wow.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/jquery-appear.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/jarallax.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/circle-progress.js')?>"></script>
+     <script src="<?php echo base_url('assets/css/OwlCarousel2-2.3.4/dist/owl.carousel.min.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/wNumb.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/nouislider.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/isotope.js')?>"></script>
+     <script src="<?php echo base_url('assets/js/index.js')?>"></script>
      <script>
        function fnBrowserDetect(){
          let userAgent = navigator.userAgent;

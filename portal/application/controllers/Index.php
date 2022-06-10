@@ -16,6 +16,11 @@ class Index extends App_Controller
     public function index()
     {
 
-        $this->load->view('themes/' . active_clients_theme() . '/views/main',['data'=>$_SESSION]);
+        $this->load->view('themes/' . active_clients_theme() . '/views/main');
+    }
+
+    public function about()
+    {
+        $this->load->view('themes/' . active_clients_theme() . '/views/about');
     }
 }
