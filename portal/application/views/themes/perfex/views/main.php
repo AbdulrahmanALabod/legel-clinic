@@ -1,6 +1,7 @@
-<?php
-?>
+<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,8 +47,8 @@
                         </button>
                         <div id="header-nav" class="collapse navbar-collapse justify-content-center">
                           <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link  active" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                          <li class="nav-item"><a class="nav-link" href="<?php echo site_url('')?>">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/about'); ?>">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
                             <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
@@ -60,7 +61,11 @@
                                 <ul style="display: none;" id="ul-menu-profile">
                                   <li class="current"><a href="#"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
                                   <li><a href="#"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                                  <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                                  <?php   if(isset($_SESSION['client_logged_in'])){?>
+                                    <li><a href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                                    <?php }else{?>
+                                      <li><a href="<?php echo base_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                                  <?php }?>
                                 </ul>
                             </li>
                           </ul>
@@ -79,8 +84,12 @@
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
                               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
                               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
-                            </ul>
+                              <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                      <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                    <?php } else { ?>
+                      <li><a class="dropdown-item"  href="<?php echo base_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                    <?php } ?>
+                                                           </ul>
                           </div>
                         <!-- </li> -->
                         <!-- <a href="#"><img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt=""></a> -->
@@ -561,7 +570,7 @@
             <div class="row pt-5 pb-5 justify-content-between">
               <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 spec-logo">
                 <div class="footer-widget">
-                  <a href="index.html" class="footer-widget__Logo">
+                  <a href="<?php echo site_url('')?>" class="footer-widget__Logo">
                     <img src="<?php echo base_url('assets/images/main/logofooter.svg')?>" alt="logofooter"/>
                   </a>
                 </div>
@@ -570,7 +579,7 @@
                 <h3 class="footer-widget__title">Company</h3>
                 <ul class="list-unstyled footer-widget__contact">
                   <li>
-                    <a href="about.html">About Us</a>
+                    <a href="<?php echo site_url('index/about')?>">About Us</a>
                   </li>
                   <!-- <li>
                     <a href="">Login</a>
