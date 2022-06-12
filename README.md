@@ -1,1 +1,0 @@
-# legel-clinic
