@@ -467,9 +467,17 @@ nav .navbar-toggler.show span:nth-child(3) {
 }
 .btn:hover{
   transform: scale(.97);
-
 }
-
+.btn:focus{
+  box-shadow: none;
+}
+.social-icons .signin-out .btn-signIn{
+    color: var(--main-color);
+    background: transparent;
+    border: 2px solid var(--main-color);
+    /* padding: 0.7rem 2.1rem; */
+    border-radius: 5px;
+}
 /* --------------------- */
 /* footer */
 .site-footer{

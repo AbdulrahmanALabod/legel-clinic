@@ -47,7 +47,7 @@
                         </button>
                         <div id="header-nav" class="collapse navbar-collapse justify-content-center">
                           <ul class="navbar-nav">
-                          <li class="nav-item"><a class="nav-link" href="<?php echo site_url('')?>">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="<?php echo site_url('')?>">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/about'); ?>">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/price'); ?>">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
@@ -77,7 +77,10 @@
                         <a href="#" class="search-toggler align-self-center" style="margin-right: 4rem;">
                         <img src="<?php echo base_url('assets/images/main/search-icon.svg')?>" alt=""></a>
                         <!-- <li> -->
-                          <div class="dropdown">
+                          <div class="signin-out">
+                            <button class="btn btn-signIn">sign in</button>
+                          </div>
+                          <div class="dropdown" style="display:none;">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
                               <img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt="">
                             </a>
@@ -92,7 +95,9 @@
                                                            </ul>
                           </div>
                         <!-- </li> -->
-                        <!-- <a href="#"><img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt=""></a> -->
+                        <!-- <a href="#"><img src="
+                        <?php echo base_url('assets/images/main/profile.svg')?>
+                        " alt=""></a> -->
                         </div>
                     </div>
                 </nav>
