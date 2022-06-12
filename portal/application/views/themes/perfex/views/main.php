@@ -36,7 +36,7 @@
                     <div class="col-auto col-lg-2"> 
                         <!-- Logo --> 
                         <a class="logo pt-4" href="index.html" title="legal-clinic-logo">
-                          <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="" width="100%"></a>  
+                          <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt=""></a>  
                         <!-- Logo End --> 
                       </div>
                       <div class="col col-lg-8  align-self-start">
@@ -87,12 +87,12 @@
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
                               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
                               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                              <?php if (isset($_SESSION['client_logged_in'])) { ?>
-                      <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
-                    <?php } else { ?>
-                      <li><a class="dropdown-item"  href="<?php echo base_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
-                    <?php } ?>
-                                                           </ul>
+                                        <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                                <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                                    <?php } else { ?>
+                                <li><a class="dropdown-item"  href="<?php echo base_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                                    <?php } ?>
+                            </ul>
                           </div>
                         <!-- </li> -->
                         <!-- <a href="#"><img src="
