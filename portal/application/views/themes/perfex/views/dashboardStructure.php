@@ -274,7 +274,7 @@
             </div>
         </div>
         <!-- footer -->
-     <footer class="site-footer">
+        <footer class="site-footer">
         <div class="container">
           <div class="row pt-5 pb-5 justify-content-between">
             <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
