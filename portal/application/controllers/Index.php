@@ -28,4 +28,9 @@ class Index extends App_Controller
     {
         $this->load->view('themes/' . active_clients_theme() . '/views/price');
     }
+
+    public function contact()
+    {
+        $this->load->view('themes/' . active_clients_theme() . '/views/contact-us');
+    }
 }

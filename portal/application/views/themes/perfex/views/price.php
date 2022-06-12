@@ -39,25 +39,29 @@
                     <span></span>
                   </button>
                   <div id="header-nav" class="collapse navbar-collapse justify-content-center">
-                    <ul class="navbar-nav">
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url(''); ?>">Home</a></li>
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/about'); ?>">About</a></li>
-                      <li class="nav-item"><a class="nav-link active" href="<?php echo site_url('index/price'); ?>">Pricing</a></li>
-                      <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
-                      <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
-                      <li class="nav-item dropdown at-spec-width">
-                        <a href="#" class="pro-spec">Profile
-                          <button aria-label="dropdown toggler" id="drop-menu-profile" type="button">
-                            <i class="fa fa-angle-down"></i>
-                          </button>
-                        </a>
-                          <ul style="display: none;" id="ul-menu-profile">
-                            <li class="current"><a href="#"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
-                            <li><a href="#"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                            <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                  <ul class="navbar-nav">
+                          <li class="nav-item"><a class="nav-link" href="<?php echo site_url('')?>">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/about'); ?>">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/price'); ?>">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/contact'); ?>">Contact us</a></li>
+                            <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
+                            <li class="nav-item dropdown at-spec-width">
+                              <a href="#" class="pro-spec">Profile
+                                <button aria-label="dropdown toggler" id="drop-menu-profile" type="button">
+                                  <i class="fa fa-angle-down"></i>
+                                </button>
+                              </a>
+                                <ul style="display: none;" id="ul-menu-profile">
+                                  <li class="current"><a href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
+                                  <li><a href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
+                                  <?php   if(isset($_SESSION['client_logged_in'])){?>
+                                    <li><a class="dropdown-item" href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                                    <?php }else{?>
+                                      <li><a class="dropdown-item"  href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                                  <?php }?>
+                                </ul>
+                            </li>
                           </ul>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               <div class="social-icons col-auto col-lg-2 d-flex justify-content-end">
@@ -70,10 +74,13 @@
                         <img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt="">
                       </a>
                       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
-                      </ul>
+                        <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
+                        <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
+                                  <?php   if(isset($_SESSION['client_logged_in'])){?>
+                                    <li><a class="dropdown-item" href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                                    <?php }else{?>
+                                      <li><a class="dropdown-item" href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                                  <?php }?>                      </ul>
                     </div>
                   <!-- </li> -->
                   <!-- <a href="#"><img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt=""></a> -->

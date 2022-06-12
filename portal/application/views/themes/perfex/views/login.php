@@ -23,7 +23,7 @@
             <div class="px-5 py-5">
                <h2>Sign In</h2>
 
-               <?php echo form_open($this->uri->uri_string(), array('class' => 'row gx-0')); ?>
+               <?php echo form_open($this->uri->uri_string(), array('class' => 'row gx-0', "id" => "sign-up-info")); ?>
                   <?php hooks()->do_action('clients_login_form_start'); ?>
                   <div class="col-12">
                      <input type="email" autofocus="true" class="form-control" placeholder="Email" name="email" id="emailSignin">
