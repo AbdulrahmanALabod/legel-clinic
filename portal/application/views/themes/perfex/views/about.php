@@ -70,19 +70,22 @@
                   <!-- <li></li> -->
                   <a href="#" class="search-toggler align-self-center" style="padding-right: 4rem;"><img src="<?php echo base_url('assets/images/main/search-icon.svg')?>" alt=""></a>
                   <!-- <li> -->
-                    <div class="dropdown">
-                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
-                        <img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt="">
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="<?php echo site_url('clients')?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
-                        <li><a class="dropdown-item" href="<?php echo site_url('clients')?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                        <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                  <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                          <div class="dropdown" >
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                              <img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt="">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
                       <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                      </ul>
+                          </div>
                     <?php } else { ?>
-                      <li><a class="dropdown-item"  href="<?php echo base_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
-                    <?php } ?>                      </ul>
-                    </div>
+                      <div class="signin-out">
+                            <a class="btn btn-signIn"  href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a>
+                          </div>
+                      <?php } ?>
                   <!-- </li> -->
                   <!-- <a href="#"><img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt=""></a> -->
                   </div>
