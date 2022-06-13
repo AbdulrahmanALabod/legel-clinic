@@ -1,14 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
-        <div class="nav-control" id="sidebarCollapse">
-            <div class="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </div>
+    <div class="nav-control" id="sidebarCollapse">
+        <div class="hamburger">
+            <span class="line"></span> 
+            <span class="line"></span>
+            <span class="line"></span>
         </div>
+    </div>
+    <div class="container justify-content-end">
         <div class="social-icons spec col-auto col-lg-2 d-flex justify-content-end">
             <div class=" social-icons-light mb-0 d-flex">
                 <a href="#" class="search-toggler align-self-center" style="margin-right: 4rem;"><img src="<?php echo base_url('assets/images/main/search-icon.svg') ?>" alt="search-icon"></a>
