@@ -22,19 +22,16 @@
          <div class="sign-in" id="sign-in-info">
             <div class="px-5 py-5">
                <h2>Sign In</h2>
-
-               <?php echo form_open($this->uri->uri_string(), array('class' => 'row gx-0 needs-validation' ,'novalidate'=>'novalidate', "id" => "sign-up-info")); ?>
+               <?php echo form_open($this->uri->uri_string(), array('class' => 'row gx-0 needs-validation' ,'novalidate'=>'novalidate', "id" => "sign-in-form")); ?>
                   <?php hooks()->do_action('clients_login_form_start'); ?>
                   <div class="col-12">
-                     <input type="email" autofocus="true" class="form-control" placeholder="Email" name="email" id="emailSignin" required>
-
+                     <input type="email" class="form-control" placeholder="Email" name="email" id="emailSignin" required />
                   </div>
                   <div class="col-12">
-                     <input type="password" class="form-control" name="password" id="passSignin" placeholder="Password" required>
+                     <input type="password" class="form-control" name="password" id="passSignin" placeholder="Password" required />
                   </div>
-                  <div class="12">
-                     <button type="submit"  class="btn btn-info btn-block"><?php echo _l('Sign In'); ?></button>
-
+                  <div class="col-12">
+                     <button type="submit" class="control-button in btn"><?php echo _l('Sign In'); ?></button>
                   </div>
                   <?php hooks()->do_action('clients_login_form_end'); ?>
                   <?php echo form_close(); ?>
@@ -81,7 +78,7 @@
                      id="inputConfPass" required />
                   </div>
                   <div class="col-12">
-                     <button class="control-button up btn" type="submit" id="btnSignup">Sign Up</button>
+                     <button class="control-button up btn" type="submit">Sign Up</button>
                   </div>
                   <?php echo form_close(); ?>
                <a href="<?php echo site_url('')?>" class="backtohome">Back to Home &gt;&gt;</a>

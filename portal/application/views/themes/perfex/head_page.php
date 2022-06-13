@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="nav-control" id="sidebarCollapse">
         <div class="hamburger">
-            <span class="line"></span>
+            <span class="line"></span> 
             <span class="line"></span>
             <span class="line"></span>
         </div>
