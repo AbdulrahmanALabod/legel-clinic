@@ -100,107 +100,128 @@ app_js_alerts();
     forgetpass.style.display = 'none';
   }
 
-  btnSignup.addEventListener('click', (e) => {
-    e.preventDefault();
-    formValidation();
-  });
+  // btnSignup.addEventListener('click', (e) => {
+  //   if (!formValidation()) return false;
+  // });
 
-  btnSignin.addEventListener('click', (e) => {
-    e.preventDefault();
-    signinValidation();
+  // btnSignin.addEventListener('click', (e) => {
+  //   e.stopPropagation();
+  //   signinValidation();
+  // })
+  (() => {
+  'use strict'
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
   })
+})()
+  // function formValidation() {
+  //   let arrayValid = [];
+  //   let valid = false;
+  //   if (inputFname.value == '') {
+  //     inputFname.style.border = "1px solid red";
+  //     arrayValid.push(false);
+  //   } else {
+  //     inputFname.style.border = "none";
+  //     arrayValid.push(true);
+  //   }
+  //   if (inputLname.value == '') {
+  //     inputLname.style.border = "1px solid red";
+  //     arrayValid.push(false);
+  //   } else {
+  //     inputLname.style.border = "none";
+  //     arrayValid.push(true);
+  //   }
+  //   if (inputEmail.value == '') {
+  //     inputEmail.style.border = "1px solid red";
+  //     arrayValid.push(false);
+  //   } else {
+  //     if (!(emailPattern.test(inputEmail.value))) {
+  //       inputEmail.style.border = "1px solid red";
+  //       arrayValid.push(false);
+  //     } else {
+  //       inputEmail.style.border = "none";
+  //       arrayValid.push(true);
+  //     }
+  //   }
+  //   if (inputPhone.value == '') {
+  //     inputPhone.style.border = "1px solid red";
+  //     arrayValid.push(false);
+  //   } else {
+  //     if (!(phonePattern.test(inputPhone.value))) {
+  //       inputPhone.style.border = "1px solid red";
+  //       arrayValid.push(false);
+  //     } else {
+  //       inputPhone.style.border = "none";
+  //       arrayValid.push(true);
+  //     }
+  //   }
+  //   if (inputComp.value == '') {
+  //     inputComp.style.border = "1px solid red";
+  //     arrayValid.push(false);
+  //   } else {
+  //     inputComp.style.border = "none";
+  //     arrayValid.push(true);
+  //   }
+  //   if (inputPass.value == '') {
+  //     inputPass.style.border = "1px solid red";
+  //     arrayValid.push(false);
+  //   } else {
+  //     if (inputPass.value.length < 5) {
+  //       inputPass.style.border = "1px solid red";
+  //       arrayValid.push(false);
+  //     } else {
+  //       inputPass.style.border = "none";
+  //       arrayValid.push(true);
+  //     }
+  //   }
+  //   if (inputConfPass.value == '') {
+  //     inputConfPass.style.border = "1px solid red";
+  //     arrayValid.push(false);
+  //   } else {
+  //     if (inputConfPass.value !== inputPass.value) {
+  //       inputConfPass.style.border = "1px solid red";
+  //       arrayValid.push(false);
+  //     } else {
+  //       inputConfPass.style.border = "none";
+  //       arrayValid.push(true);
+  //     }
+  //   }
+  //   [...arrayValid].foreach(e=>{
+  //     if(e.value == false){
+  //       valid = flase;
+  //     } else{
+  //       valid = true;
+  //     }
+  //   });
+  //   return valid;
+  // }
 
-  function formValidation() {
-    let arrayValid = [];
-    if (inputFname.value == '') {
-      inputFname.style.border = "1px solid red";
-      arrayValid.push(false);
-    } else {
-      inputFname.style.border = "none";
-      arrayValid.push(true);
-    }
-    if (inputLname.value == '') {
-      inputLname.style.border = "1px solid red";
-      arrayValid.push(false);
-    } else {
-      inputLname.style.border = "none";
-      arrayValid.push(true);
-    }
-    if (inputEmail.value == '') {
-      inputEmail.style.border = "1px solid red";
-      arrayValid.push(false);
-    } else {
-      if (!(emailPattern.test(inputEmail.value))) {
-        inputEmail.style.border = "1px solid red";
-        arrayValid.push(false);
-      } else {
-        inputEmail.style.border = "none";
-        arrayValid.push(true);
-      }
-    }
-    if (inputPhone.value == '') {
-      inputPhone.style.border = "1px solid red";
-      arrayValid.push(false);
-    } else {
-      if (!(phonePattern.test(inputPhone.value))) {
-        inputPhone.style.border = "1px solid red";
-        arrayValid.push(false);
-      } else {
-        inputPhone.style.border = "none";
-        arrayValid.push(true);
-      }
-    }
-    if (inputComp.value == '') {
-      inputComp.style.border = "1px solid red";
-      arrayValid.push(false);
-    } else {
-      inputComp.style.border = "none";
-      arrayValid.push(true);
-    }
-    if (inputPass.value == '') {
-      inputPass.style.border = "1px solid red";
-      arrayValid.push(false);
-    } else {
-      if (inputPass.value.length < 5) {
-        inputPass.style.border = "1px solid red";
-        arrayValid.push(false);
-      } else {
-        inputPass.style.border = "none";
-        arrayValid.push(true);
-      }
-    }
-    if (inputConfPass.value == '') {
-      inputConfPass.style.border = "1px solid red";
-      arrayValid.push(false);
-    } else {
-      if (inputConfPass.value !== inputPass.value) {
-        inputConfPass.style.border = "1px solid red";
-        arrayValid.push(false);
-      } else {
-        inputConfPass.style.border = "none";
-        arrayValid.push(true);
-      }
-    }
-    // console.log(arrayValid);
-  }
-
-  function signinValidation() {
-    arrsigninValid = [];
-    if (emailSignin.value == '') {
-      emailSignin.style.border = "1px solid red";
-      arrsigninValid.push(false);
-    } else {
-      emailSignin.style.border = "none";
-      arrsigninValid.push(true);
-    }
-    if (passSignin.value == '') {
-      passSignin.style.border = "1px solid red";
-      arrsigninValid.push(false);
-    } else {
-      passSignin.style.border = "none";
-      arrsigninValid.push(true);
-    }
-  }
+  // function signinValidation() {
+  //   arrsigninValid = [];
+  //   if (emailSignin.value == '') {
+  //     emailSignin.style.border = "1px solid red";
+  //     arrsigninValid.push(false);
+  //   } else {
+  //     emailSignin.style.border = "none";
+  //     arrsigninValid.push(true);
+  //   }
+  //   if (passSignin.value == '') {
+  //     passSignin.style.border = "1px solid red";
+  //     arrsigninValid.push(false);
+  //   } else {
+  //     passSignin.style.border = "none";
+  //     arrsigninValid.push(true);
+  //   }
+  // }
 
   function fnBrowserDetect() {
     let userAgent = navigator.userAgent;
