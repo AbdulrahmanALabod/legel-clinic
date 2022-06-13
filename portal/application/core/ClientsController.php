@@ -11,6 +11,8 @@ class ClientsController extends App_Controller
     public $data = [];
 
     public $use_footer = true;
+    public $use_sidebar = true;
+    public $use_head_page = true;
 
     public $use_submenu = true;
 
@@ -61,6 +63,25 @@ class ClientsController extends App_Controller
         $this->template['head'] = $this->load->view('themes/' . active_clients_theme() . '/head', $this->data, true);
 
         $GLOBALS['customers_head'] = $this->template['head'];
+
+        /**
+         * Theme sidebar file
+         * @var string
+         */
+        $this->template['sidebar'] = $this->use_sidebar == true
+        ? $this->load->view('themes/' . active_clients_theme() . '/sidebar', $this->data, true)
+        : '';
+
+        $GLOBALS['customers_sidebar'] = $this->template['sidebar'];
+        /**
+         * Theme head_page file
+         * @var string
+         */
+        $this->template['head_page'] = $this->use_head_page == true
+        ? $this->load->view('themes/' . active_clients_theme() . '/head_page', $this->data, true)
+        : '';
+
+        $GLOBALS['customers_head_page'] = $this->template['head_page'];
 
         /**
          * Load the template view

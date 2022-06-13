@@ -113,6 +113,15 @@ function theme_footer_view()
     return isset($GLOBALS['customers_footer']) ? $GLOBALS['customers_footer'] : '';
 }
 
+function theme_sidebar_view()
+{
+    return isset($GLOBALS['customers_sidebar']) ? $GLOBALS['customers_sidebar'] : '';
+}
+function theme_head_page_view()
+{
+    return isset($GLOBALS['customers_head_page']) ? $GLOBALS['customers_head_page'] : '';
+}
+
 function theme_template_view()
 {
     return isset($GLOBALS['customers_view']) ? $GLOBALS['customers_view'] : '';

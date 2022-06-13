@@ -30,36 +30,36 @@
 
 @font-face {
   font-family: 'Gotham';
-  src: url('../fonts/Gotham-Thin.eot');
-  src: url('../fonts/Gotham-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/Gotham-Thin.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/Gotham-Thin.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/New folder/GothamThin.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/Gotham-Thin.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../../fonts/Gotham-Thin.eot');
+  src: url('../../fonts/Gotham-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/Gotham-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/Gotham-Thin.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/New folder/GothamThin.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/Gotham-Thin.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Gotham';
-  src: url('../fonts/Gotham-Light.eot');
-  src: url('../fonts/Gotham-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/Gotham-Light.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/Gotham-Light.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/New folder/GothamLight.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/Gotham-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../../fonts/Gotham-Light.eot');
+  src: url('../../fonts/Gotham-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/Gotham-Light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/Gotham-Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/New folder/GothamLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/Gotham-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Gotham';
-  src: url('../fonts/Gotham-Medium.eot');
-  src: url('../fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/Gotham-Medium.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/Gotham-Medium.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/New folder/GothamMedium.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/Gotham-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../../fonts/Gotham-Medium.eot');
+  src: url('../../fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../fonts/Gotham-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../fonts/Gotham-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/New folder/GothamMedium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../../fonts/Gotham-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -84,7 +84,7 @@ button:focus {
   box-shadow: none;
 }
 .main-content{
-    background-image: url('../images/bgImage\ \(2\).svg');
+    background-image: url('../images/main/bgImage\ \(2\).svg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -467,9 +467,17 @@ nav .navbar-toggler.show span:nth-child(3) {
 }
 .btn:hover{
   transform: scale(.97);
-
 }
-
+.btn:focus{
+  box-shadow: none;
+}
+.social-icons .signin-out .btn-signIn{
+    color: var(--main-color);
+    background: transparent;
+    border: 2px solid var(--main-color);
+    /* padding: 0.7rem 2.1rem; */
+    border-radius: 5px;
+}
 /* --------------------- */
 /* footer */
 .site-footer{
@@ -532,7 +540,7 @@ nav .navbar-toggler.show span:nth-child(3) {
 }
 /* shapes and titles */
 .about-content{
-  background-image: url('../images/bgImage\ \(2\).svg');
+  background-image: url('../images/main/bgImage\ \(2\).svg');
   /* background-repeat: no-repeat;
   background-size: cover; */
   height: 100%;

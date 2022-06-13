@@ -6,14 +6,14 @@ class Authentication extends ClientsController
 {
     public function __construct()
     {
-		
+
         parent::__construct();
         hooks()->do_action('clients_authentication_constructor', $this);
     }
 
     public function index()
     {
-		
+
         $this->login();
     }
 
@@ -25,12 +25,23 @@ class Authentication extends ClientsController
 
     public function login()
     {
-		 
-		$this->use_footer = false;
-		$this->use_head = false;
-		$this->add_scripts = false;
-		$this->use_navigation = false;
-		/*
+
+        $this->use_footer = false;
+        $this->use_head = false;
+        $this->add_scripts = false;
+        $this->use_navigation = false;
+        $this->use_sidebar =false;
+        $this->use_head_page =false;
+
+        $honeypot = get_option('enable_honeypot_spam_validation') == 1;
+
+        $fields = [
+            'firstname' => $honeypot ? 'firstnamemjxw' : 'firstname',
+            'lastname'  => $honeypot ? 'lastnamemjxw' : 'lastname',
+            'email'     => $honeypot ? 'emailmjxw' : 'email',
+            'company'   => $honeypot ? 'companymjxw' : 'company',
+        ];
+        /*
 		var_dump(is_client_logged_in());
 		var_dump($_REQUEST);
 		var_dump($this->input->post('email'));
@@ -58,7 +69,7 @@ class Authentication extends ClientsController
                 false
             );
 
-		
+
             if (is_array($success) && isset($success['memberinactive'])) {
                 set_alert('danger', _l('inactive_account'));
                 redirect(site_url('authentication/login'));
@@ -76,8 +87,8 @@ class Authentication extends ClientsController
 
             hooks()->do_action('after_contact_login');
 
-        //    maybe_redirect_to_previous_url();
-           header('Location: /legel-form');
+            //    maybe_redirect_to_previous_url();
+            redirect(site_url('/'));
         }
         if (get_option('allow_registration') == 1) {
             $data['title'] = _l('clients_login_heading_register');
@@ -85,6 +96,8 @@ class Authentication extends ClientsController
             $data['title'] = _l('clients_login_heading_no_register');
         }
         $data['bodyclass'] = 'customers_login';
+        $data['honeypot']  = $honeypot;
+        $data['fields']    = $fields;
 
         $this->data($data);
         $this->view('login');
@@ -157,88 +170,88 @@ class Authentication extends ClientsController
 
         if ($this->input->post()) {
             if ($honeypot &&
-                count(array_filter($this->input->post(['email', 'firstname', 'lastname', 'company']))) > 0) {
+            count(array_filter($this->input->post(['email', 'firstname', 'lastname', 'company']))) > 0) {
                 show_404();
             }
 
-            if ($this->form_validation->run() !== false) {
-                $data      = $this->input->post();
-                $countryId = is_numeric($data['country']) ? $data['country'] : 0;
+            // if ($this->form_validation->run() !== false) {
+            $data      = $this->input->post();
+            // $countryId = is_numeric($data['country']) ? $data['country'] : 0;
 
-                if (is_automatic_calling_codes_enabled()) {
-                    $customerCountry = get_country($countryId);
+            // if (is_automatic_calling_codes_enabled()) {
+            //     $customerCountry = get_country($countryId);
 
-                    if ($customerCountry) {
-                        $callingCode = '+' . ltrim($customerCountry->calling_code, '+');
+            //     if ($customerCountry) {
+            //         $callingCode = '+' . ltrim($customerCountry->calling_code, '+');
 
-                        if (startsWith($data['contact_phonenumber'], $customerCountry->calling_code)) { // with calling code but without the + prefix
-                            $data['contact_phonenumber'] = '+' . $data['contact_phonenumber'];
-                        } elseif (!startsWith($data['contact_phonenumber'], $callingCode)) {
-                            $data['contact_phonenumber'] = $callingCode . $data['contact_phonenumber'];
-                        }
-                    }
-                }
+            //         if (startsWith($data['contact_phonenumber'], $customerCountry->calling_code)) { // with calling code but without the + prefix
+            //             $data['contact_phonenumber'] = '+' . $data['contact_phonenumber'];
+            //         } elseif (!startsWith($data['contact_phonenumber'], $callingCode)) {
+            //             $data['contact_phonenumber'] = $callingCode . $data['contact_phonenumber'];
+            //         }
+            //     }
+            // }
 
-                define('CONTACT_REGISTERING', true);
+            define('CONTACT_REGISTERING', true);
 
-                $clientid = $this->clients_model->add([
-                      'billing_street'      => $data['address'],
-                      'billing_city'        => $data['city'],
-                      'billing_state'       => $data['state'],
-                      'billing_zip'         => $data['zip'],
-                      'billing_country'     => $countryId,
-                      'firstname'           => $data[$fields['firstname']],
-                      'lastname'            => $data[$fields['lastname']],
-                      'email'               => $data[$fields['email']],
-                      'contact_phonenumber' => $data['contact_phonenumber'] ,
-                      'website'             => $data['website'],
-                      'title'               => $data['title'],
-                      'password'            => $data['passwordr'],
-                      'company'             => $data[$fields['company']],
-                      'vat'                 => isset($data['vat']) ? $data['vat'] : '',
-                      'phonenumber'         => $data['phonenumber'],
-                      'country'             => $data['country'],
-                      'city'                => $data['city'],
-                      'address'             => $data['address'],
-                      'zip'                 => $data['zip'],
-                      'state'               => $data['state'],
-                      'custom_fields'       => isset($data['custom_fields']) && is_array($data['custom_fields']) ? $data['custom_fields'] : [],
-                      'default_language'    => (get_contact_language() != '') ? get_contact_language() : get_option('active_language'),
-                ], true);
+            $clientid = $this->clients_model->add([
+                //   'billing_street'      => $data['address'],
+                //   'billing_city'        => $data['city'],
+                //   'billing_state'       => $data['state'],
+                //   'billing_zip'         => $data['zip'],
+                //   'billing_country'     => $countryId,
+                'firstname'           => $data[$fields['firstname']],
+                'lastname'            => $data[$fields['lastname']],
+                'email'               => $data[$fields['email']],
+                //   'contact_phonenumber' => $data['contact_phonenumber'] ,
+                //   'website'             => $data['website'],
+                //   'title'               => $data['title'],
+                'password'            => $data['passwordr'],
+                'company'             => $data[$fields['company']],
+                'vat'                 => isset($data['vat']) ? $data['vat'] : '',
+                'phonenumber'         => $data['phonenumber'],
+                //   'country'             => $data['country'],
+                //   'city'                => $data['city'],
+                //   'address'             => $data['address'],
+                //   'zip'                 => $data['zip'],
+                //   'state'               => $data['state'],
+                'custom_fields'       => isset($data['custom_fields']) && is_array($data['custom_fields']) ? $data['custom_fields'] : [],
+                'default_language'    => (get_contact_language() != '') ? get_contact_language() : get_option('active_language'),
+            ], true);
 
-                if ($clientid) {
-                    hooks()->do_action('after_client_register', $clientid);
+            if ($clientid) {
+                hooks()->do_action('after_client_register', $clientid);
 
-                    if (get_option('customers_register_require_confirmation') == '1') {
-                        send_customer_registered_email_to_administrators($clientid);
-
-                        $this->clients_model->require_confirmation($clientid);
-                        set_alert('success', _l('customer_register_account_confirmation_approval_notice'));
-                        redirect(site_url('authentication/login'));
-                    }
-
-                    $this->load->model('authentication_model');
-
-                    $logged_in = $this->authentication_model->login(
-                        $data[$fields['email']],
-                        $this->input->post('password', false),
-                        false,
-                        false
-                    );
-
-                    $redUrl = site_url();
-
-                    if ($logged_in) {
-                        hooks()->do_action('after_client_register_logged_in', $clientid);
-                        set_alert('success', _l('clients_successfully_registered'));
-                    } else {
-                        set_alert('warning', _l('clients_account_created_but_not_logged_in'));
-                        $redUrl = site_url('authentication/login');
-                    }
-
+                if (get_option('customers_register_require_confirmation') == '1') {
                     send_customer_registered_email_to_administrators($clientid);
-                    redirect($redUrl);
+
+                    $this->clients_model->require_confirmation($clientid);
+                    set_alert('success', _l('customer_register_account_confirmation_approval_notice'));
+                    redirect(site_url('authentication/login'));
                 }
+
+                $this->load->model('authentication_model');
+
+                $logged_in = $this->authentication_model->login(
+                    $data[$fields['email']],
+                    $this->input->post('password', false),
+                    false,
+                    false
+                );
+
+                $redUrl = site_url();
+
+                if ($logged_in) {
+                    hooks()->do_action('after_client_register_logged_in', $clientid);
+                    set_alert('success', _l('clients_successfully_registered'));
+                } else {
+                    set_alert('warning', _l('clients_account_created_but_not_logged_in'));
+                    $redUrl = site_url('authentication/login');
+                }
+
+                send_customer_registered_email_to_administrators($clientid);
+                redirect($redUrl);
+                // }
             }
         }
 
@@ -247,7 +260,7 @@ class Authentication extends ClientsController
         $data['honeypot']  = $honeypot;
         $data['fields']    = $fields;
         $this->data($data);
-        $this->view('register');
+        $this->view('login');
         $this->layout();
     }
 
