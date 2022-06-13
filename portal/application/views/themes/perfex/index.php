@@ -53,8 +53,7 @@ app_customers_footer();
 app_js_alerts();
 ?>
 <script>
-  let emailPattern = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
-  let phonePattern = /1?-?\.?\(?\d{3}[\-\)\.\s]?\d{3}[\-\.\s]?\d{4}/;
+  
   const signinbtn = document.querySelector('#slide-right-button');
   const signupbtn = document.querySelector('#slide-left-button');
   const formbox = document.querySelector('.form');
@@ -70,8 +69,6 @@ app_js_alerts();
   const inputComp = document.getElementById('inputComp');
   const inputPass = document.getElementById('inputPass');
   const inputConfPass = document.getElementById('inputConfPass');
-  const emailSignin = document.getElementById('emailSignin');
-  const passSignin = document.getElementById('passSignin');
 
 
   const forgetpass = document.getElementById('forgetpass');
@@ -100,14 +97,6 @@ app_js_alerts();
     forgetpass.style.display = 'none';
   }
 
-  // btnSignup.addEventListener('click', (e) => {
-  //   if (!formValidation()) return false;
-  // });
-
-  // btnSignin.addEventListener('click', (e) => {
-  //   e.stopPropagation();
-  //   signinValidation();
-  // })
   (() => {
   'use strict'
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -123,106 +112,25 @@ app_js_alerts();
     }, false)
   })
 })()
-  // function formValidation() {
-  //   let arrayValid = [];
-  //   let valid = false;
-  //   if (inputFname.value == '') {
-  //     inputFname.style.border = "1px solid red";
-  //     arrayValid.push(false);
-  //   } else {
-  //     inputFname.style.border = "none";
-  //     arrayValid.push(true);
-  //   }
-  //   if (inputLname.value == '') {
-  //     inputLname.style.border = "1px solid red";
-  //     arrayValid.push(false);
-  //   } else {
-  //     inputLname.style.border = "none";
-  //     arrayValid.push(true);
-  //   }
-  //   if (inputEmail.value == '') {
-  //     inputEmail.style.border = "1px solid red";
-  //     arrayValid.push(false);
-  //   } else {
-  //     if (!(emailPattern.test(inputEmail.value))) {
-  //       inputEmail.style.border = "1px solid red";
-  //       arrayValid.push(false);
-  //     } else {
-  //       inputEmail.style.border = "none";
-  //       arrayValid.push(true);
-  //     }
-  //   }
-  //   if (inputPhone.value == '') {
-  //     inputPhone.style.border = "1px solid red";
-  //     arrayValid.push(false);
-  //   } else {
-  //     if (!(phonePattern.test(inputPhone.value))) {
-  //       inputPhone.style.border = "1px solid red";
-  //       arrayValid.push(false);
-  //     } else {
-  //       inputPhone.style.border = "none";
-  //       arrayValid.push(true);
-  //     }
-  //   }
-  //   if (inputComp.value == '') {
-  //     inputComp.style.border = "1px solid red";
-  //     arrayValid.push(false);
-  //   } else {
-  //     inputComp.style.border = "none";
-  //     arrayValid.push(true);
-  //   }
-  //   if (inputPass.value == '') {
-  //     inputPass.style.border = "1px solid red";
-  //     arrayValid.push(false);
-  //   } else {
-  //     if (inputPass.value.length < 5) {
-  //       inputPass.style.border = "1px solid red";
-  //       arrayValid.push(false);
-  //     } else {
-  //       inputPass.style.border = "none";
-  //       arrayValid.push(true);
-  //     }
-  //   }
-  //   if (inputConfPass.value == '') {
-  //     inputConfPass.style.border = "1px solid red";
-  //     arrayValid.push(false);
-  //   } else {
-  //     if (inputConfPass.value !== inputPass.value) {
-  //       inputConfPass.style.border = "1px solid red";
-  //       arrayValid.push(false);
-  //     } else {
-  //       inputConfPass.style.border = "none";
-  //       arrayValid.push(true);
-  //     }
-  //   }
-  //   [...arrayValid].foreach(e=>{
-  //     if(e.value == false){
-  //       valid = flase;
-  //     } else{
-  //       valid = true;
-  //     }
-  //   });
-  //   return valid;
-  // }
-
-  // function signinValidation() {
-  //   arrsigninValid = [];
-  //   if (emailSignin.value == '') {
-  //     emailSignin.style.border = "1px solid red";
-  //     arrsigninValid.push(false);
-  //   } else {
-  //     emailSignin.style.border = "none";
-  //     arrsigninValid.push(true);
-  //   }
-  //   if (passSignin.value == '') {
-  //     passSignin.style.border = "1px solid red";
-  //     arrsigninValid.push(false);
-  //   } else {
-  //     passSignin.style.border = "none";
-  //     arrsigninValid.push(true);
-  //   }
-  // }
-
+// function checkPasswordMatch(){
+//   if(inputPass.value == inputConfPass.value){
+//     inputPass.classList.add('was-validated');
+//     inputConfPass.classList.add('was-validated');
+//   } else{
+//     inputPass.classList.remove('was-validated');
+//     inputConfPass.classList.remove('was-validated');
+//   }
+// }
+inputConfPass.onkeyup = function() {
+  // Validate lowercase letters
+  if(inputConfPass.value == inputPass.value) {
+    inputPass.setAttribute("valid","valid");
+    inputConfPass.setAttribute("valid","valid");
+  } else {
+    inputPass.setAttribute("invalid","invalid");
+    inputConfPass.setAttribute("invalid","invalid");
+  }
+}
   function fnBrowserDetect() {
     let userAgent = navigator.userAgent;
     let browserName;
