@@ -46,7 +46,7 @@
           </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
+          <a href="<?php echo site_url('payment/index')?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/onlineinco.svg"') ?>"alt="onlineinco">
               <span class="pcoded-mtext">Online Incorporation</span>
@@ -80,7 +80,7 @@
           </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
+          <a href="<?php echo site_url('pickup/pickups/request_service'); ?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/requestservice.svg"') ?>"alt="requestservice">
               <span class="pcoded-mtext">Request service</span>
@@ -91,7 +91,7 @@
        
         </li>
         <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
+          <a href="<?php echo site_url('pickup/pickups/ask'); ?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/askalaywer.svg"') ?>"alt="askalaywer">
               <span class="pcoded-mtext">Ask a Lawyer</span>
@@ -104,16 +104,6 @@
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/legalresource.svg"') ?>"alt="legalresource">
               <span class="pcoded-mtext">our Legal Resources</span>
-            </span>
-            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
-
-          </a>
-        </li>
-        <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
-            <span class="pcoded-micon">
-              <img src="<?php echo base_url('assets/images/main/home.svg"') ?>"alt="home">
-              <span class="pcoded-mtext">Home</span>
             </span>
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
 
