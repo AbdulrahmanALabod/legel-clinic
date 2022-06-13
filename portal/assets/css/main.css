@@ -101,7 +101,7 @@ nav .nav-item .nav-link{
     padding-right: 0 !important;
     padding-left: 0 !important;
 }
-nav .nav-item .nav-link:hover{
+/* nav .nav-item .nav-link:hover{
     font-weight: 500;
 }
 nav .nav-item .nav-link:hover,
@@ -114,6 +114,20 @@ nav .nav-item .nav-link.active{
     font-weight: 500;
     border-bottom: 1px solid var(--org-color);
   }
+} */
+header nav li.nav-item:hover a{
+  font-weight: 500;
+}
+header nav li.nav-item:hover a,
+header nav li.nav-item a.active{
+font-weight: 700;
+border-bottom: 3px solid var(--org-color);
+}
+@media screen and (max-width: 991.5px) {
+header  nav li.nav-item a.active{
+  font-weight: 500;
+  border-bottom: 1px solid var(--org-color);
+}
 }
 nav .navbar-toggler{
     margin-left: auto;
