@@ -532,7 +532,7 @@ nav .navbar-toggler.show span:nth-child(3) {
     font-size: .9rem;
 }
 .site-footer li a:hover{
-  font-size: 1rem;
+  /* font-size: 1rem; */
   font-weight: 500;
 }
 .site-footer li i{
