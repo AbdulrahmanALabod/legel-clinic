@@ -30,6 +30,8 @@ class Authentication extends ClientsController
         $this->use_head = false;
         $this->add_scripts = false;
         $this->use_navigation = false;
+        $this->use_sidebar =false;
+        $this->use_head_page =false;
 
         $honeypot = get_option('enable_honeypot_spam_validation') == 1;
 
@@ -96,7 +98,6 @@ class Authentication extends ClientsController
         $data['bodyclass'] = 'customers_login';
         $data['honeypot']  = $honeypot;
         $data['fields']    = $fields;
-        $this->data($data);
 
         $this->data($data);
         $this->view('login');
