@@ -30,7 +30,7 @@
             <nav class="navbar navbar-expand-lg nav-style bg-style navbar-text-light pt-4">
               <div class="col-auto col-lg-2"> 
                   <!-- Logo --> 
-                  <a class="logo pt-4" href="<?php echo site_url('')?>" title="legal-clinic-logo"><img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="" width="100%"></a>  
+                  <a class="logo pt-4" href="<?php echo site_url('')?>" title="legal-clinic-logo"><img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt=""></a>  
                   <!-- Logo End --> 
                 </div>
                 <div class="col col-lg-8  align-self-start">
@@ -103,28 +103,7 @@
                 </div>
             </div>  
           </div>
-          <!-- <span class="svg-sperator">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 1456 177" style="enable-background:new 0 0 1456 177;" xml:space="preserve">
-                <style type="text/css">
-                  .st0{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
-                  .st1{fill:#FFFFFF;}
-                  .st2{opacity:0.6;fill:#FFFFFF;enable-background:new    ;}
-                  .st3{opacity:0.15;fill:#FFFFFF;enable-background:new    ;}
-                  .st4{opacity:0.2;fill:#FFFFFF;enable-background:new    ;}
-                </style>
-                <path class="st0" d="M-2.4,121.2V177h1460.7l0.2-99.7c-36.6,9.9-128.1,32.9-175.5,45.4c-59.2,15.6-133.5,24.6-243.3,35.7
-                  c-109.8,11.2-298.2-37.2-310-39.5c-11.8-2.2-111.9-38-303.5-46.2C273,66.2,71.9,102.3-2.4,121.2z"/>
-                <path class="st1" d="M-2.4,84.9V145h1460.7V37.7c-36.6,10.7-112.4,35.4-159.8,48.9c-59.2,16.8-133.5,26.4-243.4,38.5
-                  C945.3,137,756.8,84.9,745,82.5c-11.8-2.4-112-40.9-303.7-49.7C287.9,25.8,72,64.6-2.4,84.9z"/>
-                <path class="st2" d="M-2.4,65.2V121h1460.7l0.5-99.7c-36.6,9.9-118.6,32.9-166,45.4c-59.2,15.6-133.5,24.6-243.3,35.7
-                  c-109.8,11.2-298.2-37.2-310-39.5C727.7,60.7,627.6,25,436,16.8C282.8,10.2,71.9,46.3-2.4,65.2z"/>
-                <path class="st3" d="M1456.9,49.2V105H-2.4V5.3c36.8,9.9,141.2,32.9,188.8,45.4c59.6,15.6,134.4,24.6,244.9,35.7
-                  s300.1-37.2,312.1-39.5C755.3,44.7,856.1,9,1049,0.8C1203.3-5.8,1382.1,30.3,1456.9,49.2z"/>
-                <path class="st4" d="M1458.4,55.2l-5.8,55.8H-2.4V11.3C34.5,21.2,140.3,44.2,188,56.7c59.6,15.6,134.4,24.6,244.9,35.7
-                  S733,55.2,744.9,52.9s112.7-38,305.5-46.2C1204.8,0.2,1383.6,36.3,1458.4,55.2z"/>
-                </svg>
-          </span> -->
+         
         </div>
     <!-- shapes -->
      <!-- <div class="shapes"> -->
@@ -247,78 +226,73 @@
       </section>
       <!-- footer -->
       <footer class="site-footer">
-        <div class="container">
-          <div class="row pt-5 pb-5 justify-content-between">
-            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
-              <div class="footer-widget">
-                <a href="" class="footer-widget__Logo">
-                  <img src="<?php echo base_url('assets/images/main/logofooter.svg')?>" alt="" loading="lazy"/>
-                </a>
-               
+          <div class="container">
+            <div class="row pt-5 pb-5 justify-content-between">
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 spec-logo">
+                <div class="footer-widget">
+                  <a href="<?php echo site_url('')?>" class="footer-widget__Logo">
+                    <img src="<?php echo base_url('assets/images/main/logofooter.svg')?>" alt="logofooter"/>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5 spec-hide">
+                <h3 class="footer-widget__title">Company</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li>
+                    <a href="<?php echo site_url('index/about')?>">About Us</a>
+                  </li>
+                  <li>
+                    <a href="">FAQs</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/price')?>">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/contact')?>">Contact us</a>
+                  </li>
+                  <li>
+                    <a href="">Events</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-5">
+                <h3 class="footer-widget__title">Get In Touch</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li class="">
+                    <!-- <i class="fa-solid fa-phone-volume"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg')?>" alt="carbon_phone"></i>
+                    <a href="tel:666-888-0000">01000358970</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-location-dot"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
+                    <a href="<?php echo site_url('index/contact')?>">Cairo, EGYPT</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-envelope"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg')?>" alt="carbon_email"></i>
+                    <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
+                <h3 class="footer-widget__title">Follow us</h3>
+                <div class="mc-form__response"></div>
+                  <div class="footer__social pt-1">
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
+                  </div>
+                  <p class="work-time">Work Time<br>
+                    Sun- Thu: 9:00 - 18:00<br>
+                    Closed on Weekends</p>
               </div>
             </div>
-          
-            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
-              <h3 class="footer-widget__title">Company</h3>
-              <ul class="list-unstyled footer-widget__contact">
-                <li>
-                  <a href="<?php echo site_url('index/about')?>">About Us</a>
-                </li>
-                <li>
-                  <a href="">Login</a>
-                </li>
-                <li>
-                  <a href="">FAQs</a>
-                </li>
-                <li>
-                  <a href="">Pricing</a>
-                </li>
-                <li>
-                  <a href="">Contact us</a>
-                </li>
-                <li>
-                  <a href="">Events</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-5">
-              <h3 class="footer-widget__title">Get In Touch</h3>
-              <ul class="list-unstyled footer-widget__contact">
-                <li class="">
-                  <!-- <i class="fa-solid fa-phone-volume"></i> -->
-                  <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg')?>" alt="carbon_phone"></i>
-                  <a href="tel:666-888-0000">01000358970</a>
-                </li>
-                <li  class="">
-                  <!-- <i class="fa-solid fa-location-dot"></i> -->
-                  <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
-                  <a href="#">Cairo, EGYPT</a>
-                </li>
-                <li  class="">
-                  <!-- <i class="fa-solid fa-envelope"></i> -->
-                  <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg')?>" alt="carbon_email"></i>
-                  <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
-              <h3 class="footer-widget__title">Follow us</h3>
-              <div class="mc-form__response"></div>
-                <div class="footer__social pt-1">
-                  <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
-                  <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
-                  <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
-                  <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
-                </div>
-                <p class="work-time">Work Time<br>
-                  Sun- Thu: 9:00 - 18:00<br>
-                  Closed on Weekends</p>
-            </div>
           </div>
-        </div>
-    </footer>
+      </footer>
     <!-- search pop up -->
     <div class="search-popup">
       <div class="search-popup__overlay search-toggler"></div>
