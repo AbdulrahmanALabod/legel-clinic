@@ -144,7 +144,7 @@ input.invalid{
 .turn-en{
     position: relative;
 }
-.turn-en button{
+.turn-en a{
     background-color: inherit !important;
     border: none !important;
     background-image: url('../images/circles-ar\ \(2\).svg') !important;
@@ -159,7 +159,7 @@ input.invalid{
     bottom: 0rem;
 }
 @media screen and (max-width: 930.5px) {
-    .turn-en button{
+    .turn-en a{
         display: none;
     }
     .form-check.form-switch{
