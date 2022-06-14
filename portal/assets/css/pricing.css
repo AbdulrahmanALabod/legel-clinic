@@ -188,7 +188,7 @@
   .pricing-365 .card .card-footer .btn-choose{
       background-color: var(--main-color);
       color: var(--bg-color);
-      width: 90%;
+      /* width: 90%; */
       /* height: 3rem; */
       border-radius: 10px;
       font-weight: 500;

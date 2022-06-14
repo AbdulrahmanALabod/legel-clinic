@@ -219,7 +219,10 @@
                     <h6>12,500<small>LE/Year</small></h6>
                     <p>One Time Payment</p>
                     <div class="d-flex justify-content-center">
-                      <button class="btn btn-choose">Choose</button>
+                    <form action="<?php echo site_url('payment/Cashier_Create'); ?>" id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+                     <input type="hidden" name="plan_id" value="1">
+                    <button type="submit" class="btn btn-choose">Choose</button>
+                    </form>
                     </div>
                   </div>
                 </div>
