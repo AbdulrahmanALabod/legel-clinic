@@ -55,7 +55,7 @@ class Cashier_Create extends ClientsController
         global  $connection;
         $dataInput =  $this->validation();
         if (($dataInput == false) || (!isset($_SESSION['client_user_id']))) {
-            header("Location: " .  "/");
+            header("Location: " .  site_url(""));
             exit;
         }
 
@@ -184,7 +184,7 @@ if ($result && $result["data"]) {
     header("Location: " . $result["data"]['cashierUrl']);
     exit;
 } else {
-    header("Location: " . "/");
+    header("Location: " . site_url(""));
     exit;
 }
 $database_instance->destructConnection();
