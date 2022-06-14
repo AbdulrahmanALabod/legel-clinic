@@ -1,19 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-<div style="margin-top: 30px;">
+<!-- <div style="margin-top: 30px;"> -->
     <div class="row">
-
-         <div class="col-lg-3">
-            <?php //get_template_part('side_menu'); ?>
-        </div> 
-        <div class="col-lg-9">
-            <!--Content-->
-
+        <div class="col-12">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-grid--stretch">
                 <div class="kt-container kt-body  kt-grid kt-grid--ver" id="kt_body">
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
 
-                        <!-- begin:: Subheader -->
                         <div class="kt-subheader   kt-grid__item" id="kt_subheader" style="    margin: 0!important;">
                             <div class="kt-subheader__main">
                                 <h3 class="kt-subheader__title" id="greeting"></h3>
@@ -29,7 +22,6 @@
                             </div>
                         </div>
 
-                        <!-- end:: Subheader -->
 
                         <div class="kt-container  kt-grid__item kt-grid__item--fluid" style="margin-bottom: 60px;">
                             <div class="row">
@@ -83,13 +75,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--End::Dashboard 4-->
                 </div>
-                <!-- end:: Content -->
             </div>
         </div>
-        <!--/Content-->
     </div>
-</div>
+<!-- </div> -->
 
 

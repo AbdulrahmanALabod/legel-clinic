@@ -35,7 +35,7 @@
                   <nav class="navbar navbar-expand-lg nav-style bg-style navbar-text-light pt-4">
                     <div class="col-auto col-lg-2"> 
                         <!-- Logo --> 
-                        <a class="logo pt-4" href="index.html" title="legal-clinic-logo">
+                        <a class="logo pt-4" href="<?php echo site_url('')?>" title="legal-clinic-logo">
                           <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt=""></a>  
                         <!-- Logo End --> 
                       </div>
@@ -51,7 +51,8 @@
                             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/about'); ?>">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/price'); ?>">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/contact'); ?>">Contact us</a></li>
-                            <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
+                            <li class="nav-item search-toggler at-spec-width">
+                              <a class="nav-link" href="#">Search</a></li>
                             <li class="nav-item dropdown at-spec-width">
                               <a href="#" class="pro-spec">Profile
                                 <button aria-label="dropdown toggler" id="drop-menu-profile" type="button">
@@ -140,7 +141,7 @@
                     <div class="carousel-item active">
                       <img src="<?php echo base_url('assets/images/main/sliderimg.svg')?>" class="d-block w-100" alt="...">
                       <div class="content">
-                       <a href="pricing.html" class="more" >More...</a>
+                       <a href="<?php echo site_url('index/price'); ?>" class="more" >More...</a>
                       </div>
                     </div>
                     <div class="carousel-item">
@@ -239,7 +240,7 @@
           <div class="main-box">
             <div class="row justify-content-center pb-5">
               <div class="col-12 col-md-6 col-lg-5 col-xl-5">
-                <div class="card spec-box" onclick="location.href='pricing.html';" style="cursor: pointer;">
+                <div class="card spec-box" onclick="location.href='<?php echo site_url('index/price'); ?>';" style="cursor: pointer;">
                   <span class="yellow-circle">
                     <svg width="81" height="60" viewBox="0 0 81 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="28" cy="7" r="53" fill="#FDC041"/>
@@ -336,7 +337,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-center pt-5">
-            <button class="btn btn-ask" onclick="location.href='pricing.html';">All Services</button>
+            <button class="btn btn-ask" onclick="location.href='<?php echo site_url('index/price'); ?>';">All Services</button>
           </div>
         </div>
         <div class="shapes-two d-flex justify-content-between">
@@ -368,7 +369,7 @@
                   <div class="icon-phone">
                     <img src="<?php echo base_url('assets/images/main/icn settings .icn-xl (1).svg')?>" alt="phone">
                     <p>View our locations around the world <br> and find contact details for your <br> nearest office.</p>
-                    <button class="btn btn-contact" onclick="location.href='contact.html'">Locate the Nerest Office</button>
+                    <button class="btn btn-contact" onclick="location.href='<?php echo site_url('index/contact'); ?>'">Locate the Nerest Office</button>
                   </div>
                 </div>
               </div>
@@ -587,17 +588,14 @@
                   <li>
                     <a href="<?php echo site_url('index/about')?>">About Us</a>
                   </li>
-                  <!-- <li>
-                    <a href="">Login</a>
-                  </li> -->
                   <li>
                     <a href="">FAQs</a>
                   </li>
                   <li>
-                    <a href="pricing.html">Pricing</a>
+                    <a href="<?php echo site_url('index/price')?>">Pricing</a>
                   </li>
                   <li>
-                    <a href="contact.html">Contact us</a>
+                    <a href="<?php echo site_url('index/contact')?>">Contact us</a>
                   </li>
                   <li>
                     <a href="">Events</a>
@@ -616,7 +614,7 @@
                   <li  class="">
                     <!-- <i class="fa-solid fa-location-dot"></i> -->
                     <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
-                    <a href="#">Cairo, EGYPT</a>
+                    <a href="<?php echo site_url('index/contact')?>">Cairo, EGYPT</a>
                   </li>
                   <li  class="">
                     <!-- <i class="fa-solid fa-envelope"></i> -->

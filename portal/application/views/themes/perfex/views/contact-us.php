@@ -28,7 +28,7 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-lg nav-style bg-style navbar-text-light pt-4">
                         <div class="col-auto col-lg-2">
-                            <a class="logo pt-4" href="index.html" title="legal-clinic-logo"><img src="<?php echo base_url('assets/images/main/logo-nav.svg') ?>" alt="" width="100%"></a>
+                            <a class="logo pt-4" href="<?php echo site_url('')?>" title="legal-clinic-logo"><img src="<?php echo base_url('assets/images/main/logo-nav.svg') ?>" alt=""></a>
                         </div>
                         <div class="col col-lg-8  align-self-start">
                             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav">
@@ -245,16 +245,16 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-6 g-4 justify-content-center">
                     <div class="col d-flex justify-content-center">
-                        <a href=""><img src="<?php echo base_url('assets/images/main/facebook.svg') ?>" alt="facebook"></a>
+                        <a href="#"><img src="<?php echo base_url('assets/images/main/facebook.svg') ?>" alt="facebook"></a>
                     </div>
                     <div class="col d-flex justify-content-center">
-                        <a href=""><img src="<?php echo base_url('assets/images/main/twiter.svg') ?>" alt="twiter"></a>
+                        <a href="#"><img src="<?php echo base_url('assets/images/main/twiter.svg') ?>" alt="twiter"></a>
                     </div>
                     <div class="col d-flex justify-content-center">
-                        <a href=""><img src="<?php echo base_url('assets/images/main/linkedin.svg') ?>" alt="linkedin"></a>
+                        <a href="#"><img src="<?php echo base_url('assets/images/main/linkedin.svg') ?>" alt="linkedin"></a>
                     </div>
                     <div class="col d-flex justify-content-center">
-                        <a href=""><img src="<?php echo base_url('assets/images/main/instgram.svg') ?>" alt="instgram"></a>
+                        <a href="#"><img src="<?php echo base_url('assets/images/main/instgram.svg') ?>" alt="instgram"></a>
                     </div>
                 </div>
             </div>
@@ -286,78 +286,73 @@
         </section>
         <!-- footer -->
         <footer class="site-footer">
-            <div class="container">
-                <div class="row pt-5 pb-5 justify-content-between">
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
-                        <div class="footer-widget">
-                            <a href="" class="footer-widget__Logo">
-                                <img src="<?php echo base_url('assets/images/main/logofooter.svg') ?>" alt="" loading="lazy" />
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
-                        <h3 class="footer-widget__title">Company</h3>
-                        <ul class="list-unstyled footer-widget__contact">
-                            <li>
-                                <a href="">About Us</a>
-                            </li>
-                            <li>
-                                <a href="">Login</a>
-                            </li>
-                            <li>
-                                <a href="">FAQs</a>
-                            </li>
-                            <li>
-                                <a href="">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="">Contact us</a>
-                            </li>
-                            <li>
-                                <a href="">Events</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-5">
-                        <h3 class="footer-widget__title">Get In Touch</h3>
-                        <ul class="list-unstyled footer-widget__contact">
-                            <li class="">
-                                <!-- <i class="fa-solid fa-phone-volume"></i> -->
-                                <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg') ?>" alt="carbon_phone"></i>
-                                <a href="tel:666-888-0000">01000358970</a>
-                            </li>
-                            <li class="">
-                                <!-- <i class="fa-solid fa-location-dot"></i> -->
-                                <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg') ?>" alt="akar-icons_location"></i>
-                                <a href="#">Cairo, EGYPT</a>
-                            </li>
-                            <li class="">
-                                <!-- <i class="fa-solid fa-envelope"></i> -->
-                                <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg') ?>" alt="carbon_email"></i>
-                                <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
-                        <h3 class="footer-widget__title">Follow us</h3>
-                        <div class="mc-form__response"></div>
-                        <div class="footer__social pt-1">
-                            <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg') ?>" alt="brandico_facebook"></a>
-                            <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg') ?>" alt="Frame"></a>
-                            <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg') ?>" alt="foundation_social-twitter"></a>
-                            <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg') ?>" alt="foundation_social-linkedin"></a>
-                        </div>
-                        <p class="work-time">Work Time<br>
-                            Sun- Thu: 9:00 - 18:00<br>
-                            Closed on Weekends</p>
-                    </div>
+          <div class="container">
+            <div class="row pt-5 pb-5 justify-content-between">
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 spec-logo">
+                <div class="footer-widget">
+                  <a href="<?php echo site_url('')?>" class="footer-widget__Logo">
+                    <img src="<?php echo base_url('assets/images/main/logofooter.svg')?>" alt="logofooter"/>
+                  </a>
                 </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5 spec-hide">
+                <h3 class="footer-widget__title">Company</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li>
+                    <a href="<?php echo site_url('index/about')?>">About Us</a>
+                  </li>
+                  <li>
+                    <a href="">FAQs</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/price')?>">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/contact')?>">Contact us</a>
+                  </li>
+                  <li>
+                    <a href="">Events</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-5">
+                <h3 class="footer-widget__title">Get In Touch</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li class="">
+                    <!-- <i class="fa-solid fa-phone-volume"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg')?>" alt="carbon_phone"></i>
+                    <a href="tel:666-888-0000">01000358970</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-location-dot"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
+                    <a href="<?php echo site_url('index/contact')?>">Cairo, EGYPT</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-envelope"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg')?>" alt="carbon_email"></i>
+                    <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
+                <h3 class="footer-widget__title">Follow us</h3>
+                <div class="mc-form__response"></div>
+                  <div class="footer__social pt-1">
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
+                  </div>
+                  <p class="work-time">Work Time<br>
+                    Sun- Thu: 9:00 - 18:00<br>
+                    Closed on Weekends</p>
+              </div>
             </div>
-        </footer>
+          </div>
+      </footer>
         <!-- search pop up -->
         <div class="search-popup">
             <div class="search-popup__overlay search-toggler"></div>
