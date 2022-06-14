@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/all.min.css" />
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="css/rome.css"> -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>css/index.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/index-ar.css">
 </head>
 
 <body>
     <div class="container pro-bar" id="pro-bar">
-        <!-- operations progress bar -->
-        <div class="progress-container">
+        <div class="progress-container" dir="rtl">
             <div class="progress" id="progress"></div>
             <div class="circle active"><span>1</span></div>
             <div class="circle"><span>2</span></div>
@@ -23,21 +21,21 @@
             <div class="circle"><span>4</span></div>
             <div class="circle"><span>5</span></div>
         </div>
-        <div class="operations-container">
+        <div class="operations-container" dir="rtl">
             <div class="type">
-                <p>Company type</p>
+                <p>نوع الشركه</p>
             </div>
-            <div class="type spec-type">
-                <p>Company data</p>
-            </div>
-            <div class="type">
-                <p>Shareholders data</p>
+            <div class="type ">
+                <p>بيانات الشركه</p>
             </div>
             <div class="type">
                 <p id="mang-types"></p>
             </div>
             <div class="type">
-                <p>Payment</p>
+                <p>بيانات المديرين</p>
+            </div>
+            <div class="type">
+                <p>الدفع</p>
             </div>
         </div>
     </div>
@@ -46,185 +44,192 @@
             <input type="hidden" name="userid" id="userid" value="">
             <div class="main-content" id="main">
                 <div class="container">
-                    <!-- layer--1 money & people -->
                     <div class="layer">
                         <div class="buttons-tog">
                             <div class="switch">
                                 <input name="radio" type="radio" value="optionone" id="optionone" checked>
-                                <label for="optionone">Corporations</label>
+                                <label for="optionone">شركات الاموال</label>
                                 <input name="radio" type="radio" value="optiontwo" id="optiontwo">
-                                <label for="optiontwo" class="right">Partnerships</label>
+                                <label for="optiontwo" class="right">شركات الأشخاص</label>
                                 <span aria-hidden="true" id="span-right"></span>
                             </div>
                         </div>
                         <div id="choice-Money">
                             <div class="pref text-center">
-                                <p>A Corporation enjoys a legal entity separated from its owners.<br>
-                                    Each shareholder has a limited liability – limited to the amount of shares he owns in the company’s capital</p>
+                                <p>لھا كیان قانوني منفصل عن أصحابھا
+                                    <br>یكون لكل شریك/مساھم مسئولیة محدودة – محدودة بقیمة
+                                    الحصص/الاسهم التي یملكھا
+                                </p>
                             </div>
-                            <div class="choice d-flex justify-content-center flex-column">
-                                <div class="form-check d-flex  mt-3">
+                            <div class="choice d-flex justify-content-center flex-column align-items-end">
+                                <div class="form-check d-flex flex-row-reverse mt-3">
                                     <div>
                                         <input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios1" value="LimitedLiabilityCompany" onclick="checkboxSelection()" required>
                                     </div>
-                                    <div class="ml-3">
+                                    <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            <h2>Limited Liability Company (LLC)</h2>
-                                            <p>LLC is the least complicated and the most recommended to Start-ups.<br>
-                                                It is a company with a minimum of (2) shareholders whether Egyptians or foreigners, <br>
-                                                and whether natural persons or Juridical persons (companies).<br>
-                                                The liability of the shareholders is limited to their shares. There is no required minimum capital for LLC.
+                                            <h2>شركة ذات مسئولية محدودة</h2>
+                                            <p>الشركة ذات المسؤولیة المحدودة ھي أقل الشركات تعقیدًا
+                                                .والاكثر توصیة بھا للشركات الناشئة<br>
+                                                ھي شركة بھا مساھمان اثنان على الاقل سواء كانوا مصریین أو
+                                                أجانب، طبیعیین أو اعتباریین (شركات). <br>تقتصر مسؤولیة
+                                                المساھمین على قیمة حصصھم. لا یوجد حد أدنى لرأس المال
+                                                المطلوب لشركة ذات مسؤولیة محدودة</p>
+                                        </label>
+                                    </div>
+                                    <div class="mr-8">
+                                        <button class="btn down" id="down-1" type="button" onclick="download('limited-responsibilites-comp');" style="display: none;">المستندات المطلوبة</button>
+                                    </div>
+                                </div>
+                                <div class="form-check d-flex flex-row-reverse mt-3">
+                                    <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios2" value="JointStockIncorporation" onclick="checkboxSelection()" required></div>
+                                    <div class="mr-3">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            <h2>شركة مساهمة مصري</h2>
+                                            <p>شركة المساھمة ھي شركة بھا ثلاثه مساھمین على الاقل سواء
+                                                كانوا مصریین أو أجانب، طبیعیین أو اعتباریین (شركات).
+                                                <br>تقتصر مسؤولیة المساھمین على قیمة أسھمھم
+                                                الحد األدنى لرأس المال ھو ٢٥٠ ألف جنيه مصري.<br> خلال
+                                                مرحلة التأسیس، یتم دفع ١٠٪ مع زیادة تحدث في غضون ثلاثه
+                                                اشهر. یتم إیداع المبلغ المتبقي في غضون خمس سنوات<br>یجب أن تدار من قبل مجلس إدارة، والذي یجب أن یتألف من
+                                                ثلاثه (٣) أعضاء على الاقل من أي جنسیة
                                             </p>
                                         </label>
                                     </div>
-                                    <div class="ml-8">
-                                        <button class="btn down" id="down-1" type="button" onclick="download('limited-responsibilites-comp');" style="display: none;">Required Documents</button>
+                                    <div class="mr-8">
+                                        <button class="btn down" id="down-2" style="display: none;" onclick="download('egy-corporation-comp');" type="button">المستندات المطلوبة</button>
                                     </div>
                                 </div>
-                                <div class="form-check d-flex  mt-3">
-                                    <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios2" value="JointStockIncorporation" onclick="checkboxSelection()" required></div>
-                                    <div class="ml-3">
-                                        <label class="form-check-label" for="exampleRadios2">
-                                            <h2>Egyptian Joint Stock Company (JSC)</h2>
-                                            <p>JSC is a company with a minimum of (3) shareholders
-                                                whether Egyptians or foreigners, <br>and whether natural persons
-                                                or juridical persons (companies).<br>The shareholders’ liability is limited to their shares in the company’s capital.<br>
-                                                The required minimum capital is 250 thousand Egyptian Pounds.<br>
-                                                10% shall be paid to incorporate, 25% shall be paid within the first (3) months after incorporation, <br>
-                                                and 100% shall be paid within (5) years. All amounts must be deposited at one of the commercial banks.<br>
-                                                JSC is managed though a Board of Directors, <br>which must be consisted of a minimum of 3 members regardless of their nationalities.</p>
-                                        </label>
-                                    </div>
-                                    <div class="ml-8">
-                                        <button class="btn down" id="down-2" style="display: none;" onclick="download('egy-corporation-comp');" type="button">Required Documents</button>
-                                    </div>
-                                </div>
-                                <div class="form-check d-flex mt-3">
+                                <div class="form-check d-flex flex-row-reverse mt-3">
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios3" value="OPCrequirements" onclick="checkboxSelection()" required></div>
-                                    <div class="ml-3">
-                                        <label class="form-check-label" for="exampleRadios3">
-                                            <h2>One Person Company</h2>
-                                            <p>It is a company with only one owner, whether Egyptians or foreigners, <br>
-                                                and whether natural persons or juridical persons (companies).</p>
+                                    <div class="mr-3">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            <h2>شركة شخص واحد ذات مسئولية محدودة</h2>
+                                            <p>شركة الشخص الواحد ھي في الاساس شركة ذات مؤسس
+                                                منفرد، سواء كان مصریا أو أجنبیًا، شخصا طبیعیًا أو اعتباري</p>
                                         </label>
                                     </div>
-                                    <div class="ml-8">
-                                        <button class="btn down" id="down-3" style="display: none;" onclick="download('one-person-comp-with-limited-resp');" type="button">Required Documents</button>
+                                    <div class="mr-8">
+                                        <button class="btn down" id="down-3" style="display: none;" onclick="download('one-person-comp-with-limited-resp');" type="button">المستندات المطلوبة</button>
                                     </div>
                                 </div>
-                                <div class="invalid-feedback">You must Choose one company</div>
+                                <div class="invalid-feedback">يجب اختيار شركه</div>
                             </div>
                         </div>
                         <div id="choice-people" style="display: none;">
                             <div class="pref mt-2 mb-2 text-center">
-                                <p>Partnerships do not enjoy a separate legal entity from their owner.<br>
-                                    Each partner enjoys an unlimited liability along with a personal liability
-                                    in all debts incurred by the partnership.
-                                    A partner cannot transfer his share without the prior consent of the other partners.</p>
+                                <p>لیس لھا كیان قانوني منفصل عن أصحابھا
+                                    یتحمل كل شریك مسؤولیة غیر محدودة وھو مسؤول شخصیًا
+                                    عن جمیع دیون الشركة<br>
+                                    لا یجوز للشریك نقل حصته في الشركة دون موافقة جمیع
+                                    الشركاء</p>
                             </div>
-                            <div class="choice d-flex justify-content-center flex-column">
-                                <div class="form-check d-flex  mt-3">
+                            <div class="choice d-flex justify-content-center flex-column align-items-end">
+                                <div class="form-check d-flex flex-row-reverse mt-3">
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios4" value="SoleEntity" onclick="checkboxSelection()" required></div>
-                                    <div class="ml-3">
+                                    <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios4">
-                                            <h2>Sole Proprietorship</h2>
-                                            <p>It is owned by one person “natural” and it is named after its owner.<br>
-                                                It is not possible for other partners to join the sole proprietorship.<br>
-                                                The owner is responsible of managing the project in full and the liability is unlimited.<br>
-                                                <span style="color: #041851;">Note: Sole Proprietorship cannot be transferred to any other type of companies.</span>
+                                            <h2>المنشاة الفردية</h2>
+                                            <p>یمتلك المنشأة الفردیة شخص واحد "طبیعي" وتسمى على اسم صاحبھا<br> ولا
+                                                یجوز ان یدخل في المنشأة الفردیة أي شركاء إضافیین باستثناء صاحب
+                                                المنشأة <br>والذي یكون مسئول عن إدارة المنشأة بشكل كامل وتكون مسئولیته
+                                                تجاه المنشأة مسئولیة غیر محدودة<br>
+                                                <span style="color: #041851;">ملحوظة: لا یجوز تحویل المنشأة الفردیة الى أي نوع اخر من الشركات</span>
                                             </p>
                                         </label>
                                     </div>
-                                    <div class="ml-8">
-                                        <button class="btn down" id="down-4" type="button" onclick="download('solo-company');" style="display: none;">Required Documents</button>
+                                    <div class="mr-8">
+                                        <button class="btn down" id="down-4" type="button" onclick="download('solo-company');" style="display: none;">المستندات المطلوبة</button>
                                     </div>
                                 </div>
-                                <div class="form-check d-flex  mt-3">
+                                <div class="form-check d-flex flex-row-reverse mt-3">
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios5" value="Generalpartnership" onclick="checkboxSelection()" required></div>
-                                    <div class="ml-3">
-                                        <label class="form-check-label" for="exampleRadios5">
-                                            <h2>General Partnership</h2>
-                                            <p>It consists of a minimum of two partners, they enjoy the capacity of merchant.<br>
-                                                It is named after its partners followed by the word partners or CO <br>
-                                                and its name shall be named after a real partner’s name in the partnership.<br>
-                                                The partners’ liability is unlimited and joint.
+                                    <div class="mr-3">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            <h2>شركة التضامن</h2>
+                                            <p>ھي أحد شركات الاشخاص وتتكون من شخصین أو أكثر
+                                                (شركاء) ویعاملون معاملة التاجر <br>
+                                                ویتم تسمیتھا باسم شركائھا،وتليها كلمه شركاء او CO ويجب ان يكون اسمها باسم شريك حقيقى<br>
+                                                وحال فى الشركه كما تكون المسؤوليه على الشركاء مسؤوليه شخصيه وليست فى حدود<br>
+                                                مساهمه كل شريك فى راس مال الشركه مثلما هو الحال فى شركات الاموال
                                             </p>
                                         </label>
                                     </div>
-                                    <div class="ml-8">
-                                        <button class="btn down" id="down-5" style="display: none;" onclick="download('solidarity-comp');" type="button">Required Documents</button>
+                                    <div class="mr-8">
+                                        <button class="btn down" id="down-5" style="display: none;" onclick="download('solidarity-comp');" type="button">المستندات المطلوبة</button>
                                     </div>
                                 </div>
-                                <div class="form-check d-flex  mt-3">
+                                <div class="form-check d-flex flex-row-reverse mt-3">
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios6" value="LimitedPartnership" onclick="checkboxSelection()" required></div>
-                                    <div class="ml-3">
-                                        <label class="form-check-label" for="exampleRadios6">
-                                            <h2>Limited Partnership</h2>
-                                            <p>It consists of a minimum of (2) partners.<br>
-                                                The partners are divided into (2) types:<br>
-                                                1- General Partner (Enjoys the capacity of a merchant)<br>
-                                                The partnership is name after one or more of its general partners,<br>
-                                                followed by the word “Partners” or “CO” and the name must be real. <br>
-                                                General Partners have unlimited and personal liability.<br>
-                                                2- Limited Partner<br>
-                                                Limited Partners do not have the right to manage the partnership. <br>Their liability is limited to their shares in the partnership capital.</p>
+                                    <div class="mr-3">
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            <h2>شركة التوصية البسيطة</h2>
+                                            <p>ھي أحد شركات الاشخاص وتتكون من شخصین أو أكثر (شركاء)<br>
+                                                وینقسم الشركاء في ھذا النوع من الشركات الى نوعین "شركاء
+                                                متضامنین" ویعاملون معاملة التاجر <br>
+                                                ویتم تسمیتھا باسم احد او كل الشركاء المتضمنين،وتليها كلمه شركاء او CO ويجب ان يكون اسمها
+                                                <br> باسم شريك حقيقى وحال فى الشركه كما تكون المسؤوليه على الشركاء مسؤوليه شخصيه
+                                                <br> وليست محدوده على حسب مساهمه كل شريك فى رأس مال الشركه وتتضمن نوع اخر من الشركاء
+                                                <br>وهم " الموصيين" والشريك الموصى لا يكون للشركاء الموصيين الحق فى اداره الشركه ، ولكن
+                                                <br>تقتصر مسؤوليه هؤلاء الشركاء على قدر مساهمتهم فى راس مال الشركه ولذلك يتمتع الشريك
+                                                <br> الموصى بمسؤوليه محدوده مثلما هو الحال فى شركات الاموال.
+                                            </p>
                                         </label>
                                     </div>
-                                    <div class="invalid-feedback">You must Choose one company</div>
-                                    <div class="ml-8">
-                                        <button class="btn down" id="down-6" style="display: none;" onclick="download('simple-recommendation-comp');" type="button">Required Documents</button>
+                                    <div class="invalid-feedback">يجب اختيار شركه</div>
+                                    <div class="mr-8">
+                                        <button class="btn down" id="down-6" style="display: none;" onclick="download('simple-recommendation-comp');" type="button">المستندات المطلوبة</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- layer--2 chose name -->
                     <div class="layer">
                         <div class="comp-name pt-4">
-                            <h3>Suggest a name for your company</h3>
-                            <div id="form-in">
+                            <h3>اقترح اسم لشركتك</h3>
+                            <div id="form-in" dir="rtl">
                                 <div class="row g-3 justify-content-evenly pt-3" id="parent-el">
                                     <div class="col-md-4">
-                                        <label for="inputtext1" class="form-label">First Suggestion</label>
+                                        <label for="inputtext1" class="form-label">الاقتراح الاول</label>
                                         <input type="text" class="form-control lay2" name="company_name[]" id="inputtext1">
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="inputtext2" class="form-label">Second Suggestion</label>
+                                        <label for="inputtext2" class="form-label">الاقتراح الثانى</label>
                                         <input type="text" class="form-control lay2" name="company_name[]" id="inputtext2">
                                     </div>
                                     <div class="col-md-4 align-self-end text-center">
-                                        <button class="btn btn-add" id="btn-add-sug" type="button">Add suggestions</button>
+                                        <button class="btn btn-add" id="btn-add-sug" type="button">اضافه اقتراحات</button>
                                         <!-- <button class="btn btn-outline-danger" id="btn-delete-sug">حذف اقتراحات</button> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="comp-info pt-4">
-                            <h3>Basic Data</h3>
-                            <div class="form-in">
+                            <h3>معلومات اساسيه</h3>
+                            <div class="form-in" dir="rtl">
                                 <div class="row g-3 justify-content-start pt-3">
                                     <div class="col-md-4">
-                                        <label for="floatingTextarea" class="form-label">Company’s Activity</label>
+                                        <label for="floatingTextarea" class="form-label">نشاط الشركه</label>
                                         <!-- <input type="text" class="form-control"  required> -->
-                                        <textarea class="form-control lay2" placeholder="Company’s Activity" name="company_activity" id="floatingTextarea" style="resize: none;"></textarea>
+                                        <textarea class="form-control lay2" placeholder="نشاط الشركه" name="company_activity" id="floatingTextarea" style="resize: none;"></textarea>
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="floatingTextarea2" class="form-label">Company’s Address</label>
+                                        <label for="floatingTextarea2" class="form-label">عنوان الشركه</label>
                                         <!-- <input type="text" class="form-control" height="72px"  aria-label="Large" aria-describedby="inputGroup-sizing-sm" required> -->
-                                        <textarea class="form-control lay2" placeholder="Company’s Address" name="company_address" id="floatingTextarea2" style="resize: none;"></textarea>
+                                        <textarea class="form-control lay2" placeholder="عنوان الشركه" name="company_address" id="floatingTextarea2" style="resize: none;"></textarea>
                                     </div>
                                 </div>
                                 <div class="row g-3 justify-content-start pt-3 pb-3">
                                     <div class="col-md-4">
-                                        <label for="inputtext3" class="form-label">Capital</label>
+                                        <label for="inputtext3" class="form-label">قيمه رأس المال</label>
                                         <input type="text" class="form-control lay2" id="inputtext3" name="capital_value" onkeyup="arabicValue(inputtext3)"></input>
-                                        <div id="soloComp"><span>Minimum of 50 thousand EGP</span></div>
-                                        <div id="partCompMoney"><span>Minimum of 250 thousand EGP</span></div>
+                                        <div id="soloComp"><span>راس المال يجب الا يقل عن 50 الف جنيها</span></div>
+                                        <div id="partCompMoney"><span>راس المال يجب الا يقل عن 250 الف جنيها</span></div>
                                     </div>
                                     <div class="col-md-4">
                                         <!-- <label for="inputtext4" class="form-label" style="display: none;">قيمه السهم</label> -->
-                                        <label for="inputtext4" class="form-label" id="valueCor">Share value</label>
+                                        <label for="inputtext4" class="form-label" id="valueCor">قيمه الحصه</label>
                                         <input type="text" class="form-control lay2" id="inputtext4" name="capital_share" onkeyup="arabicValue(inputtext4)"></input>
                                     </div>
                                 </div>
@@ -234,36 +239,36 @@
                     <!-- layer--3 parts info -->
                     <div class="layer">
                         <div class="count">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" dir="rtl">
                                 <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                                 <select class="form-select" id="specificSizeSelect">
-                                    <option disabled selected class="OPT-padding" id="allCompOption">Number of Shareholders</option>
+                                    <option disabled selected class="OPT-padding" id="allCompOption">اختر عدد المديرين</option>
                                     <!-- <option  disabled id="partCompOption" class="OPT-padding">اختر عدد المساهمين</option> -->
                                 </select>
                                 <div class="oneComp">
                                     <div style="text-align: center ;background-color: var(--main-color);
                                     color: var(--bg-main-color);height: 50px;border-radius: 18px;display: flex;">
-                                        <p style="margin: auto;padding-right: 1rem;padding-left: 1rem;font-weight: 400;">Owner’s Data</p>
+                                        <p style="margin: auto;padding-right: 1rem;padding-left: 1rem;font-weight 400;">بيانات المالك</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="oneComp" id="oneCompDiv">
-                            <div class="row g-3 justify-content-between pt-3" data-id="item_0">
+                            <div class="row g-3 justify-content-between pt-3" dir="rtl" data-id="item_0">
                                 <div class="col-md-4">
-                                    <label for="inputtext1" class="form-label mang" id="mangName">Owner’s Name</label>
+                                    <label for="inputtext1" class="form-label mang" id="mangName">اسم المالك</label>
                                     <input type="text" class="form-control mangSolo mangOneInfo" id="name" name="malek_name">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="inputtext2" class="form-label mang">Owner’s Nationality</label>
+                                    <label for="inputtext2" class="form-label mang">جنسيه المالك</label>
                                     <input type="text" class="form-control mangSolo mangOneInfo" id="nation" name="malek_nationality">
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="formFileMultiple" class="form-label">Add National ID</label>
+                                    <label for="formFileMultiple" class="form-label">اضافه البطاقه الشخصية</label>
                                     <input class="form-control mangSolo mangOneInfo" name="malek_personal_id" type="file" id="id" accept="image/png, image/gif, image/jpeg">
                                 </div>
                                 <div class="col-md-4 x-last align-self-center">
-                                    <button class="btn btn-outline-danger" type="reset" id="partCompDel">Remove owner</button>
+                                    <button class="btn btn-outline-danger" type="reset" id="partCompDel">حذف المالك</button>
                                 </div>
                                 <hr>
                             </div>
@@ -274,31 +279,29 @@
                     <!-- layer---4 mangers names -->
                     <div class="layer">
                         <div class="mang-names pt-4">
-                            <div class="row g-3 justify-content-center">
+                            <div class="row g-3 justify-content-center" dir="rtl">
                                 <div class="col-md-6">
-                                    <label for="autocompleteinput" class="form-label" id="partName">Add Managers Names</label>
-                                    <!-- <label for="inputtextAdd" class="form-label" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" style="display: none;">ادخل اسماء المساهمين</label> -->
+                                    <label for="autocompleteinput" class="form-label" id="partName">ادخل اسماء المديرين</label>
                                     <input type="text" class="form-control" id="autocompleteinput" autocomplete="additional-name">
                                     <div id="error-mangerAdd" class="error"></div>
                                 </div>
                                 <div class="col-3 " style="text-align: center;padding-top: 2.1rem;">
-                                    <button class="btn bttn-add" style="width: 10rem;" id="btn-add-mang" type="button">Add</button>
+                                    <button class="btn bttn-add" style="width: 10rem;" id="btn-add-mang" type="button">اضافه</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="mang-details pt-4 pb-4">
+                        <div class="mang-details pt-4 pb-4" dir="rtl">
                             <div class="row" id="card-newAdd">
 
                             </div>
                         </div>
                     </div>
-                    <!-- layer---5 payment -->
+                    <!-- layer---5 calender -->
                     <div class="layer">
                         <div class="d-flex justify-content-center align-items-center" style="height:20vh">
                             <div class="down-paper text-center">
                                 <button onclick="download_docx('incorporation-poa');" type="button" class="btn btn-down-paper">
-                                    Download Power of Attorney <img src="<?php echo base_url(); ?>/images/Vector (1).svg">
-                                </button>
+                                    <img src="<?php echo base_url(); ?>/images/Vector (1).svg"> تحميل التوكيل </button>
                             </div>
                         </div>
                         <section class="pricing-365">
@@ -306,14 +309,14 @@
                                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-center">
                                     <div class="col">
                                         <label for="radio_1">
-                                            <input type="radio" onclick="showPromoDiv()" name="plan_id" value="2" class="card-input-element hidden" id="radio_1" name="radio" />
-                                            <div class="card h-100">     
+                                            <input type="radio" name="plan_id" value="2" class="card-input-element hidden" id="radio_1" name="radio" />
+                                            <div class="card h-100">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <h2>Online Incorporation</h2>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                <h2><span id="oldPrice">5000</span><span id='price'></span><small>LE</small></h2>
-                                                    <p>One Time Payment</p>
+                                                    <h2><span id="oldPrice">5000</span><span id='price'></span><small>LE</small></h2>
+                                                    <p>الدفع لمره واحده</p>
                                                     <div id="promoDiv">
                                                         <div class="d-flex">
                                                             <input type="text" name="promo" id="promocode" class="form-control promo" placeholder="Add promo code">
@@ -325,50 +328,47 @@
                                                 <div class="card-footer">
                                                     <ul class="row row-cols-xxl-2 row-cols-xl-1 row-cols-lg-2 row-cols-1 gx-4 justify-content-center">
                                                         <li class="col">
+
                                                             <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
                                                             </svg>
+                                                            <span>تاسيس الشركه</span>
+                                                        </li>
+                                                        <li class="col">
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
+                                                            </svg>
+                                                            <span>استخراج سجل تجارى</span>
 
-                                                            <span>Incorporation</span>
                                                         </li>
                                                         <li class="col">
-                                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M7.80296 1.13629L6.86296 0.196289L3.99962 3.05962L1.13629 0.196289L0.196289 1.13629L3.05962 3.99962L0.196289 6.86296L1.13629 7.80296L3.99962 4.93962L6.86296 7.80296L7.80296 6.86296L4.93962 3.99962L7.80296 1.13629Z" fill="#FB0F0F" />
+                                                            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
                                                             </svg>
+                                                            <span>استخراج بطاقه ضريبيه</span>
 
-                                                            <span>IP registration</span>
                                                         </li>
                                                         <li class="col">
                                                             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M7.80296 1.13629L6.86296 0.196289L3.99962 3.05962L1.13629 0.196289L0.196289 1.13629L3.05962 3.99962L0.196289 6.86296L1.13629 7.80296L3.99962 4.93962L6.86296 7.80296L7.80296 6.86296L4.93962 3.99962L7.80296 1.13629Z" fill="#FB0F0F" />
                                                             </svg>
-                                                            <span>Contracts/Agreements</span>
-                                                        </li>
+                                                            <span>صياغه الشروط والأحكام</span>
 
-                                                        <li class="col">
-                                                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M7.80296 1.13629L6.86296 0.196289L3.99962 3.05962L1.13629 0.196289L0.196289 1.13629L3.05962 3.99962L0.196289 6.86296L1.13629 7.80296L3.99962 4.93962L6.86296 7.80296L7.80296 6.86296L4.93962 3.99962L7.80296 1.13629Z" fill="#FB0F0F" />
-                                                            </svg>
-                                                            <span>Terms and Conditions</span>
                                                         </li>
                                                         <li class="col">
                                                             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M7.80296 1.13629L6.86296 0.196289L3.99962 3.05962L1.13629 0.196289L0.196289 1.13629L3.05962 3.99962L0.196289 6.86296L1.13629 7.80296L3.99962 4.93962L6.86296 7.80296L7.80296 6.86296L4.93962 3.99962L7.80296 1.13629Z" fill="#FB0F0F" />
                                                             </svg>
-                                                            <span>Insurance File</span>
+                                                            <span>صياغه و اعتماد الجمعيات العموميه</span>
+
                                                         </li>
                                                         <li class="col">
                                                             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M7.80296 1.13629L6.86296 0.196289L3.99962 3.05962L1.13629 0.196289L0.196289 1.13629L3.05962 3.99962L0.196289 6.86296L1.13629 7.80296L3.99962 4.93962L6.86296 7.80296L7.80296 6.86296L4.93962 3.99962L7.80296 1.13629Z" fill="#FB0F0F" />
                                                             </svg>
-                                                            <span>Tax Card Renewal</span>
+                                                            <span>خدمات قانونيه غير محدوده لمده 12 شهر</span>
+
                                                         </li>
-                                                        <!-- <li class="col">
-                                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10.0001 7.62939e-05C4.48612 7.62939e-05 0.00012207 4.48608 0.00012207 10.0001C0.00012207 15.5141 4.48612 20.0001 10.0001 20.0001C15.5141 20.0001 20.0001 15.5141 20.0001 10.0001C20.0001 4.48608 15.5141 7.62939e-05 10.0001 7.62939e-05ZM8.00112 14.4131L4.28812 10.7081L5.70012 9.29208L7.99912 11.5871L13.2931 6.29308L14.7071 7.70708L8.00112 14.4131Z" fill="#000086"/>
-                                                        </svg>
-                                                        <span>Different types of <br>Contracts /Agreements</span>
-                                                    </li> -->
                                                     </ul>
                                                 </div>
                                             </div>
@@ -376,7 +376,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="radio_2">
-                                            <input onclick="hidePromoDiv()" type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2" name="radio" checked />
+                                            <input type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2" name="radio" checked />
                                             <div class="card h-100 card-x">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <svg width="83" height="41" viewBox="0 0 83 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -385,12 +385,12 @@
                                                         <path d="M0.0093888 25.7734C2.21243 25.7734 4.3712 25.7734 6.5355 25.7734C6.86761 29.8672 8.78836 32.7953 12.7461 33.8885C16.8533 35.0263 19.8257 33.1188 22.0122 29.7445C22.455 30.8711 22.8314 32.0312 23.3628 33.1132C23.8997 34.2064 24.5972 35.2159 25.2392 36.2923C22.8203 39.254 16.5987 42.4163 10.15 40.1352C2.94309 37.5863 -0.195417 30.8599 0.0093888 25.7734Z" fill="#000086" />
                                                     </svg>
                                                     <span class="recomend">
-                                                        <img src="images\Group 1278.svg" alt="" srcset="">
+                                                        <img src="<?php echo base_url(); ?>/images/Group 1278.svg" alt="" srcset="">
                                                     </span>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                    <h2>12,500<small>LE/Year</small></h2>
-                                                    <p>One Time Payment</p>
+                                                    <h2>12500<small>LE/Year</small></h2>
+                                                    <p>الدفع لمره واحده</p>
                                                 </div>
                                                 <div class="card-footer">
                                                     <ul class="row row-cols-xxl-2 row-cols-xl-1 row-cols-lg-2 row-cols-1 gx-4 justify-content-center">
@@ -398,42 +398,50 @@
                                                             <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
                                                             </svg>
-                                                            <span>Incorporation</span>
-                                                        </li>
-                                                        <li class="col">
-                                                            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
-                                                            </svg>
-                                                            <span>IP registration</span>
-                                                        </li>
-                                                        <li class="col">
-                                                            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
-                                                            </svg>
-                                                            <span>Contracts/Agreements</span>
-                                                        </li>
+                                                            <span>تاسيس الشركه</span>
 
-                                                        <li class="col">
-                                                            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
-                                                            </svg>
-                                                            <span>Terms and Conditions</span>
                                                         </li>
                                                         <li class="col">
                                                             <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
                                                             </svg>
-                                                            <span>Insurance File</span>
+                                                            <span>تسجيل العلامه التجاريه</span>
+
+                                                        </li>
+                                                        <li class="col">
+
+                                                            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
+                                                            </svg>
+                                                            <span>صياغه العقود والاتفاقيات</span>
+
                                                         </li>
                                                         <li class="col">
                                                             <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                 <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
                                                             </svg>
-                                                            <span>Tax Card Renewal</span>
+                                                            <span>صياغه الشروط والأحكام</span>
+
+                                                        </li>
+                                                        <li class="col">
+                                                            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
+                                                            </svg>
+                                                            <span>صياغه و اعتماد الجمعيات العموميه</span>
+
+                                                        </li>
+                                                        <li class="col">
+                                                            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.96967 0.970475C7.11054 0.836364 7.298 0.762222 7.49249 0.763693C7.68698 0.765165 7.87329 0.842135 8.01212 0.978363C8.15094 1.11459 8.23141 1.29942 8.23655 1.49385C8.24169 1.68828 8.1711 1.8771 8.03967 2.02048L4.04967 7.01048C3.98106 7.08437 3.89825 7.14368 3.8062 7.18484C3.71415 7.22601 3.61474 7.24819 3.51392 7.25005C3.4131 7.25192 3.31294 7.23344 3.21943 7.19571C3.12591 7.15798 3.04097 7.10178 2.96967 7.03048L0.323669 4.38448C0.249983 4.31581 0.19088 4.23301 0.149888 4.14101C0.108896 4.04901 0.0868544 3.9497 0.0850777 3.849C0.0833009 3.7483 0.101826 3.64827 0.139547 3.55488C0.177268 3.46149 0.233412 3.37666 0.304631 3.30544C0.37585 3.23422 0.460684 3.17807 0.554072 3.14035C0.64746 3.10263 0.747489 3.08411 0.848192 3.08588C0.948895 3.08766 1.04821 3.1097 1.14021 3.15069C1.23221 3.19169 1.31501 3.25079 1.38367 3.32448L3.47767 5.41748L6.95067 0.992475C6.95692 0.984776 6.9636 0.977431 6.97067 0.970475H6.96967Z" fill="#43C62E" />
+                                                            </svg>
+                                                            <span>خدمات قانونيه غير محدوده لمده 12 شهر</span>
+
                                                         </li>
 
                                                     </ul>
                                                 </div>
+                                                <p class="note">Note:You can pay in installments through</p>
+
                                             </div>
                                         </label>
                                     </div>
@@ -452,13 +460,11 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- buttons change-layers -->
-
                     <div id="but-chose">
                         <div class="btn-chose d-flex justify-content-center pb-3 pt-3">
-                            <button class="btn pre " id="prev-1" type="button" onclick="changeLayer(-1);arrayEle = []; arrayNames = [];">Previous</button>
-                            <button class="btn next ml-3" id="next-1" type="button" onclick="changeLayer(1)">next</button>
+                            <button class="btn next mr-3" id="next-1" type="button" onclick="changeLayer(1)">التالي</button>
+                            <button class="btn pre " id="prev-1" type="button" onclick="changeLayer(-1);arrayEle = []; arrayNames = [];">السابق</button>
                         </div>
                     </div>
                 </div>
@@ -467,23 +473,22 @@
         <!-- btn-languages -->
         <div class="turn-en">
             <div class="cir-4">
-                <!-- <button type="button" onclick="location.href ='legal-form-ar/legal-form/index.php';"></button> -->
-
-                <a href="<?php echo base_url('payment/index/form'); ?>"></a>
+            <a href="<?php echo base_url('payment/index'); ?>"></a>
             </div>
             <div class="turn-en-mob" style="display:none;">
-                <input type="checkbox" class="check" onclick="location.href ='legal-form-ar/legal-form/index.php';" />
+                <input type="checkbox" class="check" onclick="location.href ='../../index.php';" />
             </div>
         </div>
     </section>
-
+    <img id="loadingimage" src="images/loading.gif" style="display:none;" />
+    <div id="area" style="display:none;"></div>
     <script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/js/intlTelInput.min.js" integrity="sha512-Po9nSdYOcWIcoADdRjkAbRYPpR8OHjxzA/3RDUERZcDewTLzRTxbG4bUX7Sr7lVEcO3wTCzphdOBWgNFKVmxaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- <script src="js/rome.js"></script> -->
 
-    <script src="<?php echo base_url(); ?>js/main.js?t=<?php echo time(); ?>"></script>
+    <script src="<?php echo base_url(); ?>js/main_ar.js?t=<?php echo time(); ?>"></script>
     <script>
         //download files.pdf
         function download(filename) {
