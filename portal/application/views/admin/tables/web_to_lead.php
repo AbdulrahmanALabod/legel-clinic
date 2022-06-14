@@ -7,7 +7,7 @@ $aColumns = ['id', 'name', '(SELECT COUNT(id) FROM '.db_prefix().'leads WHERE '.
 $sIndexColumn = 'id';
 $sTable       = db_prefix().'web_to_lead';
 
-$result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], [], ['form_key', 'id']);
+$result  = data_tables_init($aColumns, $sIndexColumn, $sTable, [], [' AND is_mpwtl = 0'], ['form_key', 'id']);
 $output  = $result['output'];
 $rResult = $result['rResult'];
 

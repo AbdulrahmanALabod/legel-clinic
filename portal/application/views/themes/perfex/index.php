@@ -28,8 +28,8 @@ echo theme_head_view();
             if (is_client_logged_in() && $subMenuEnabled && !isset($knowledge_base_search)) { ?>
               <ul class="submenu customer-top-submenu">
                 <?php hooks()->do_action('before_customers_area_sub_menu_start'); ?>
-                <li class="customers-top-submenu-files"><a href="<?php echo site_url('clients/files'); ?>"><i class="fa fa-file" aria-hidden="true"></i> <?php echo _l('customer_profile_files'); ?></a></li>
-                <li class="customers-top-submenu-calendar"><a href="<?php echo site_url('clients/calendar'); ?>"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <?php echo _l('calendar'); ?></a></li>
+                <!-- <li class="customers-top-submenu-files"><a href="<?php echo site_url('clients/files'); ?>"><i class="fa fa-file" aria-hidden="true"></i> <?php echo _l('customer_profile_files'); ?></a></li>
+                <li class="customers-top-submenu-calendar"><a href="<?php echo site_url('clients/calendar'); ?>"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i> <?php echo _l('calendar'); ?></a></li> -->
                 <?php hooks()->do_action('after_customers_area_sub_menu_end'); ?>
               </ul>
               <div class="clearfix"></div>

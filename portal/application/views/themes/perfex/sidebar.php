@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <nav id="sidebar" class="pcoded-navbar">
     <div class="nav-header">
-      <a href="index.html" class="brand-logo">
+      <a href="<?php echo site_url('') ?>" class="brand-logo">
         <img class="logo-abbr" src="<?php echo base_url('assets/images/main/logo-appr.svg')?>" alt="logo-appr">
         <img class="logo-compact" src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="logo-nav">
         <img class="brand-title" src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="logo-nav">
@@ -20,25 +20,25 @@
           </a>
           <ul class="pcoded-submenu" style="display: none;">
             <li class="inner-list">
-              <a href="#" class="">
+              <a href="<?php echo base_url('clients/invoices') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/invoice.svg"') ?>" alt="invoice" class="img-inner">
                 <span>Invoice</span>
               </a>
             </li>
             <li class="inner-list">
-              <a href="" class="">
+              <a href="<?php echo base_url('clients/statement') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/balance$.svg"') ?> "alt="balance">
                 <span>Balance</span>
               </a>
             </li>
             <li class="inner-list">
-              <a href="" class="">
+              <a href="<?php echo base_url('contacts') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/contacts.svg"') ?>" alt="contacts">
                 <span>Contacts</span>
               </a>
             </li>
             <li class="inner-list">
-              <a href="" class="">
+              <a href="<?php echo base_url('clients/projects') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/mymatters.svg"') ?> "alt="mymatters">
                 <span>My Matters</span>
               </a>
@@ -46,7 +46,7 @@
           </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
+          <a href="<?php echo site_url('payment/index')?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/onlineinco.svg"') ?>"alt="onlineinco">
               <span class="pcoded-mtext">Online Incorporation</span>
@@ -80,7 +80,7 @@
           </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
+          <a href="<?php echo site_url('pickup/pickups/request_service'); ?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/requestservice.svg"') ?>"alt="requestservice">
               <span class="pcoded-mtext">Request service</span>
@@ -91,7 +91,7 @@
        
         </li>
         <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
+          <a href="<?php echo site_url('pickup/pickups/ask'); ?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/askalaywer.svg"') ?>"alt="askalaywer">
               <span class="pcoded-mtext">Ask a Lawyer</span>
@@ -104,16 +104,6 @@
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/legalresource.svg"') ?>"alt="legalresource">
               <span class="pcoded-mtext">our Legal Resources</span>
-            </span>
-            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
-
-          </a>
-        </li>
-        <li class="nav-item pcoded-hasmenu">
-          <a href="#!" class="nav-link justify-content-between">
-            <span class="pcoded-micon">
-              <img src="<?php echo base_url('assets/images/main/home.svg"') ?>"alt="home">
-              <span class="pcoded-mtext">Home</span>
             </span>
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
 
