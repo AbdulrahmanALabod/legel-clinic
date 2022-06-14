@@ -82,3 +82,4 @@
 			'<b>' + greet + ' <?php echo $contact->firstname; ?>!</b>';
 		}
 	</script>
+</div>
