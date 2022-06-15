@@ -14,7 +14,7 @@
           <a href="#!" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/companyprofile.svg"') ?>" alt="companyprofile">
-              <span class="pcoded-mtext">Company profile</span>
+              <span class="pcoded-mtext">My Company</span>
             </span>
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
           </a>
@@ -55,6 +55,15 @@
           </a>
         </li>
         <li class="nav-item pcoded-hasmenu">
+          <a href="<?php echo site_url('clients/calendar'); ?>" class="nav-link justify-content-between">
+            <span class="pcoded-micon">
+              <img src="<?php echo base_url('assets/images/main/onlineinco.svg"') ?>"alt="calendar">
+              <span class="pcoded-mtext">Calender</span>
+            </span>
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+          </a>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
           <a href="#" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/makecontract.svg"') ?>"alt="makecontract">
@@ -80,7 +89,7 @@
           </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
-          <a href="<?php echo site_url('pickups/request_service'); ?>" class="nav-link justify-content-between">
+          <a href="#" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/requestservice.svg"') ?>"alt="requestservice">
               <span class="pcoded-mtext">Request service</span>
@@ -88,7 +97,20 @@
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
 
           </a>
-       
+          <ul class="pcoded-submenu" style="display: none;">
+            <li class="inner-list">
+              <a href="<?php echo site_url('clients/open_ticket'); ?>" class="">
+              <img src="<?php echo base_url('assets/images/main/requestservice.svg"') ?>"alt="TICKET">
+                <span>TICKET</span>
+              </a>
+            </li>
+            <li class="inner-list">
+              <a href="<?php echo base_url('surveys/survey/3/de5fbbfb2cf044b6b092d3638aa86dd5'); ?>" class="">
+              <img src="<?php echo base_url('assets/images/main/companyprofile.svg"') ?>" alt="Send Documents">
+                <span> Send Documents</span>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
           <a href="<?php echo site_url('pickups/ask'); ?>" class="nav-link justify-content-between">
