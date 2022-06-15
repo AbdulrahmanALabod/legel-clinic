@@ -344,7 +344,7 @@ class Authentication extends ClientsController
         $this->load->model('authentication_model');
         $this->authentication_model->logout(false);
         hooks()->do_action('after_client_logout');
-        redirect(site_url('authentication/login'));
+        redirect(site_url(''));
     }
 
     public function contact_email_exists($email = '')
