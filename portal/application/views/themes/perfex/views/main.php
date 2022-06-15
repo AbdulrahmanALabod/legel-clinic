@@ -393,7 +393,7 @@
                     <img src="<?php echo base_url('assets/images/main/clarity_users-line (1).svg')?>" alt="careers">
                     <h6>Careers</h6>
                     <p>Join the world's largest consulting <br>organization with a unique position.</p>
-                    <button class="btn btn-contact">Submit Request</button>
+                    <a href="<?php echo site_url('index/careers')?>" class="btn btn-contact">Submit Request</a>
                   </div>
                 </div>
               </div>

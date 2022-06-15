@@ -24,6 +24,11 @@ class Index extends App_Controller
         $this->load->view('themes/' . active_clients_theme() . '/views/about');
     }
 
+    public function careers()
+    {
+        $this->load->view('themes/' . active_clients_theme() . '/views/careers');
+    }
+    
     public function sendMessage()
     {
         $this->load->library('form_validation');
