@@ -44,7 +44,7 @@
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/')?>">Home</a></li>
                       <li class="nav-item"><a class="nav-link active" href="<?php echo site_url('index/about')?>">About</a></li>
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/price'); ?>">Pricing</a></li>
-                      <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/contact'); ?>">Contact us</a></li>
                       <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
                       <li class="nav-item dropdown at-spec-width">
                         <a href="#" class="pro-spec">Profile
