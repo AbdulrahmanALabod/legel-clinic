@@ -15,13 +15,24 @@ class Index extends ClientsController
     public function index()
     {
         if (!isset($_SESSION['contact_user_id'])) {
-            $root  = ("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . "/legel-form/portal/");
+            
 
-            header('Location: ' . $root);
+            header('Location: ' . site_url('authentication/login'));
             exit;
         }
 
         $this->load->view('form/index');
+    }
+
+    public function form()
+    {
+        if (!isset($_SESSION['contact_user_id'])) {
+
+            header('Location: ' . site_url('authentication/login'));
+            exit;
+        }
+
+        $this->load->view('form/index_ar');
     }
 }
 ?>
