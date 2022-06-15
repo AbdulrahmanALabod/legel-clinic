@@ -413,51 +413,52 @@
       </section>
       <!-- Modal -->
       <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="d-flex justify-content-end">
-              <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
-                <img src="<?php echo base_url('assets/images/main/ant-design_close-circle-outlined.svg')?>" alt=""></button>
-            </div>
-            <div class="modal-header">
-              <h5 class="modal-title text-center" id="exampleModalLabel">Please fill out the form below to inquire about our work</h5>
-            </div>
-            <div class="modal-body">
-              <form class="row g-4">
-                <div class="col-md-6">
-                  <!-- <label for="inputEmail4" class="form-label">Email</label> -->
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Name">
-                </div>
-                <div class="col-md-6">
-                  <!-- <label for="inputPassword4" class="form-label">Password</label> -->
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="Email">
-                </div>
-                <div class="col-12">
-                  <!-- <label for="inputAddress" class="form-label">Address</label> -->
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Organization">
-                </div>
-                <div class="col-12">
-                  <!-- <label for="inputAddress2" class="form-label">Address 2</label> -->
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Subject">
-                </div>
-                <div class="col-12">
-                  <!-- <div class="form-floating"> -->
-                    <textarea class="form-control" placeholder="Describe briefly" id="floatingTextarea2" style="height: 100px;resize: none;"></textarea>
-                    <!-- <label for="floatingTextarea2">Comments</label> -->
-                  <!-- </div> -->
-                </div>
-              </div>
-              <div class="modal-footer justify-content-center">
-                <!-- <div class="col-12"> -->
-                  <button type="submit" class="btn btn-getin">Lets Go</button>
-                <!-- </div> -->
-                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <form  action="<?php echo base_url('index/sendMessage'); ?>" method="post">                
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><img src="<?php echo base_url('assets/images/main/ant-design_close-circle-outlined.svg') ?>" alt=""></button>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">Please fill out the form below to inquire about our work</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <!-- <label for="inputEmail4" class="form-label">Email</label> -->
+                                <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- <label for="inputPassword4" class="form-label">Password</label> -->
+                                <input name="email" type="email" class="form-control" id="inputPassword4" placeholder="Email" required>
+                            </div>
+                            <div class="col-12">
+                                <!-- <label for="inputAddress" class="form-label">Address</label> -->
+                                <input name="organization"  type="text" class="form-control" id="inputAddress" placeholder="Organization" required>
+                            </div>
+                            <div class="col-12">
+                                <!-- <label for="inputAddress2" class="form-label">Address 2</label> -->
+                                <input name="subject" type="text" class="form-control" id="inputAddress2" placeholder="Subject" required>
+                            </div>
+                            <div class="col-12">
+                                <!-- <div class="form-floating"> -->
+                                <textarea name="message" class="form-control" placeholder="Describe briefly" id="floatingTextarea2" style="height: 100px;resize: none;" required></textarea>
+                                <!-- <label for="floatingTextarea2">Comments</label> -->
+                                <!-- </div> -->
+                            </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <!-- <div class="col-12"> -->
+                        <button type="submit" class="btn btn-getin">Lets Go</button>
+                        <!-- </div> -->
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                    </div>
                 </div>
-              </form>
-          </div>
+            </div>
+            </form>
         </div>
-      </div>
       <!-- Clients Testimonial -->
       <section class="testimonial">
         <div class="container">

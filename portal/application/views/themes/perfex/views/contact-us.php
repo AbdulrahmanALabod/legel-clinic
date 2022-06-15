@@ -42,7 +42,7 @@
                                     <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/about'); ?>">About</a></li>
                                     <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/price'); ?>">Pricing</a></li>
                                     <li class="nav-item"><a class="nav-link active" href="<?php echo site_url('index/contact'); ?>">Contact us</a></li>
-                                    <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
+                                    <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="<?php echo site_url('index/price'); ?>">Search</a></li>
                                     <li class="nav-item dropdown at-spec-width">
                                         <a href="#" class="pro-spec">Profile
                                             <button aria-label="dropdown toggler" id="drop-menu-profile" type="button">
@@ -120,6 +120,7 @@
         </section>
         <!-- Modal -->
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <form  action="<?php echo base_url('index/sendMessage'); ?>" method="post">                
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="d-flex justify-content-end">
@@ -129,26 +130,26 @@
                         <h5 class="modal-title text-center" id="exampleModalLabel">Please fill out the form below to inquire about our work</h5>
                     </div>
                     <div class="modal-body">
-                        <form class="row g-4">
+                        <div class="row g-4">
                             <div class="col-md-6">
                                 <!-- <label for="inputEmail4" class="form-label">Email</label> -->
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Name">
+                                <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Name" required>
                             </div>
                             <div class="col-md-6">
                                 <!-- <label for="inputPassword4" class="form-label">Password</label> -->
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Email">
+                                <input name="email" type="email" class="form-control" id="inputPassword4" placeholder="Email" required>
                             </div>
                             <div class="col-12">
                                 <!-- <label for="inputAddress" class="form-label">Address</label> -->
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Organization">
+                                <input name="organization"  type="text" class="form-control" id="inputAddress" placeholder="Organization" required>
                             </div>
                             <div class="col-12">
                                 <!-- <label for="inputAddress2" class="form-label">Address 2</label> -->
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Subject">
+                                <input name="subject" type="text" class="form-control" id="inputAddress2" placeholder="Subject" required>
                             </div>
                             <div class="col-12">
                                 <!-- <div class="form-floating"> -->
-                                <textarea class="form-control" placeholder="Describe briefly" id="floatingTextarea2" style="height: 100px;resize: none;"></textarea>
+                                <textarea name="message" class="form-control" placeholder="Describe briefly" id="floatingTextarea2" style="height: 100px;resize: none;" required></textarea>
                                 <!-- <label for="floatingTextarea2">Comments</label> -->
                                 <!-- </div> -->
                             </div>
@@ -160,9 +161,10 @@
                         <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Save changes</button> -->
                     </div>
-                    </form>
+                    </div>
                 </div>
             </div>
+            </form>
         </div>
         <section class="location">
             <div class="container">
