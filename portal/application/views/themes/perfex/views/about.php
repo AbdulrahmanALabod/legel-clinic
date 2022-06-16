@@ -47,21 +47,33 @@
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/contact'); ?>">Contact us</a></li>
                       <li class="nav-item search-toggler at-spec-width"><a class="nav-link" href="contact.html">Search</a></li>
                       <li class="nav-item dropdown at-spec-width">
-                        <a href="#" class="pro-spec">Profile
-                          <button aria-label="dropdown toggler" id="drop-menu-profile" type="button">
-                            <i class="fa fa-angle-down"></i>
-                          </button>
-                        </a>
-                        <ul style="display: none;" id="ul-menu-profile">
-                                  <li class="current"><a href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
-                                  <li><a href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
+                              <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                                <a href="" class="pro-spec">Profile
+                                  <button aria-label="dropdown toggler" id="drop-menu-profile" type="button">
+                                    <i class="fa fa-angle-down"></i>
+                                  </button>
+                                </a>
+                                <?php } else { ?>
+                                  <a class="nav-link" href="<?php echo site_url('authentication/login'); ?>">Login</a>
+                                <?php } ?>  
+                                <ul style="display: none;" id="ul-menu-profile">
+                                  <li class="drop-item">
+                                    <a href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a>
+                                  </li>
+                                  <li class="drop-item">
+                                    <a href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a>
+                                  </li>
                                   <?php   if(isset($_SESSION['client_logged_in'])){?>
-                                    <li><a href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
-                                    <?php }else{?>
-                                      <li><a href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a></li>
+                                    <li class="drop-item">
+                                      <a href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a>
+                                    </li>
+                                  <?php }else{?>
+                                      <li class="drop-item">
+                                        <a href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a>
+                                      </li>
                                   <?php }?>
                                 </ul>
-                      </li>
+                            </li>
                     </ul>
                   </div>
                 </div>
@@ -77,7 +89,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
                               <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
-                              <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
                       <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
                       </ul>
                           </div>
@@ -99,7 +111,7 @@
               <!-- <div class=""> -->
                 <div class="col-12 text-center">
                   <h2>About Us</h2>
-                  <p class="pt-4 pb-4">is the first law firm specialized in serving and <br>supporting startups and empowering <br>entrepreneurship in MENA Region.</p>
+                  <p class="pt-4 pb-4">Is the first law firm specialized in serving and <br>supporting startups and empowering <br>entrepreneurship in MENA Region.</p>
                 </div>
             </div>  
           </div>
@@ -166,7 +178,7 @@
           <div class="d-flex flex-wrap justify-content-center">
             <div class="partner text-center">
               <img src="<?php echo base_url('assets/images/main/partnericon.svg')?>" alt="partnericon">
-              <h2>Our Partner</h2>
+              <h2>Our Partners</h2>
             </div>
           </div>
           <div class="row justify-content-center">
@@ -310,6 +322,7 @@
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top" style="display: inline;">
       <i class="fa fa-angle-up"></i>
     </a>
+    </div>  
      <!--js links-->
      <script src="<?php echo base_url('assets/js/jquery.js')?>"></script>
      <script src="<?php echo base_url('assets/js/popper.js')?>"></script>
