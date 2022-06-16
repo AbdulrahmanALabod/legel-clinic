@@ -33,9 +33,6 @@ const partCompMoney = document.getElementById('partCompMoney');
 const select = document.querySelector('#specificSizeSelect');
 const parentCountEl = document.getElementById('part-form');
 const formLang =  document.getElementsByClassName('turn-en');
-const header = document.getElementById('header');
-const footer = document.getElementById('footer');
-const backToTop = document.getElementById('backToTop');
 
 ///////// show layers
 
@@ -128,9 +125,6 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
       if (curr == layer.length){
         divButChose.style.display = 'none';
         proBar.style.display = 'none';
-        header.style.display = 'none';
-        footer.style.display = 'none';
-        backToTop.style.display = 'none';
     }  
     //update progress bar 
     update();
@@ -140,17 +134,14 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
 function changeLayer(curr){
     // console.log(curr);
     //hold for validation
-    // if (curr == 1 && !validateForm()) return false;
+    if (curr == 1 && !validateForm()) return false;
     layer[currLayer].style.display = "none";
     currLayer = currLayer + curr;
     // console.log(currLayer);
         if (currLayer >= layer.length) {
-			wrapLoader.style.display = 'block';
+			 wrapLoader.style.display = 'block';
             divButChose.style.display = 'none';
             proBar.style.display = 'none';
-            header.style.display = 'none';
-            footer.style.display = 'none';
-            backToTop.style.display = 'none';
             setTimeout(()=>{
                 form.submit();
                 wrapLoader.style.display = 'none';
@@ -579,12 +570,12 @@ function setInputFilter(textbox, inputFilter) {
   function update(){
     circles.forEach((circles , cirIndx)=>{
         if(cirIndx <= currLayer){
-            circles.classList.add('active2');
+            circles.classList.add('active');
         } else{
-            circles.classList.remove('active2')
+            circles.classList.remove('active')
         }
     });
-    const actives = document.querySelectorAll('.active2');
+    const actives = document.querySelectorAll('.active');
 
     progress.style.width =( (actives.length - 1) / (circles.length - 1) ) * 100 + '%';
 }
@@ -754,15 +745,15 @@ const btnAdd = document.querySelector('#btn-add-sug');
                     // newform.setAttribute('dir','rtl');
                     newform.classList.add('row', 'g-3', 'justify-content-evenly' ,'pt-3','sug1');
                         newform.innerHTML = `<div class="col-md-4">
-                        <label for="inputtext1" class="form-label">New Suggestion</label>
+                        <label for="inputtext1" class="form-label">new suggestion</label>
                         <input type="text" class="form-control" id="inputtext1" name="company_name[]"  required>
                                 </div>
                                 <div class="col-md-4">
-                                <label for="inputtext2" class="form-label">New Suggestion</label>
+                                <label for="inputtext2" class="form-label">new suggestion</label>
                                 <input type="text" class="form-control" id="inputtext2" name="company_name[]"  required>
                                   </div>
                                 <div class="col-md-4 align-self-end text-center" >
-                                    <button class="btn btn-outline-danger" id="btn-delete-sug" type="button" onclick="deleted1()">Remove Suggestions</button>
+                                    <button class="btn btn-outline-danger" id="btn-delete-sug" type="button" onclick="deleted1()">remove suggestions</button>
                                 </div>`;
                     parentForm.appendChild(newform);            
                     } else if(i < 9){
@@ -772,15 +763,15 @@ const btnAdd = document.querySelector('#btn-add-sug');
                     newform.classList.add('row', 'g-3', 'justify-content-evenly' ,'pt-3','sug2');
                    
                         newform.innerHTML = `<div class="col-md-4">
-                        <label for="inputtext1" class="form-label">New Suggestion</label>
+                        <label for="inputtext1" class="form-label">new suggestion</label>
                         <input type="text" class="form-control" id="inputtext1" name="company_name[]"  required>
                                 </div>
                                 <div class="col-md-4">
-                                <label for="inputtext2" class="form-label">New Suggestion</label>
+                                <label for="inputtext2" class="form-label">new suggestion</label>
                                 <input type="text" class="form-control" id="inputtext2" name="company_name[]"  required>
                                   </div>
                                 <div class="col-md-4 align-self-end text-center" >
-                                    <button class="btn btn-outline-danger" id="btn-delete-sug"  type="button" onclick="deleted2()">Remove Suggestions</button>
+                                    <button class="btn btn-outline-danger" id="btn-delete-sug"  type="button" onclick="deleted2()">remove suggestions</button>
                                 </div>`;
 
                     parentForm.appendChild(newform);   
@@ -1740,11 +1731,4 @@ promoApply.addEventListener('click',(e)=>{
         codeApp.style.color = 'red';
 
     }
-});
-
-
-$(".search-toggler").on("click", function(e) {
-    e.preventDefault();
-    $(".search-popup").toggleClass("active");
-    // console.log('fjf')
-});
+})

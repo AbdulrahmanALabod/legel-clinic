@@ -32,9 +32,6 @@ const partCompMoney = document.getElementById('partCompMoney');
 const select = document.querySelector('#specificSizeSelect');
 const parentCountEl = document.getElementById('part-form');
 const formLang =  document.getElementsByClassName('turn-en');
-const header = document.getElementById('header');
-const footer = document.getElementById('footer');
-const backToTop = document.getElementById('backToTop');
 ///////// show layers
 
 let currLayer = 0;
@@ -126,9 +123,6 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
       if (curr == layer.length){
         divButChose.style.display = 'none';
         proBar.style.display = 'none';
-        header.style.display = 'none';
-        footer.style.display = 'none';
-        backToTop.style.display = 'none';
     }  
     //update progress bar 
     update();
@@ -138,7 +132,7 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
 function changeLayer(curr){
     // console.log(curr);
     //hold for validation
-    // if (curr == 1 && !validateForm()) return false;
+    if (curr == 1 && !validateForm()) return false;
     layer[currLayer].style.display = "none";
     currLayer = currLayer + curr;
     // console.log(currLayer);
@@ -146,13 +140,9 @@ function changeLayer(curr){
              wrapLoader.style.display = 'block';
             divButChose.style.display = 'none';
             proBar.style.display = 'none';
-            header.style.display = 'none';
-                footer.style.display = 'none';
-                backToTop.style.display = 'none';
             setTimeout(()=>{
                 form.submit();
                 wrapLoader.style.display = 'none';
-                
             },1500);
             return false;
         }
