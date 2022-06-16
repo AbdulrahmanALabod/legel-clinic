@@ -6,6 +6,14 @@
         <img class="logo-compact" src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="logo-nav">
         <img class="brand-title" src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="logo-nav">
       </a>
+      <div class="nav-control" id="sidebarCollapse">
+        <div class="hamburger">
+            <span class="line"></span> 
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+      </div>
+    </div>
     </div>
     <div class="navbar-content scroll-div ">
       <span id="navBarContent"></span>

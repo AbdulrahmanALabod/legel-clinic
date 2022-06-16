@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-<div class="page-wraper d-flex  min-vh-100 justify-content-center align-items-center">
+<div class="page-wrap d-flex  min-vh-100 justify-content-center align-items-center" id="page-wraper">
    <div class="container-signup">
       <div class="overlay-signup" id="overlay">
          <div class="sign-in box" id="sign-in">
@@ -87,3 +87,12 @@
       </div>
    </div>
 </div>
+<script>
+   jQuery(window).on('load', function() {
+		'use strict';
+		$('#preloader').fadeOut(1000);
+		setTimeout(() => {
+			$('#main-wrapper').addClass('show');
+		}, 1000);
+	});
+</script>

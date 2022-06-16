@@ -86,12 +86,15 @@
 }
 
 #sidebar.active {
-  min-width: 80px;
-  max-width: 80px;
+  min-width: 100px;
+  max-width: 100px;
   text-align: center;
 }
 #sidebar .nav-header{
   padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #sidebar .nav-header .logo-abbr {
   max-width: 52px; 
@@ -101,7 +104,8 @@
        max-width: 40px; 
      } 
 }
-#sidebar .nav-header .logo-compact {
+#sidebar .nav-header .logo-compact ,
+#sidebar .nav-header .logo-abbr {
  display: none; 
 }
 
@@ -135,7 +139,7 @@
 #sidebar .nav-header .brand-logo {
  padding-left: 0;
  padding-right: 0;
- justify-content: center; 
+ /* justify-content: center;  */
 }
 @media only screen and (max-width: 767px) {
   #sidebar  .nav-header .brand-logo {
@@ -169,6 +173,11 @@
 
 #sidebar.active .nav-header .logo-compact {
   display: none; 
+}
+@media screen and (max-width: 574px) {
+  .nav-control{
+    display: none;
+  }
 }
 .hamburger {
   display: inline-block;

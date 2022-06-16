@@ -118,16 +118,21 @@ nav .nav-item .nav-link.active{
 header nav li.nav-item:hover a{
   font-weight: 500;
 }
-header nav li.nav-item:hover a,
-header nav li.nav-item a.active{
-font-weight: 700;
-border-bottom: 3px solid var(--org-color);
+header nav li.nav-item:not(li.dropdown):hover a:not(.pro-spec),
+header nav li.nav-item:not(li.dropdown) a.active:not(.pro-spec){
+  font-weight: 500;
+  border-bottom: 3px solid var(--org-color);
 }
 @media screen and (max-width: 991.5px) {
-header  nav li.nav-item a.active{
-  font-weight: 500;
-  border-bottom: 1px solid var(--org-color);
+  header  nav li.nav-item:not(li.dropdown) a.active:not(.pro-spec),
+  header  nav li.nav-item:not(li.dropdown):hover a:not(.pro-spec){
+    font-weight: 500;
+    border-bottom: 1px solid var(--org-color) ;
+  }
 }
+#ul-menu-profile li.drop-item{
+  color: var(--main-color);
+  font-weight: 300;
 }
 nav .navbar-toggler{
     margin-left: auto;
@@ -381,7 +386,7 @@ nav .navbar-toggler.show span:nth-child(3) {
   display: none ;
 }
 @media screen and (max-width: 500px) {
-  .social-icons{
+  .social-icons:not(.dash){
     display: none !important;
   }
   #header-nav .at-spec-width{
@@ -414,7 +419,7 @@ nav .navbar-toggler.show span:nth-child(3) {
   -webkit-transition: 500ms;
   transition: 500ms;
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding-right: 0 !important;
   padding-left: 0 !important; 
 }
@@ -476,6 +481,11 @@ nav .navbar-toggler.show span:nth-child(3) {
 .social-icons .dropdown-menu .dropdown-item  i{
   padding-right: 0.6rem;
 }
+.dropdown-item.active,.dropdown-item:active {
+  
+  background-color: #e9ecef;
+}
+
 .social-icons .dropdown-menu .dropdown-item:not(:last-child) {
   border-bottom: 1px solid var(--grey-footer) ;
 }

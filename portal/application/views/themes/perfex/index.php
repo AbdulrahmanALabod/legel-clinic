@@ -6,6 +6,7 @@ echo theme_head_view();
 <?php echo theme_sidebar_view(); ?>
   
   <!-- Page Content  -->
+<div class="container">
   <div id="content">
     <?php echo theme_head_page_view();?>
     <div id="wrapper">
@@ -40,6 +41,7 @@ echo theme_head_view();
       </div>
     </div>
   </div>
+</div>
 </div>
 <?php
 echo theme_footer_view();
