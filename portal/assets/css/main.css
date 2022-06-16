@@ -385,7 +385,7 @@ nav .navbar-toggler.show span:nth-child(3) {
   display: none ;
 }
 @media screen and (max-width: 500px) {
-  .social-icons{
+  .social-icons:not(.dash){
     display: none !important;
   }
   #header-nav .at-spec-width{

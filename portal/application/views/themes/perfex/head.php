@@ -28,6 +28,6 @@
         </div>
     </div> -->
 
-	<!-- <div id="main-wrapper"> -->
-	<div>
+	<div id="main-wrapper">
+	<!-- <div> -->
 

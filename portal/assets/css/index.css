@@ -340,6 +340,14 @@
     display: flex;
     flex: 1 1 auto;
 }
+.mac .card{
+    width: 100%;
+    height: auto;
+}
+.practice .main-box .col-6.mac .card{
+    width: 100%;
+    height: auto;
+}
 .practice .main-box .col.mac .card{
     width: 100%;
     height: auto;
