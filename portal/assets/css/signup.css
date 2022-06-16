@@ -4,7 +4,7 @@
     --form-991-width: 450px;
     --form-991-height: 950px;
   }
-  .page-wraper {
+  .page-wrap {
    transition: 0.5s; 
    display: flex;
    min-height: 100vh;

@@ -124,7 +124,8 @@ header nav li.nav-item:not(li.dropdown) a.active:not(.pro-spec){
   border-bottom: 3px solid var(--org-color);
 }
 @media screen and (max-width: 991.5px) {
-  header  nav li.nav-item:not(li.dropdown) a.active:not(.pro-spec){
+  header  nav li.nav-item:not(li.dropdown) a.active:not(.pro-spec),
+  header  nav li.nav-item:not(li.dropdown):hover a:not(.pro-spec){
     font-weight: 500;
     border-bottom: 1px solid var(--org-color) ;
   }
