@@ -5,19 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Legal Clinic</title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/fontawesome-free-6.1.1-web/css/all.min.css')?>">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/all.min.css" />
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel="stylesheet" href="css/rome.css"> -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/index.css">
 </head>
 
 <body>
-    <div class="container pro-bar" id="pro-bar">
+    <!-- header -->
+        <header id="header"> 
+                <div class="container">
+                  <nav class="navbar navbar-expand-lg nav-style bg-style  justify-content-between navbar-text-light pt-4">
+                    <div class="col-auto"> 
+                        <!-- Logo --> 
+                        <a class="logo pt-4" href="<?php echo site_url('')?>" title="legal-clinic-logo">
+                          <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt=""></a>  
+                        <!-- Logo End --> 
+                      </div>
+                    <div class="social-icons form-icon col-auto ">
+                      <div class=" social-icons-light mb-0 d-flex">
+                        
+                          <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                          <div class="dropdown" >
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                              <img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt="">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
+                              <li><a class="dropdown-item" href="<?php echo base_url('payment/index/form'); ?>"><i class="fa-solid fa-globe"></i>Turn-Ar</a></li>
+
+                      <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                      </ul>
+                          </div>
+                    <?php } else { ?>
+                      <div class="signin-out">
+                            <a class="btn btn-signIn"  href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a>
+                          </div>
+                      <?php } ?>
+                        
+                        </div>
+                    </div>
+                </nav>
+                </div>
+        </header> 
+    <div class="container pro-bar mt-5" id="pro-bar">
         <!-- operations progress bar -->
         <div class="progress-container">
             <div class="progress" id="progress"></div>
-            <div class="circle active"><span>1</span></div>
+            <div class="circle active2"><span>1</span></div>
             <div class="circle"><span>2</span></div>
             <div class="circle"><span>3</span></div>
             <div class="circle"><span>4</span></div>
@@ -42,6 +79,17 @@
         </div>
     </div>
     <section>
+        <!-- btn-languages -->
+        <div class="turn-en">
+            <div class="cir-4">
+                <!-- <button type="button" onclick="location.href ='legal-form-ar/legal-form/index.php';"></button> -->
+
+                <a href="<?php echo base_url('payment/index/form'); ?>"></a>
+            </div>
+            <div class="turn-en-mob" style="display:none;">
+                <input type="checkbox" class="check" onclick="location.href ='legal-form-ar/legal-form/index.php';" />
+            </div>
+        </div>
         <form action="<?php echo site_url('payment/Cashier_Create'); ?>" id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
             <input type="hidden" name="userid" id="userid" value="">
             <div class="main-content" id="main">
@@ -69,10 +117,10 @@
                                     </div>
                                     <div class="ml-3">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            <h2>Limited Liability Company (LLC)</h2>
-                                            <p>LLC is the least complicated and the most recommended to Start-ups.<br>
-                                                It is a company with a minimum of (2) shareholders whether Egyptians or foreigners, <br>
-                                                and whether natural persons or Juridical persons (companies).<br>
+                                            <h3>Limited Liability Company (LLC)</h3>
+                                            <p>LLC is the least complicated and the most recommended to Start-ups.
+                                                It is a company with a minimum of (2) shareholders whether Egyptians or foreigners,
+                                                and whether natural persons or Juridical persons (companies).
                                                 The liability of the shareholders is limited to their shares. There is no required minimum capital for LLC.
                                             </p>
                                         </label>
@@ -85,14 +133,14 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios2" value="JointStockIncorporation" onclick="checkboxSelection()" required></div>
                                     <div class="ml-3">
                                         <label class="form-check-label" for="exampleRadios2">
-                                            <h2>Egyptian Joint Stock Company (JSC)</h2>
+                                            <h3>Egyptian Joint Stock Company (JSC)</h3>
                                             <p>JSC is a company with a minimum of (3) shareholders
-                                                whether Egyptians or foreigners, <br>and whether natural persons
-                                                or juridical persons (companies).<br>The shareholders’ liability is limited to their shares in the company’s capital.<br>
-                                                The required minimum capital is 250 thousand Egyptian Pounds.<br>
-                                                10% shall be paid to incorporate, 25% shall be paid within the first (3) months after incorporation, <br>
-                                                and 100% shall be paid within (5) years. All amounts must be deposited at one of the commercial banks.<br>
-                                                JSC is managed though a Board of Directors, <br>which must be consisted of a minimum of 3 members regardless of their nationalities.</p>
+                                                whether Egyptians or foreigners,and whether natural persons
+                                                or juridical persons (companies).The shareholders’ liability is limited to their shares in the company’s capital.
+                                                The required minimum capital is 250 thousand Egyptian Pounds.
+                                                10% shall be paid to incorporate, 25% shall be paid within the first (3) months after incorporation, 
+                                                and 100% shall be paid within (5) years. All amounts must be deposited at one of the commercial banks.
+                                                JSC is managed though a Board of Directors,which must be consisted of a minimum of 3 members regardless of their nationalities.</p>
                                         </label>
                                     </div>
                                     <div class="ml-8">
@@ -103,8 +151,8 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios3" value="OPCrequirements" onclick="checkboxSelection()" required></div>
                                     <div class="ml-3">
                                         <label class="form-check-label" for="exampleRadios3">
-                                            <h2>One Person Company</h2>
-                                            <p>It is a company with only one owner, whether Egyptians or foreigners, <br>
+                                            <h3>One Person Company</h3>
+                                            <p>It is a company with only one owner, whether Egyptians or foreigners,
                                                 and whether natural persons or juridical persons (companies).</p>
                                         </label>
                                     </div>
@@ -116,8 +164,8 @@
                             </div>
                         </div>
                         <div id="choice-people" style="display: none;">
-                            <div class="pref mt-2 mb-2 text-center">
-                                <p>Partnerships do not enjoy a separate legal entity from their owner.<br>
+                            <div class="pref text-center">
+                                <p>Partnerships do not enjoy a separate legal entity from their owner.
                                     Each partner enjoys an unlimited liability along with a personal liability
                                     in all debts incurred by the partnership.
                                     A partner cannot transfer his share without the prior consent of the other partners.</p>
@@ -127,9 +175,9 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios4" value="SoleEntity" onclick="checkboxSelection()" required></div>
                                     <div class="ml-3">
                                         <label class="form-check-label" for="exampleRadios4">
-                                            <h2>Sole Proprietorship</h2>
-                                            <p>It is owned by one person “natural” and it is named after its owner.<br>
-                                                It is not possible for other partners to join the sole proprietorship.<br>
+                                            <h3>Sole Proprietorship</h3>
+                                            <p>It is owned by one person “natural” and it is named after its owner.
+                                                It is not possible for other partners to join the sole proprietorship.
                                                 The owner is responsible of managing the project in full and the liability is unlimited.<br>
                                                 <span style="color: #041851;">Note: Sole Proprietorship cannot be transferred to any other type of companies.</span>
                                             </p>
@@ -143,10 +191,10 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios5" value="Generalpartnership" onclick="checkboxSelection()" required></div>
                                     <div class="ml-3">
                                         <label class="form-check-label" for="exampleRadios5">
-                                            <h2>General Partnership</h2>
-                                            <p>It consists of a minimum of two partners, they enjoy the capacity of merchant.<br>
-                                                It is named after its partners followed by the word partners or CO <br>
-                                                and its name shall be named after a real partner’s name in the partnership.<br>
+                                            <h3>General Partnership</h3>
+                                            <p>It consists of a minimum of two partners, they enjoy the capacity of merchant.
+                                                It is named after its partners followed by the word partners or CO 
+                                                and its name shall be named after a real partner’s name in the partnership.
                                                 The partners’ liability is unlimited and joint.
                                             </p>
                                         </label>
@@ -159,15 +207,15 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios6" value="LimitedPartnership" onclick="checkboxSelection()" required></div>
                                     <div class="ml-3">
                                         <label class="form-check-label" for="exampleRadios6">
-                                            <h2>Limited Partnership</h2>
-                                            <p>It consists of a minimum of (2) partners.<br>
-                                                The partners are divided into (2) types:<br>
-                                                1- General Partner (Enjoys the capacity of a merchant)<br>
-                                                The partnership is name after one or more of its general partners,<br>
-                                                followed by the word “Partners” or “CO” and the name must be real. <br>
-                                                General Partners have unlimited and personal liability.<br>
-                                                2- Limited Partner<br>
-                                                Limited Partners do not have the right to manage the partnership. <br>Their liability is limited to their shares in the partnership capital.</p>
+                                            <h3>Limited Partnership</h3>
+                                            <p>It consists of a minimum of (2) partners.
+                                                The partners are divided into (2) types:
+                                                1- General Partner (Enjoys the capacity of a merchant)
+                                                The partnership is name after one or more of its general partners,
+                                                followed by the word “Partners” or “CO” and the name must be real.
+                                                General Partners have unlimited and personal liability.
+                                                2- Limited Partner
+                                                Limited Partners do not have the right to manage the partnership.Their liability is limited to their shares in the partnership capital.</p>
                                         </label>
                                     </div>
                                     <div class="invalid-feedback">You must Choose one company</div>
@@ -182,7 +230,7 @@
                     <!-- layer--2 chose name -->
                     <div class="layer">
                         <div class="comp-name pt-4">
-                            <h3>Suggest a name for your company</h3>
+                            <h4>Suggest a name for your company</h4>
                             <div id="form-in">
                                 <div class="row g-3 justify-content-evenly pt-3" id="parent-el">
                                     <div class="col-md-4">
@@ -201,7 +249,7 @@
                             </div>
                         </div>
                         <div class="comp-info pt-4">
-                            <h3>Basic Data</h3>
+                            <h4>Basic Data</h4>
                             <div class="form-in">
                                 <div class="row g-3 justify-content-start pt-3">
                                     <div class="col-md-4">
@@ -234,7 +282,7 @@
                     <!-- layer--3 parts info -->
                     <div class="layer">
                         <div class="count">
-                            <div class="col-sm-3">
+                            <div class="col-lg-3 col-sm-4">
                                 <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                                 <select class="form-select" id="specificSizeSelect">
                                     <option disabled selected class="OPT-padding" id="allCompOption">Number of Shareholders</option>
@@ -385,7 +433,7 @@
                                                         <path d="M0.0093888 25.7734C2.21243 25.7734 4.3712 25.7734 6.5355 25.7734C6.86761 29.8672 8.78836 32.7953 12.7461 33.8885C16.8533 35.0263 19.8257 33.1188 22.0122 29.7445C22.455 30.8711 22.8314 32.0312 23.3628 33.1132C23.8997 34.2064 24.5972 35.2159 25.2392 36.2923C22.8203 39.254 16.5987 42.4163 10.15 40.1352C2.94309 37.5863 -0.195417 30.8599 0.0093888 25.7734Z" fill="#000086" />
                                                     </svg>
                                                     <span class="recomend">
-                                                        <img src="images\Group 1278.svg" alt="" srcset="">
+                                                        <img src="<?php echo base_url(); ?>/images/Group 1278.svg" alt="" srcset="">
                                                     </span>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
@@ -464,19 +512,94 @@
                 </div>
             </div>
         </form>
-        <!-- btn-languages -->
-        <div class="turn-en">
-            <div class="cir-4">
-                <!-- <button type="button" onclick="location.href ='legal-form-ar/legal-form/index.php';"></button> -->
-
-                <a href="<?php echo base_url('payment/index/form'); ?>"></a>
-            </div>
-            <div class="turn-en-mob" style="display:none;">
-                <input type="checkbox" class="check" onclick="location.href ='legal-form-ar/legal-form/index.php';" />
-            </div>
-        </div>
+        
     </section>
+        <!-- footer -->
+        <footer class="site-footer mt-5" id="footer">
+          <div class="container">
+            <div class="row pt-5 pb-5 justify-content-between">
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 spec-logo">
+                <div class="footer-widget">
+                  <a href="<?php echo site_url('')?>" class="footer-widget__Logo">
+                    <img src="<?php echo base_url('assets/images/main/logofooter.svg')?>" alt="logofooter"/>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5 spec-hide">
+                <h3 class="footer-widget__title">Company</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li>
+                    <a href="<?php echo site_url('index/about')?>">About Us</a>
+                  </li>
+                  <li>
+                    <a href="">FAQs</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/price')?>">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/contact')?>">Contact us</a>
+                  </li>
+                  <li>
+                    <a href="">Events</a>
+                  </li>
+                </ul>
+              </div>
 
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-5">
+                <h3 class="footer-widget__title">Get In Touch</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li class="">
+                    <!-- <i class="fa-solid fa-phone-volume"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg')?>" alt="carbon_phone"></i>
+                    <a href="tel:666-888-0000">01000358970</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-location-dot"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
+                    <a href="<?php echo site_url('index/contact')?>">Cairo, EGYPT</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-envelope"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg')?>" alt="carbon_email"></i>
+                    <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
+                <h3 class="footer-widget__title">Follow us</h3>
+                <div class="mc-form__response"></div>
+                  <div class="footer__social pt-1">
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
+                  </div>
+                  <p class="work-time">Work Time<br>
+                    Sun- Thu: 9:00 - 18:00<br>
+                    Closed on Weekends</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      <!-- search pop up -->
+      <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <div class="search-popup__content">
+        <form action="#">
+        <label for="search" class="sr-only">search here</label>
+        <input type="text" id="autocompleteinput" placeholder="Search Here...">
+        <button type="submit" aria-label="search submit" class="thm-btn">
+        <i class="fa fa-search"></i>
+        </button>
+        </form>
+        </div>
+      </div>
+      <!-- back top  -->
+      <a id="backToTop" href="#" data-target="html" class="scroll-to-target scroll-to-top" style="display: inline;">
+        <i class="fa fa-angle-up"></i>
+      </a>
     <script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
