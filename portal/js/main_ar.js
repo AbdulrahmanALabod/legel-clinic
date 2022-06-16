@@ -138,7 +138,7 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
 function changeLayer(curr){
     // console.log(curr);
     //hold for validation
-    if (curr == 1 && !validateForm()) return false;
+    // if (curr == 1 && !validateForm()) return false;
     layer[currLayer].style.display = "none";
     currLayer = currLayer + curr;
     // console.log(currLayer);
@@ -146,12 +146,13 @@ function changeLayer(curr){
              wrapLoader.style.display = 'block';
             divButChose.style.display = 'none';
             proBar.style.display = 'none';
+            header.style.display = 'none';
+                footer.style.display = 'none';
+                backToTop.style.display = 'none';
             setTimeout(()=>{
                 form.submit();
                 wrapLoader.style.display = 'none';
-                header.style.display = 'none';
-                footer.style.display = 'none';
-                backToTop.style.display = 'none';
+                
             },1500);
             return false;
         }

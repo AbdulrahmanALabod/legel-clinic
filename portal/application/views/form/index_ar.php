@@ -5,14 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Legal Clinic</title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/fontawesome-free-6.1.1-web/css/all.min.css')?>">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/all.min.css" />
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/index-ar.css">
 </head>
 
 <body>
-    <div class="container pro-bar" id="pro-bar">
+    <!-- header -->
+    <header id="header"> 
+                <div class="container">
+                  <nav class="navbar navbar-expand-lg nav-style bg-style  justify-content-between navbar-text-light pt-4">
+                    <div class="col-auto"> 
+                        <!-- Logo --> 
+                        <a class="logo pt-4" href="<?php echo site_url('')?>" title="legal-clinic-logo">
+                          <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt=""></a>  
+                        <!-- Logo End --> 
+                      </div>
+                    <div class="social-icons form-icon col-auto ">
+                      <div class=" social-icons-light mb-0 d-flex">
+                        
+                          <?php if (isset($_SESSION['client_logged_in'])) { ?>
+                          <div class="dropdown" >
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                              <img src="<?php echo base_url('assets/images/main/profile.svg')?>" alt="">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
+                              <li><a class="dropdown-item" href="<?php echo base_url('payment/index'); ?>"><i class="fa-solid fa-globe"></i>Turn-En</a></li>
+
+                      <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
+                      </ul>
+                          </div>
+                    <?php } else { ?>
+                      <div class="signin-out">
+                            <a class="btn btn-signIn"  href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a>
+                          </div>
+                      <?php } ?>
+                        
+                        </div>
+                    </div>
+                    </nav>
+                </div>
+        </header> 
+    <div class="container pro-bar mt-5" id="pro-bar">
         <div class="progress-container" dir="rtl">
             <div class="progress" id="progress"></div>
             <div class="circle active"><span>1</span></div>
@@ -40,6 +78,12 @@
         </div>
     </div>
     <section>
+        <!-- btn-languages -->
+        <div class="turn-en">
+            <div class="cir-4">
+            <a href="<?php echo base_url('payment/index'); ?>"></a>
+            </div>
+        </div>
         <form action="<?php echo site_url('payment/Cashier_Create'); ?>" id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
             <input type="hidden" name="userid" id="userid" value="">
             <div class="main-content" id="main">
@@ -68,11 +112,11 @@
                                     </div>
                                     <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            <h2>شركة ذات مسئولية محدودة</h2>
+                                            <h3>شركة ذات مسئولية محدودة</h3>
                                             <p>الشركة ذات المسؤولیة المحدودة ھي أقل الشركات تعقیدًا
-                                                .والاكثر توصیة بھا للشركات الناشئة<br>
+                                                .والاكثر توصیة بھا للشركات الناشئة
                                                 ھي شركة بھا مساھمان اثنان على الاقل سواء كانوا مصریین أو
-                                                أجانب، طبیعیین أو اعتباریین (شركات). <br>تقتصر مسؤولیة
+                                                أجانب، طبیعیین أو اعتباریین (شركات). تقتصر مسؤولیة
                                                 المساھمین على قیمة حصصھم. لا یوجد حد أدنى لرأس المال
                                                 المطلوب لشركة ذات مسؤولیة محدودة</p>
                                         </label>
@@ -85,13 +129,13 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios2" value="JointStockIncorporation" onclick="checkboxSelection()" required></div>
                                     <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            <h2>شركة مساهمة مصري</h2>
+                                            <h3>شركة مساهمة مصري</h3>
                                             <p>شركة المساھمة ھي شركة بھا ثلاثه مساھمین على الاقل سواء
                                                 كانوا مصریین أو أجانب، طبیعیین أو اعتباریین (شركات).
-                                                <br>تقتصر مسؤولیة المساھمین على قیمة أسھمھم
-                                                الحد األدنى لرأس المال ھو ٢٥٠ ألف جنيه مصري.<br> خلال
+                                               تقتصر مسؤولیة المساھمین على قیمة أسھمھم
+                                                الحد األدنى لرأس المال ھو ٢٥٠ ألف جنيه مصري. خلال
                                                 مرحلة التأسیس، یتم دفع ١٠٪ مع زیادة تحدث في غضون ثلاثه
-                                                اشهر. یتم إیداع المبلغ المتبقي في غضون خمس سنوات<br>یجب أن تدار من قبل مجلس إدارة، والذي یجب أن یتألف من
+                                                اشهر. یتم إیداع المبلغ المتبقي في غضون خمس سنوات یجب أن تدار من قبل مجلس إدارة، والذي یجب أن یتألف من
                                                 ثلاثه (٣) أعضاء على الاقل من أي جنسیة
                                             </p>
                                         </label>
@@ -104,7 +148,7 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios3" value="OPCrequirements" onclick="checkboxSelection()" required></div>
                                     <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            <h2>شركة شخص واحد ذات مسئولية محدودة</h2>
+                                            <h3>شركة شخص واحد ذات مسئولية محدودة</h3>
                                             <p>شركة الشخص الواحد ھي في الاساس شركة ذات مؤسس
                                                 منفرد، سواء كان مصریا أو أجنبیًا، شخصا طبیعیًا أو اعتباري</p>
                                         </label>
@@ -129,10 +173,10 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios4" value="SoleEntity" onclick="checkboxSelection()" required></div>
                                     <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios4">
-                                            <h2>المنشاة الفردية</h2>
-                                            <p>یمتلك المنشأة الفردیة شخص واحد "طبیعي" وتسمى على اسم صاحبھا<br> ولا
+                                            <h3>المنشاة الفردية</h3>
+                                            <p>یمتلك المنشأة الفردیة شخص واحد "طبیعي" وتسمى على اسم صاحبھا ولا
                                                 یجوز ان یدخل في المنشأة الفردیة أي شركاء إضافیین باستثناء صاحب
-                                                المنشأة <br>والذي یكون مسئول عن إدارة المنشأة بشكل كامل وتكون مسئولیته
+                                                المنشأة والذي یكون مسئول عن إدارة المنشأة بشكل كامل وتكون مسئولیته
                                                 تجاه المنشأة مسئولیة غیر محدودة<br>
                                                 <span style="color: #041851;">ملحوظة: لا یجوز تحویل المنشأة الفردیة الى أي نوع اخر من الشركات</span>
                                             </p>
@@ -146,11 +190,11 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios5" value="Generalpartnership" onclick="checkboxSelection()" required></div>
                                     <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            <h2>شركة التضامن</h2>
+                                            <h3>شركة التضامن</h3>
                                             <p>ھي أحد شركات الاشخاص وتتكون من شخصین أو أكثر
-                                                (شركاء) ویعاملون معاملة التاجر <br>
-                                                ویتم تسمیتھا باسم شركائھا،وتليها كلمه شركاء او CO ويجب ان يكون اسمها باسم شريك حقيقى<br>
-                                                وحال فى الشركه كما تكون المسؤوليه على الشركاء مسؤوليه شخصيه وليست فى حدود<br>
+                                                (شركاء) ویعاملون معاملة التاجر 
+                                                ویتم تسمیتھا باسم شركائھا،وتليها كلمه شركاء او CO ويجب ان يكون اسمها باسم شريك حقيقى
+                                                وحال فى الشركه كما تكون المسؤوليه على الشركاء مسؤوليه شخصيه وليست فى حدود
                                                 مساهمه كل شريك فى راس مال الشركه مثلما هو الحال فى شركات الاموال
                                             </p>
                                         </label>
@@ -163,16 +207,16 @@
                                     <div><input class="form-check-input radioComp" type="radio" name="company_type" id="exampleRadios6" value="LimitedPartnership" onclick="checkboxSelection()" required></div>
                                     <div class="mr-3">
                                         <label class="form-check-label" for="exampleRadios1">
-                                            <h2>شركة التوصية البسيطة</h2>
-                                            <p>ھي أحد شركات الاشخاص وتتكون من شخصین أو أكثر (شركاء)<br>
+                                            <h3>شركة التوصية البسيطة</h3>
+                                            <p>ھي أحد شركات الاشخاص وتتكون من شخصین أو أكثر (شركاء)
                                                 وینقسم الشركاء في ھذا النوع من الشركات الى نوعین "شركاء
-                                                متضامنین" ویعاملون معاملة التاجر <br>
+                                                متضامنین" ویعاملون معاملة التاجر 
                                                 ویتم تسمیتھا باسم احد او كل الشركاء المتضمنين،وتليها كلمه شركاء او CO ويجب ان يكون اسمها
-                                                <br> باسم شريك حقيقى وحال فى الشركه كما تكون المسؤوليه على الشركاء مسؤوليه شخصيه
-                                                <br> وليست محدوده على حسب مساهمه كل شريك فى رأس مال الشركه وتتضمن نوع اخر من الشركاء
-                                                <br>وهم " الموصيين" والشريك الموصى لا يكون للشركاء الموصيين الحق فى اداره الشركه ، ولكن
-                                                <br>تقتصر مسؤوليه هؤلاء الشركاء على قدر مساهمتهم فى راس مال الشركه ولذلك يتمتع الشريك
-                                                <br> الموصى بمسؤوليه محدوده مثلما هو الحال فى شركات الاموال.
+                                                 باسم شريك حقيقى وحال فى الشركه كما تكون المسؤوليه على الشركاء مسؤوليه شخصيه
+                                                 وليست محدوده على حسب مساهمه كل شريك فى رأس مال الشركه وتتضمن نوع اخر من الشركاء
+                                                وهم " الموصيين" والشريك الموصى لا يكون للشركاء الموصيين الحق فى اداره الشركه ، ولكن
+                                                تقتصر مسؤوليه هؤلاء الشركاء على قدر مساهمتهم فى راس مال الشركه ولذلك يتمتع الشريك
+                                                 الموصى بمسؤوليه محدوده مثلما هو الحال فى شركات الاموال.
                                             </p>
                                         </label>
                                     </div>
@@ -187,7 +231,7 @@
                     <!-- layer--2 chose name -->
                     <div class="layer">
                         <div class="comp-name pt-4">
-                            <h3>اقترح اسم لشركتك</h3>
+                            <h4>اقترح اسم لشركتك</h4>
                             <div id="form-in" dir="rtl">
                                 <div class="row g-3 justify-content-evenly pt-3" id="parent-el">
                                     <div class="col-md-4">
@@ -206,7 +250,7 @@
                             </div>
                         </div>
                         <div class="comp-info pt-4">
-                            <h3>معلومات اساسيه</h3>
+                            <h4>معلومات اساسيه</h4>
                             <div class="form-in" dir="rtl">
                                 <div class="row g-3 justify-content-start pt-3">
                                     <div class="col-md-4">
@@ -239,7 +283,7 @@
                     <!-- layer--3 parts info -->
                     <div class="layer">
                         <div class="count">
-                            <div class="col-sm-3" dir="rtl">
+                            <div class="col-lg-3 col-sm-4" dir="rtl">
                                 <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                                 <select class="form-select" id="specificSizeSelect">
                                     <option disabled selected class="OPT-padding" id="allCompOption">اختر عدد المديرين</option>
@@ -312,7 +356,7 @@
                                             <input type="radio" name="plan_id" value="2" class="card-input-element hidden" id="radio_1" name="radio" />
                                             <div class="card h-100">
                                                 <div class="card-header d-flex justify-content-center">
-                                                    <h2>Online Incorporation</h2>
+                                                    <h2 class="text-center">Online Incorporation</h2>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
                                                     <h2><span id="oldPrice">5000</span><span id='price'></span><small>LE</small></h2>
@@ -470,17 +514,93 @@
                 </div>
             </div>
         </form>
-        <!-- btn-languages -->
-        <div class="turn-en">
-            <div class="cir-4">
-            <a href="<?php echo base_url('payment/index'); ?>"></a>
-            </div>
-            <div class="turn-en-mob" style="display:none;">
-                <input type="checkbox" class="check" onclick="location.href ='../../index.php';" />
-            </div>
-        </div>
     </section>
-    <img id="loadingimage" src="images/loading.gif" style="display:none;" />
+    <!-- footer -->
+    <footer class="site-footer mt-5  text-start" id="footer">
+          <div class="container">
+            <div class="row pt-5 pb-5 justify-content-between">
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 spec-logo">
+                <div class="footer-widget">
+                  <a href="<?php echo site_url('')?>" class="footer-widget__Logo">
+                    <img src="<?php echo base_url('assets/images/main/logofooter.svg')?>" alt="logofooter"/>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5 spec-hide">
+                <h3 class="footer-widget__title">Company</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li>
+                    <a href="<?php echo site_url('index/about')?>">About Us</a>
+                  </li>
+                  <li>
+                    <a href="">FAQs</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/price')?>">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/contact')?>">Contact us</a>
+                  </li>
+                  <li>
+                    <a href="">Events</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3 pt-5">
+                <h3 class="footer-widget__title">Get In Touch</h3>
+                <ul class="list-unstyled footer-widget__contact">
+                  <li class="">
+                    <!-- <i class="fa-solid fa-phone-volume"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_phone.svg')?>" alt="carbon_phone"></i>
+                    <a href="tel:666-888-0000">01000358970</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-location-dot"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg')?>" alt="akar-icons_location"></i>
+                    <a href="<?php echo site_url('index/contact')?>">Cairo, EGYPT</a>
+                  </li>
+                  <li  class="">
+                    <!-- <i class="fa-solid fa-envelope"></i> -->
+                    <i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg')?>" alt="carbon_email"></i>
+                    <a href="mailto:info@thelegalclinics.com">info@thelegalclinics.com</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
+                <h3 class="footer-widget__title">Follow us</h3>
+                <div class="mc-form__response"></div>
+                  <div class="footer__social pt-1">
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
+                  </div>
+                  <p class="work-time">Work Time<br>
+                    Sun- Thu: 9:00 - 18:00<br>
+                    Closed on Weekends</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      <!-- search pop up -->
+      <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <div class="search-popup__content">
+        <form action="#">
+        <label for="search" class="sr-only">search here</label>
+        <input type="text" id="autocompleteinput" placeholder="Search Here...">
+        <button type="submit" aria-label="search submit" class="thm-btn">
+        <i class="fa fa-search"></i>
+        </button>
+        </form>
+        </div>
+      </div>
+      <!-- back top  -->
+      <a id="backToTop" href="#" data-target="html" class="scroll-to-target scroll-to-top" style="display: inline;">
+        <i class="fa fa-angle-up"></i>
+      </a>
     <div id="area" style="display:none;"></div>
     <script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>js/popper.min.js"></script>

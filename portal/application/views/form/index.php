@@ -33,7 +33,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
                               <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
-                              <li><a class="dropdown-item" href="<?php echo site_url('clients.profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
+                              <li><a class="dropdown-item" href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
                               <li><a class="dropdown-item" href="<?php echo base_url('payment/index/form'); ?>"><i class="fa-solid fa-globe"></i>Turn-Ar</a></li>
 
                       <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
