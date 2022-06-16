@@ -32,6 +32,9 @@ const partCompMoney = document.getElementById('partCompMoney');
 const select = document.querySelector('#specificSizeSelect');
 const parentCountEl = document.getElementById('part-form');
 const formLang =  document.getElementsByClassName('turn-en');
+const header = document.getElementById('header');
+const footer = document.getElementById('footer');
+const backToTop = document.getElementById('backToTop');
 ///////// show layers
 
 let currLayer = 0;
@@ -123,6 +126,9 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
       if (curr == layer.length){
         divButChose.style.display = 'none';
         proBar.style.display = 'none';
+        header.style.display = 'none';
+        footer.style.display = 'none';
+        backToTop.style.display = 'none';
     }  
     //update progress bar 
     update();
@@ -143,6 +149,9 @@ function changeLayer(curr){
             setTimeout(()=>{
                 form.submit();
                 wrapLoader.style.display = 'none';
+                header.style.display = 'none';
+                footer.style.display = 'none';
+                backToTop.style.display = 'none';
             },1500);
             return false;
         }
