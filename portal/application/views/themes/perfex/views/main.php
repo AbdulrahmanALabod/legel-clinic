@@ -134,7 +134,7 @@
                   <p>SPECIALIZED IN STARTUPS & <br>ENTREPRENEURSHIP IN THE MENA <br>REGION</p>
                   <div class="row d-flex pt-3 justify-content-between">
                     <div class="col-12 col-sm-6">
-                      <button <?php echo isset($_SESSION['client_logged_in']) ? 'disabled' : ''?>  class="btn btn-sub" onclick="location.href='<?php echo base_url('authentication/login');?>';" type="button">Subscribe</button>
+                      <button <?php echo isset($_SESSION['client_logged_in']) ? 'hidden' : ''?>  class="btn btn-sub" onclick="location.href='<?php echo base_url('authentication/login');?>';" type="button">Subscribe</button>
                     </div>
                     <div class="col-12 col-sm-6">
                       <button onclick="location.href='<?php echo base_url('pickups/ask');?>';" class="btn btn-ask" type="button">Ask Lawyer</button>
