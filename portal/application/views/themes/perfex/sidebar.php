@@ -109,13 +109,19 @@
             <li class="inner-list">
               <a href="<?php echo site_url('clients/open_ticket'); ?>" class="">
               <img src="<?php echo base_url('assets/images/main/requestservice.svg"') ?>"alt="TICKET">
-                <span>TICKET</span>
+                <span>Open Ticket</span>
               </a>
             </li>
             <li class="inner-list">
               <a href="<?php echo base_url('surveys/survey/3/de5fbbfb2cf044b6b092d3638aa86dd5'); ?>" class="">
               <img src="<?php echo base_url('assets/images/main/companyprofile.svg"') ?>" alt="Send Documents">
                 <span> Send Documents</span>
+              </a>
+            </li>
+            <li class="inner-list">
+              <a href="<?php echo base_url('surveys/survey/4/65035651fac36c08126dae358f71f335'); ?>" class="">
+              <img src="<?php echo base_url('assets/images/main/companyprofile.svg"') ?>" alt="Receive Documents">
+                <span> Receive Documents</span>
               </a>
             </li>
           </ul>
