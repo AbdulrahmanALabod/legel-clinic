@@ -14,7 +14,6 @@
         </div>
       </div>
     </div>
-    </div>
     <div class="navbar-content scroll-div ">
       <span id="navBarContent"></span>
       <ul class="nav pcoded-inner-navbar">
@@ -150,4 +149,4 @@
     <span class="linesdashboard">
       <img src="<?php echo base_url('assets/images/main/linesdashboard.svg"') ?>"alt="linesdashboard">
     </span>
-  </nav>
+</nav>
