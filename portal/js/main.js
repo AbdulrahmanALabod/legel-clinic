@@ -46,23 +46,27 @@ function showLayer(curr){
     layer[curr].style.display = 'block';
     // console.log(layer.length - 1)
     if(curr == 0){
-        // divButChose.style.display = 'none';
-        // proBar.style.display = 'none';
-        prev.setAttribute('disabled','disabled');
-        [...formLang].forEach(e=>{
-            e.style.display = 'block';
-        })
-    } else{
-        // divButChose.style.display = 'block';
-        // proBar.style.display = 'block';
-        mangTypes.innerHTML = "Management data";
-        prev.removeAttribute('disabled');
+        divButChose.style.display = 'none';
+        proBar.style.display = 'none';
+        // prev.setAttribute('disabled','disabled');
         [...formLang].forEach(e=>{
             e.style.display = 'none';
-        })
+        });
+    } else{
+        divButChose.style.display = 'block';
+        proBar.style.display = 'block';
+        mangTypes.innerHTML = "Management data";
+        // prev.removeAttribute('disabled');
     }
-    if(curr == 0){
+    if(curr == 1){
+        [...formLang].forEach(e=>{
+            e.style.display = 'block';
+        });
         parentCountEl.innerHTML = '';
+    } else{
+        [...formLang].forEach(e=>{
+            e.style.display = 'none';
+        });
     }
     if(curr == 1 && checkbox2.checked){
         document.getElementById('valueCor').innerHTML = 'Share value';
@@ -578,7 +582,7 @@ function setInputFilter(textbox, inputFilter) {
   
   function update(){
     circles.forEach((circles , cirIndx)=>{
-        if(cirIndx <= currLayer){
+        if(cirIndx < currLayer){
             circles.classList.add('active2');
         } else{
             circles.classList.remove('active2')

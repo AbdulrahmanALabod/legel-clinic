@@ -83,16 +83,25 @@
         <div class="turn-en">
             <div class="cir-4">
                 <!-- <button type="button" onclick="location.href ='legal-form-ar/legal-form/index.php';"></button> -->
-
                 <a href="<?php echo base_url('payment/index/form'); ?>"></a>
-            </div>
-            <div class="turn-en-mob" style="display:none;">
-                <input type="checkbox" class="check" onclick="location.href ='legal-form-ar/legal-form/index.php';" />
             </div>
         </div>
         <form action="<?php echo site_url('payment/Cashier_Create'); ?>" id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
             <input type="hidden" name="userid" id="userid" value="">
             <div class="main-content" id="main">
+                <!-- layer--0 welcome -->
+                    <div class="layer  mt-5">
+                        <div class="welcome-img d-flex">
+                            <div class="text-welcome d-flex  align-items-center align-self-end p-5">
+                                <div class="col-6 p-5 ">
+                                    <h1 id="verticalHeadingTextSection" class="rlH1TextExpanded">We make it easy to incorporate your business</h1>
+                                    <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn btn-start" id="btnSubmit" onclick="changeLayer(1)">Get Started </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="container">
                     <!-- layer--1 money & people -->
                     <div class="layer">
