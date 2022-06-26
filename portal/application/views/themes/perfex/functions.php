@@ -74,8 +74,10 @@ function theme_assets()
         'reset-css',
         base_url($CI->app_css->core_file('assets/css', 'reset.css')) . '?v=' . $CI->app_css->core_version()
     );
-
-    $CI->app_css->theme('bootstrap-css', 'assets/plugins/bootstrap/css/bootstrap.min.css');
+    $uriSegments = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+    if(!(end($uriSegments) == 'login')){
+        $CI->app_css->theme('bootstrap-css', 'assets/plugins/bootstrap/css/bootstrap.min.css'); 
+    }
     $CI->app_css->theme('roboto-css', 'assets/plugins/roboto/roboto.css');
 
     if (is_rtl()) {
