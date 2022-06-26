@@ -714,10 +714,12 @@
                 <h3 class="footer-widget__title">Follow us</h3>
                 <div class="mc-form__response"></div>
                   <div class="footer__social pt-1">
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
-                    <a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
+                  <div class="footer__social pt-1">
+                    <a href="https://www.facebook.com/LegalClinic.Eg"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                    <a href="https://www.instagram.com/legalclinic.eg/"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                    <a href="https://twitter.com/TheLegalClinic2"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                    <a href="https://www.linkedin.com/company/legalclinic_eg/?original_referer="><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
+                  </div>
                   </div>
                   <p class="work-time">Work Time<br>
                     Sun- Thu: 9:00 - 18:00<br>
