@@ -142,7 +142,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-lg-7 d-flex spec-style">
+              <div class="col-12 col-lg-7 d-flex spec-style slider-div">
                 <div id="carouselExampleIndicators" class="carousel slide col-lg-12 col-sm-7" data-bs-ride="carousel">
                   <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
