@@ -87,6 +87,19 @@
         <form action="<?php echo site_url('payment/Cashier_Create'); ?>" id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
             <input type="hidden" name="userid" id="userid" value="">
             <div class="main-content" id="main">
+                <!-- layer--0 welcome -->
+                <div class="layer  mt-5">
+                        <div class="welcome-img d-flex">
+                            <div class="text-welcome d-flex  align-items-center align-self-end p-5">
+                                <div class="col-6 p-5 ">
+                                    <h1 class="">بنسھل علیك اجراءات تأسیس شركتك الناشئة</h1>
+                                    <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn btn-start" id="btnSubmit" onclick="changeLayer(1)">ابدا الان</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="container">
                     <div class="layer">
                         <div class="buttons-tog">
