@@ -1,20 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<nav id="sidebar" class="pcoded-navbar">
-    <div class="nav-header">
-      <a href="<?php echo site_url('') ?>" class="brand-logo">
-        <img class="logo-abbr" src="<?php echo base_url('assets/images/main/logo-appr.svg')?>" alt="logo-appr">
-        <img class="logo-compact" src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="logo-nav">
-        <img class="brand-title" src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt="logo-nav">
-      </a>
-      <div class="nav-control" id="sidebarCollapse">
-        <div class="hamburger">
-            <span class="line"></span> 
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
-      </div>
-    </div>
-    </div>
+<div id="sidebar">
+    <!-- </div> -->
     <div class="navbar-content scroll-div ">
       <span id="navBarContent"></span>
       <ul class="nav pcoded-inner-navbar">
@@ -150,4 +136,4 @@
     <span class="linesdashboard">
       <img src="<?php echo base_url('assets/images/main/linesdashboard.svg"') ?>"alt="linesdashboard">
     </span>
-  </nav>
+</div>
