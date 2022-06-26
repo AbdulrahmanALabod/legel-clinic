@@ -66,7 +66,7 @@ function showLayer(curr){
             e.style.display = 'none';
         });
     }
-    if(curr == 1 && checkbox2.checked){
+    if(curr == 2 && checkbox2.checked){
         document.getElementById('valueCor').innerHTML = 'قيمه السهم';
         // console.log('jjf')
         // mangTypes.innerHTML = "بيانات المساهمين";
@@ -78,14 +78,14 @@ function showLayer(curr){
         // parentCountEl.innerHTML = '';
     }
 
-    if(curr == 1 && checkbox3.checked){
+    if(curr == 2 && checkbox3.checked){
         document.getElementById('soloComp').style.display = 'block';
 
     }else{
         document.getElementById('soloComp').style.display = 'none';
     }
 
-    if(curr == 2 && checkbox2.checked){
+    if(curr == 3 && checkbox2.checked){
         allCompOption.innerHTML = 'اختر عدد المساهمين';  
     } else{
         allCompOption.innerHTML = 'اختر عدد الشركاء';
@@ -98,7 +98,7 @@ function showLayer(curr){
         mangTypes.innerHTML = "بيانات الشركاء";
     }
 //////////////////////edit--->2
-if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
+if((curr == 3 && checkbox3.checked) || (curr == 3 && checkbox4.checked)){
     // oneCompbuild();
     // buildOneOwner();
     parentCountEl.innerHTML = '';
@@ -115,7 +115,7 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
    });
 }
 
-    if(curr == 3 && checkbox2.checked){
+    if(curr == 4 && checkbox2.checked){
         partName.innerHTML = 'ادخل اسماء اعضاء مجلس الاداره';
             
     }else{
@@ -142,7 +142,7 @@ if((curr == 2 && checkbox3.checked) || (curr == 2 && checkbox4.checked)){
 function changeLayer(curr){
     // console.log(curr);
     //hold for validation
-    // if (curr == 1 && !validateForm()) return false;
+    if (curr == 1 && !validateForm()) return false;
     layer[currLayer].style.display = "none";
     currLayer = currLayer + curr;
     // console.log(currLayer);
@@ -162,7 +162,7 @@ function changeLayer(curr){
         }
     showLayer(currLayer);
    
-    if(currLayer == 3){
+    if(currLayer == 4){
         getFormData();
         if((checkbox3.checked) || (checkbox4.checked)){
             pushToArr();
@@ -192,100 +192,10 @@ let inputTxt2 = document.getElementsByClassName('lay3');
 function validateForm() {
     let valid = true;
     let formValidArr = [];
-    // if(currLayer == 0)
-    // {
-    //    //user name
-    //    if(userName.value == ''){
-    //    //user name
-    //        errorUserName.innerHTML="يجب ادخال اسم المستخدم ";
-    //        errorUserName.style.display="block";
-    //        errorUserName.style.fontSize="14px";
-    //        errorUserName.style.color="red";
-    //        userName.style.border = "1px solid red";
-    //     //    valid = false;   
-    //     formValidArr.push(false);            
-
-    //    } else{
-    //        // if(isNaN(userName.value)) {
-    //                errorUserName.innerHTML="";
-    //                userName.style.border = "1px solid green";
-    //             //    valid = true;
-    //           formValidArr.push(true);            
-
-    //        }
-    //    //user email
-    //    if(userEmail.value == ''){
-    //        errorUserEmail.innerHTML="يجب ادخال البريد الالكترونى";
-    //        errorUserEmail.style.display="block";
-    //        errorUserEmail.style.fontSize="14px";
-    //        errorUserEmail.style.color="red";
-    //        userEmail.style.border = "1px solid red";
-    //     //    valid = false;
-    //     formValidArr.push(false);            
-    //     //    console.log('empty')            
-    //    } else{
-    //        if(emailPattern.test(userEmail.value)){
-    //            //user email
-    //                errorUserEmail.innerHTML="";
-    //                userEmail.style.border = "1px solid green";
-    //             //    valid = true;
-    //     //    console.log('valid') 
-    //     formValidArr.push(true);            
-
-
-    //        }else{
-    //                 //user email
-    //                 errorUserEmail.innerHTML="البريد الالكترونى غير صالح";
-    //                 errorUserEmail.style.display="block";
-    //                 errorUserEmail.style.fontSize="14px";
-    //                 errorUserEmail.style.color="red";
-    //                 userEmail.style.border = "1px solid red";
-    //                 // valid = false;  
-    //     //    console.log('invalidpattern')
-    //     formValidArr.push(false);            
-
-
-    //          }
-    //     }
-       
-    //    //user phone
-    //    if(userPhone.value == ''){
-    //        errorUserPhone.innerHTML="يجب ادخال رقم الهاتف";
-    //        errorUserPhone.style.display="block";
-    //        errorUserPhone.style.fontSize="14px";
-    //        errorUserPhone.style.color="red";
-    //        userPhone.style.border = "1px solid red";
-    //    // console.log('hjekh')
-    //    //   valid = false;
-    //      formValidArr.push(false);            
-
-    //    } else{
-    //        if(phonePattern.test(userPhone.value)){
-    //            //user phone
-    //                errorUserPhone.innerHTML="";
-    //                userPhone.style.border = "1px solid green";
-    //         //    valid = true;
-    //     formValidArr.push(true);            
-
-    //        }else{
-    //                //user phone
-    //                errorUserPhone.innerHTML="رقم الهاتف يجب الا يقل عن 11 رقم ولا يحتوى على رموز";
-    //                errorUserPhone.style.display="block";
-    //                errorUserPhone.style.fontSize="14px";
-    //                errorUserPhone.style.color="red";
-    //                userPhone.style.border = "1px solid red";
-    //             //    valid = false;
-    //               formValidArr.push(false);            
-
-    //            }
-    //     }
-    //     formValidArr.forEach((value)=>{
-    //         if(value == false){
-    //             valid = false;
-    //         }
-    //     });
-    // }
     if(currLayer == 0){
+        valid = true;
+    }
+    if(currLayer == 1){
         // console.log('dfghjk')
         for(let i=0; i<inputVal.length; i++){
             if(inputVal[i]['type'] == ['radio']){
@@ -303,7 +213,7 @@ function validateForm() {
             }
         }
     }
-    if(currLayer == 1){
+    if(currLayer == 2){
         let passLay2 = [];
         for(let i=0; i<inputTxt.length; i++){
             //  console.log(inputTxt[i].value)
@@ -328,7 +238,7 @@ function validateForm() {
         })
         // console.log(pass);
     }
-    if(currLayer == 2){
+    if(currLayer == 3){
         const mageData = parentCountEl.getElementsByClassName('mangData');
         let passAll = [];
        
@@ -385,7 +295,7 @@ function validateForm() {
         // console.log(passAll);
     } 
 /////////////////////////////////////////////edit--->4
-if(currLayer == 3){
+if(currLayer == 4){
     // let passlay42 = [];
     const inputAdd = document.getElementById('autocompleteinput');
     
