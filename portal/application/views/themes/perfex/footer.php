@@ -13,29 +13,24 @@
 				</div>
 			</div>
 
-			<div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5">
-				<h3 class="footer-widget__title">
-					<span class="copyright-footer"><?php echo date('Y'); ?> <?php echo _l('clients_copyright', get_option('companyname')); ?></span>
-				</h3>
+			<div class="col-sm-6 col-md-6 col-lg-3 col-xl-2 pt-5 spec-hide">
+				<h3 class="footer-widget__title">Company</h3>
 				<ul class="list-unstyled footer-widget__contact">
-					<li>
-						<a href="">About Us</a>
-					</li>
-					<li>
-						<a href="">Login</a>
-					</li>
-					<li>
-						<a href="">FAQs</a>
-					</li>
-					<li>
-						<a href="">Pricing</a>
-					</li>
-					<li>
-						<a href="">Contact us</a>
-					</li>
-					<li>
-						<a href="">Events</a>
-					</li>
+				<li>
+                    <a href="<?php echo site_url('index/about')?>">About Us</a>
+                  </li>
+                  <li>
+                    <a href="">FAQs</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/price')?>">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="<?php echo site_url('index/contact')?>">Contact us</a>
+                  </li>
+                  <li>
+                    <a href="">Events</a>
+                  </li>
 				</ul>
 			</div>
 
@@ -48,7 +43,7 @@
 					</li>
 					<li class="">
 						<i><img src="<?php echo base_url('assets/images/main/akar-icons_location.svg') ?>" alt="akar-icons_location"></i>
-						<a href="#">Cairo, EGYPT</a>
+						<a href="<?php echo site_url('index/contact')?>">Cairo, EGYPT</a>
 					</li>
 					<li class="">
 						<i><img src="<?php echo base_url('assets/images/main/carbon_email (1).svg') ?>" alt="carbon_email"></i>
@@ -61,11 +56,11 @@
 				<h3 class="footer-widget__title">Follow us</h3>
 				<div class="mc-form__response"></div>
 				<div class="footer__social pt-1">
-					<a href="#"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg') ?>" alt="brandico_facebook"></a>
-					<a href="#"><img src="<?php echo base_url('assets/images/main/Frame.svg') ?>" alt="Frame"></a>
-					<a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg') ?>" alt="foundation_social-twitter"></a>
-					<a href="#"><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg') ?>" alt="foundation_social-linkedin"></a>
-				</div>
+                    <a href="https://www.facebook.com/LegalClinic.Eg"><img src="<?php echo base_url('assets/images/main/brandico_facebook.svg')?>" alt="brandico_facebook"></a>
+                    <a href="https://www.instagram.com/legalclinic.eg/"><img src="<?php echo base_url('assets/images/main/Frame.svg')?>" alt="Frame"></a>
+                    <a href="https://twitter.com/TheLegalClinic2"><img src="<?php echo base_url('assets/images/main/foundation_social-twitter.svg')?>" alt="foundation_social-twitter"></a>
+                    <a href="https://www.linkedin.com/company/legalclinic_eg/?original_referer="><img src="<?php echo base_url('assets/images/main/foundation_social-linkedin.svg')?>" alt="foundation_social-linkedin"></a>
+                </div>
 				<p class="work-time">Work Time<br>
 					Sun- Thu: 9:00 - 18:00<br>
 					Closed on Weekends</p>
