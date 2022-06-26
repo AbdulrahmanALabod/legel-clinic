@@ -194,6 +194,7 @@
         padding-bottom: 120px;
     }
 }
+
 /* counter */
 .counter {
     padding-top: 0;
@@ -252,6 +253,12 @@
     color: var(--dark-grey);
     font-size: .9rem;
     font-weight: 700;
+}
+@media screen  and (max-width: 425px){
+    .main-slider .slider-div ,
+    .counter{
+        display: none !important;
+    }
 }
 /* practice */
 .practice{
