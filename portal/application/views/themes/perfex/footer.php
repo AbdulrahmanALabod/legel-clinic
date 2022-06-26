@@ -135,11 +135,12 @@
 
 	function changewidth(stylesidenav) {
 		if (stylesidenav.matches) {
+			$('#sidebar').toggleClass('responsive');
 			$('#sidebar').toggleClass('active');
-			$(".hamburger").toggleClass("is-active");
+			$(".page").toggleClass("resp");
 		} else {
-			$('#sidebar').removeClass('active');
-			$(".hamburger").removeClass("is-active");
+			$('#sidebar').removeClass('responsive');
+			$(".page").removeClass("resp");
 		}
 	}
 	const stylesidenav = window.matchMedia("(max-width: 768px)");

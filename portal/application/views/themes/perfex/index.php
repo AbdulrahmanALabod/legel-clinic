@@ -2,14 +2,14 @@
 echo theme_head_view();
 // get_template_part($navigationEnabled ? 'navigation' : '');
 ?>
-<div class="wrapper">
-<?php echo theme_sidebar_view(); ?>
-  
+<!-- <div class="wrapper"> -->
+<?php echo theme_head_page_view();?>
+<div class="page">
+  <?php echo theme_sidebar_view(); ?>
   <!-- Page Content  -->
-<div class="container">
-  <div id="content">
-    <?php echo theme_head_page_view();?>
-    <div id="wrapper">
+  <!-- <div class="container"> -->
+  <!-- <div id="content"> -->
+    <!-- <div id="wrapper"> -->
       <div id="content">
         <div class="container">
           <div class="row">
@@ -39,10 +39,12 @@ echo theme_head_view();
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- </div> -->
 </div>
-</div>
+  
 <?php
 echo theme_footer_view();
 ?>
