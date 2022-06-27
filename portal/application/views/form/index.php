@@ -312,7 +312,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="formFileMultiple" class="form-label">Add National ID</label>
-                                    <input class="form-control mangSolo mangOneInfo" name="malek_personal_id" type="file" id="id" accept="image/png, image/gif, image/jpeg">
+                                    <input class="form-control mangSolo mangOneInfo" name="malek_personal_id" type="file" id="id" accept="image/png, image/gif, image/jpeg ,application/pdf">
                                 </div>
                                 <div class="col-md-4 x-last align-self-center">
                                     <button class="btn btn-outline-danger" type="reset" id="partCompDel">Remove owner</button>
@@ -326,6 +326,8 @@
                     <!-- layer---4 mangers names -->
                     <div class="layer">
                         <div class="mang-names pt-4">
+                        <input type="hidden" name="close" id="imgclose" value="<?php echo site_url('assets/images/main/x-icon.svg') ?>">
+                        <input type="hidden" name="upload" id="iconupload" value="<?php echo site_url('assets/images/main/upload.svg') ?>">
                             <div class="row g-3 justify-content-center">
                                 <div class="col-md-6">
                                     <label for="autocompleteinput" class="form-label" id="partName">Add Managers Names</label>

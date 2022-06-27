@@ -132,9 +132,9 @@
                 <div class="comp-pref">
                   <h2>First Law Firm</h2>
                   <p>SPECIALIZED IN STARTUPS & <br>ENTREPRENEURSHIP IN THE MENA <br>REGION</p>
-                  <div class="row d-flex pt-3 justify-content-between">
-                    <div class="col-12 col-sm-6">
-                      <button <?php echo isset($_SESSION['client_logged_in']) ? 'hidden' : ''?>  class="btn btn-sub" onclick="location.href='<?php echo base_url('authentication/login');?>';" type="button">Subscribe</button>
+                  <div class="row d-flex pt-3 justify-content-<?php echo isset($_SESSION['client_logged_in']) ? 'center' : 'between'?> ">
+                  <div <?php echo isset($_SESSION['client_logged_in']) ? 'hidden' : ''?> class="col-12 col-sm-6">
+                      <button  class="btn btn-sub" onclick="location.href='<?php echo base_url('authentication/login');?>';" type="button">Subscribe</button>
                     </div>
                     <div class="col-12 col-sm-6">
                       <button onclick="location.href='<?php echo base_url('pickups/ask');?>';" class="btn btn-ask" type="button">Ask Lawyer</button>

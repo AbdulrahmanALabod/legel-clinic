@@ -36,7 +36,8 @@ const formLang =  document.getElementsByClassName('turn-en');
 const header = document.getElementById('header');
 const footer = document.getElementById('footer');
 const backToTop = document.getElementById('backToTop');
-
+const imgclose = document.getElementById('imgclose');
+const iconupload = document.getElementById('iconupload');
 ///////// show layers
 
 let currLayer = 0;
@@ -925,7 +926,7 @@ btnAddMang.addEventListener('click',(e)=>{
                       newCard.innerHTML= `<div class="card">
                       <div class="card-header">
                   <div class="close">
-                      <img src="images/svgexport-6 (16) 1.svg" alt="" 
+                      <img src="${imgclose.value}" alt="" 
                       onclick="this.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.parentNode);onRest();">
                   </div>
                   <div class="mt-3 mb-3 "  style="display:${displayٍSelect};"> 
@@ -990,7 +991,7 @@ btnAddMang.addEventListener('click',(e)=>{
             newCard.innerHTML= `<div class="card">
             <div class="card-header">
         <div class="close">
-            <img src="images/svgexport-6 (16) 1.svg" alt="" 
+            <img src="${imgclose.value}" alt="" 
             onclick="this.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.parentNode);onRest();">
         </div>
         <div class="mt-3 mb-3" style="display:${displayٍSelect};"> 
@@ -1023,7 +1024,7 @@ btnAddMang.addEventListener('click',(e)=>{
                     <div class="btn-file align-items-center">
                     <input type="file" id="event_image" accept="image/png, image/gif, image/jpeg"   name = "upload_manager[]" value="" onchange="onFileSelected(event,${i})" data-id="input_${x}">
                         <div class=" change-file-ico">
-                           <img src="images/upload.svg" width="25%" class="disNone">
+                           <img src="${iconupload.value}" width="25%" class="disNone">
                            </div>
                         <div class="full-width">
                             <p id="wowonder-movie-name" class="disNone">Add National ID</p>
@@ -1067,7 +1068,7 @@ btnAddMang.addEventListener('click',(e)=>{
             newCard.innerHTML= `<div class="card">
             <div class="card-header">
         <div class="close">
-            <img src="images/svgexport-6 (16) 1.svg" alt="" 
+            <img src="${imgclose.value}" alt="" 
             onclick="this.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.parentNode)">
         </div>
         <div class="mt-3 mb-3"  style="display:${displayٍSelect};"> 
@@ -1100,7 +1101,7 @@ btnAddMang.addEventListener('click',(e)=>{
                     <div class="btn-file align-items-center">
                     <input type="file" id="event_image" accept="image/png, image/gif, image/jpeg"  name = "upload_manager[]"  value="" data-id="input_${y}" onchange="onFileSelected(event, ${i})">
                         <div class=" change-file-ico">
-                           <img src="images/upload.svg" width="25%">
+                           <img src="${iconupload.value}" width="25%">
                         </div>
                         <div class="full-width">
                             <p id="wowonder-movie-name">Add National ID</p>
@@ -1154,7 +1155,7 @@ btnAddMang.addEventListener('click',(e)=>{
                       newCard.innerHTML= `<div class="card">
                       <div class="card-header">
                   <div class="close">
-                      <img src="images/svgexport-6 (16) 1.svg" alt="" 
+                      <img src="${imgclose.value}" alt="" 
                       onclick="this.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.parentNode);onRest();">
                   </div>
                   <div class="mt-3 mb-3"  style="display:${displayٍSelect};"> 
@@ -1219,7 +1220,7 @@ btnAddMang.addEventListener('click',(e)=>{
             newCard.innerHTML= `<div class="card">
             <div class="card-header">
         <div class="close">
-            <img src="images/svgexport-6 (16) 1.svg" alt="" 
+            <img src="${imgclose.value}" alt="" 
             onclick="this.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.parentNode);onRest();">
         </div>
         <div class="mt-3 mb-3 "  style="display:${displayٍSelect};"> 
@@ -1254,7 +1255,7 @@ btnAddMang.addEventListener('click',(e)=>{
                     <div class="btn-file align-items-center">
                     <input type="file" id="event_image" accept="image/png, image/gif, image/jpeg"  value="" onchange="onFileSelected(event,${i})" data-id="input_${x}">
                         <div class=" change-file-ico">
-                           <img src="images/upload.svg" width="25%" class="disNone">
+                           <img src="${iconupload.value}" width="25%" class="disNone">
                            </div>
                         <div class="full-width">
                             <p id="wowonder-movie-name" class="disNone">Add National ID</p>
@@ -1298,7 +1299,7 @@ btnAddMang.addEventListener('click',(e)=>{
             newCard.innerHTML= `<div class="card">
             <div class="card-header">
         <div class="close">
-            <img src="images/svgexport-6 (16) 1.svg" alt="" 
+            <img src="${imgclose.value}" alt="" 
             onclick="this.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode.parentNode);onRest();">
         </div>
         <div class="mt-3 mb-3"  style="display:${displayٍSelect};"> 
@@ -1331,7 +1332,7 @@ btnAddMang.addEventListener('click',(e)=>{
                     <div class="btn-file align-items-center">
                     <input type="file" id="event_image" accept="image/png, image/gif, image/jpeg" name = "upload_manager[]" value="" data-id="input_${y}" onchange="onFileSelected(event, ${i})">
                         <div class=" change-file-ico">
-                           <img src="images/upload.svg" width="25%">
+                           <img src="${iconupload.value}" width="25%">
                         </div>
                         <div class="full-width">
                             <p id="wowonder-movie-name">Add National ID</p>
