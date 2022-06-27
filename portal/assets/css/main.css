@@ -197,7 +197,7 @@ nav .navbar-toggler.show span:nth-child(3) {
     padding-right: 4rem;
 } */
 @media screen and (max-width: 991.5px) {
-    nav .social-icons{
+    nav .social-icons:not(.dash){
         padding-left: 4rem;
     }
 }

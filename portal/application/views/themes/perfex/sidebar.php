@@ -43,7 +43,7 @@
           <a href="<?php echo site_url('payment/index')?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/onlineinco.svg"') ?>"alt="onlineinco">
-              <span class="pcoded-mtext">Online Incorporation</span>
+              <span class="pcoded-mtext">Start a Company</span>
             </span>
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
           </a>

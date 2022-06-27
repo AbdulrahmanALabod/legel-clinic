@@ -77,27 +77,9 @@ input.invalid{
     border: 1px solid red;
     /* font-size: 1rem; */
 }
-.turn-en{
-    position: relative;
-}
-.turn-en a{
-    background-color: inherit !important;
-    border: none !important;
-    background-image: url('../assets/images/main/turn-ar-btn.svg') !important;
-    /* background-image: url(../images/Group\ 1253.svg) !important; */
-    width: 150px;
-    height: 150px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    right: 0rem;
-    z-index: 99;
-}
+
 @media screen and (max-width: 930.5px) {
-    .turn-en a{
-        display: none;
-    }
+    
     .form-check.form-switch{
         display: flex !important;
         padding-top: 1rem;
@@ -106,6 +88,14 @@ input.invalid{
 }
 .error{
     display: none;
+}
+@media screen and (max-width: 400px) {
+  header .navbar{
+    justify-content: center !important;
+  }
+  .social-icons-light{
+    padding-top: .5rem;
+  }   
 }
 /* language toggl */
 .switch-lan {
@@ -177,7 +167,12 @@ input.invalid{
     transition: all 200ms ease;
   }
 /*  */
-
+.turn-ar{
+    color: var(--primary-color);
+}
+.turn-ar:hover{
+    color: var(--primary-color);
+}
 .container.pro-bar{
     text-align: center;
 }
@@ -293,7 +288,7 @@ input.invalid{
     height: 500px;
     overflow: hidden;
 }
-.text-welcome .col-6{
+.text-welcome .col-12{
     border-radius: 5px;
     color: var(--white);
     background-color: rgba(0,0,0,.5);

@@ -47,25 +47,25 @@ function showLayer(curr){
         divButChose.style.display = 'none';
         proBar.style.display = 'none';
         // prev.setAttribute('disabled','disabled');
-        [...formLang].forEach(e=>{
-            e.style.display = 'none';
-        })
+        // [...formLang].forEach(e=>{
+        //     e.style.display = 'none';
+        // })
     } else{
         divButChose.style.display = 'block';
         proBar.style.display = 'block';
         // prev.removeAttribute('disabled');
         mangTypes.innerHTML = "بيانات الشركاء";
     }
-    if(curr == 1){
-        [...formLang].forEach(e=>{
-            e.style.display = 'block';
-        })
-        parentCountEl.innerHTML = '';
-    } else{
-        [...formLang].forEach(e=>{
-            e.style.display = 'none';
-        });
-    }
+    // if(curr == 1){
+    //     [...formLang].forEach(e=>{
+    //         e.style.display = 'block';
+    //     })
+    //     parentCountEl.innerHTML = '';
+    // } else{
+    //     [...formLang].forEach(e=>{
+    //         e.style.display = 'none';
+    //     });
+    // }
     if(curr == 2 && checkbox2.checked){
         document.getElementById('valueCor').innerHTML = 'قيمه السهم';
         // console.log('jjf')

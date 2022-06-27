@@ -23,9 +23,10 @@
                           <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt=""></a>  
                         <!-- Logo End --> 
                       </div>
-                    <div class="social-icons form-icon col-auto ">
-                      <div class=" social-icons-light mb-0 d-flex">
-                        
+                    <div class="social-icons form-icon col-auto dash ps-2">
+                      <div class=" social-icons-light mb-0 d-flex align-items-center">
+                      <a class="turn-ar pe-2" href="<?php echo base_url('payment/index/form'); ?>"><i class="fa-solid fa-globe"></i>Turn-Ar</a>
+
                           <?php if (isset($_SESSION['client_logged_in'])) { ?>
                           <div class="dropdown" >
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
@@ -34,7 +35,6 @@
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
                               <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
                               <li><a class="dropdown-item" href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url('payment/index/form'); ?>"><i class="fa-solid fa-globe"></i>Turn-Ar</a></li>
 
                       <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
                       </ul>
@@ -80,12 +80,7 @@
     </div>
     <section>
         <!-- btn-languages -->
-        <div class="turn-en">
-            <div class="cir-4">
-                <!-- <button type="button" onclick="location.href ='legal-form-ar/legal-form/index.php';"></button> -->
-                <a href="<?php echo base_url('payment/index/form'); ?>"></a>
-            </div>
-        </div>
+        
         <form action="<?php echo site_url('payment/Cashier_Create'); ?>" id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
             <input type="hidden" name="userid" id="userid" value="">
             <div class="main-content" id="main">
@@ -93,7 +88,7 @@
                     <div class="layer  mt-5">
                         <div class="welcome-img d-flex">
                             <div class="text-welcome d-flex  align-items-center align-self-end p-5">
-                                <div class="col-6 p-5 ">
+                                <div class="col-12 col-md-8 py-5 ps-4 pe-2">
                                     <h1 id="verticalHeadingTextSection" class="rlH1TextExpanded">We make it easy to incorporate your business</h1>
                                     <div class="d-flex justify-content-center">
                                     <button type="button" class="btn btn-start" id="btnSubmit" onclick="changeLayer(1)">Get Started </button>
