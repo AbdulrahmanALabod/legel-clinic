@@ -326,8 +326,8 @@
                     <!-- layer---4 mangers names -->
                     <div class="layer">
                         <div class="mang-names pt-4">
-                        <input type="hidden" name="close" id="imgclose" value="<?php echo site_url('assets/images/main/x-icon.svg') ?>">
-                        <input type="hidden" name="upload" id="iconupload" value="<?php echo site_url('assets/images/main/upload.svg') ?>">
+                        <input type="hidden"  id="imgclose" value="<?php echo site_url('assets/images/main/x-icon.svg') ?>">
+                        <input type="hidden"  id="iconupload" value="<?php echo site_url('assets/images/main/upload.svg') ?>">
                             <div class="row g-3 justify-content-center">
                                 <div class="col-md-6">
                                     <label for="autocompleteinput" class="form-label" id="partName">Add Managers Names</label>
@@ -609,9 +609,6 @@
     <script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
     <script src="<?php echo base_url(); ?>js/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.16/js/intlTelInput.min.js" integrity="sha512-Po9nSdYOcWIcoADdRjkAbRYPpR8OHjxzA/3RDUERZcDewTLzRTxbG4bUX7Sr7lVEcO3wTCzphdOBWgNFKVmxaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="js/rome.js"></script> -->
-
     <script src="<?php echo base_url(); ?>js/main.js?t=<?php echo time(); ?>"></script>
     <script>
         //download files.pdf

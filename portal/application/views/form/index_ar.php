@@ -332,8 +332,8 @@
                     <!-- layer---4 mangers names -->
                     <div class="layer">
                         <div class="mang-names pt-4">
-                        <input type="hidden" name="close" id="imgclose" value="<?php echo site_url('assets/images/main/x-icon.svg') ?>">
-                        <input type="hidden" name="upload" id="iconupload" value="<?php echo site_url('assets/images/main/upload.svg') ?>">
+                        <input type="hidden"  id="imgclose" value="<?php echo site_url('assets/images/main/x-icon.svg') ?>">
+                        <input type="hidden"  id="iconupload" value="<?php echo site_url('assets/images/main/upload.svg') ?>">
                             <div class="row g-3 justify-content-center" dir="rtl">
                                 <div class="col-md-6">
                                     <label for="autocompleteinput" class="form-label" id="partName">ادخل اسماء المديرين</label>

@@ -34,5 +34,15 @@ class Index extends ClientsController
 
         $this->load->view('form/index_ar');
     }
+    public function thanks()
+    {
+        if (!isset($_SESSION['contact_user_id'])) {
+
+            header('Location: ' . site_url('authentication/login'));
+            exit;
+        }
+
+        $this->load->view('form/thanks');
+    }
 }
 ?>
