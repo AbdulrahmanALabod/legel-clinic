@@ -1,6 +1,3 @@
-/*
-////// i messed with this file :( /////////////
-*/
 //////////////////////main variables//////////////////////////////////
 const form = document.getElementById('form');
 
@@ -38,6 +35,9 @@ const footer = document.getElementById('footer');
 const backToTop = document.getElementById('backToTop');
 const imgclose = document.getElementById('imgclose');
 const iconupload = document.getElementById('iconupload');
+const divOneManger = document.getElementById('oneCompDiv'); 
+const divOneComp = document.createElement('div');
+
 ///////// show layers
 
 let currLayer = 0;
@@ -49,26 +49,12 @@ function showLayer(curr){
     if(curr == 0){
         divButChose.style.display = 'none';
         proBar.style.display = 'none';
-        // prev.setAttribute('disabled','disabled');
-        // [...formLang].forEach(e=>{
-        //     e.style.display = 'none';
-        // });
     } else{
         divButChose.style.display = 'block';
         proBar.style.display = 'block';
         mangTypes.innerHTML = "Management data";
         // prev.removeAttribute('disabled');
     }
-    // if(curr == 1){
-    //     [...formLang].forEach(e=>{
-    //         e.style.display = 'block';
-    //     });
-    //     parentCountEl.innerHTML = '';
-    // } else{
-    //     [...formLang].forEach(e=>{
-    //         e.style.display = 'none';
-    //     });
-    // }
     if(curr == 2 && checkbox2.checked){
         document.getElementById('valueCor').innerHTML = 'Share value';
         // console.log('jjf')
@@ -107,15 +93,32 @@ if((curr == 3 && checkbox3.checked) || (curr == 3 && checkbox4.checked)){
     parentCountEl.innerHTML = '';
     document.getElementById('soloComp').style.display = 'block';
     document.getElementById('specificSizeSelect').style.display = 'none';
-    [...oneComp].forEach(e =>{
+    [...oneComp].forEach(e =>{ 
         e.style.display='block';
        });
-
-}else{
+       divOneComp.classList.add('row', 'g-3', 'justify-content-between' ,'pt-3');
+       divOneComp.innerHTML=`<div class="col-md-4">
+       <label for="inputtext1" class="form-label mang" id="mangName">Owner’s Name</label>
+       <input type="text" class="form-control mangSolo mangOneInfo" id="name" name="malek_name">
+   </div>
+   <div class="col-md-4">
+       <label for="inputtext2" class="form-label mang">Owner’s Nationality</label>
+       <input type="text" class="form-control mangSolo mangOneInfo" id="nation" name="malek_nationality">
+   </div>
+   <div class="col-md-6 mb-3">
+       <label for="formFileMultiple" class="form-label">Add National ID</label>
+       <input class="form-control mangSolo mangOneInfo" name="malek_personal_id" type="file" id="id" accept="image/png, image/gif, image/jpeg ,application/pdf">
+   </div>
+   <div class="col-md-4 x-last align-self-center">
+       <button class="btn btn-outline-danger" type="reset" id="partCompDel">Remove owner</button>
+   </div>`;
+   divOneManger.appendChild(divOneComp);
+    }else{
     document.getElementById('specificSizeSelect').style.display = 'block';
     [...oneComp].forEach(e =>{
     e.style.display='none';
    });
+   divOneComp.innerHTML='';
 }
 
     if(curr == 4 && checkbox2.checked){
@@ -321,16 +324,6 @@ if(currLayer == 4){
     }
 }
     if (valid) {
-    //document.getElementsByClassName("step")[currentTab].className += " finish";
-     //user name
-//      errorUserName.innerHTML="";
-//      userName.style.border = "1px solid green";
-//  //user email
-//      errorUserEmail.innerHTML="";
-//      userEmail.style.border = "1px solid green";
-//  //user phone
-//      errorUserPhone.innerHTML="";
-//      userPhone.style.border = "1px solid green";
     }
     // console.log(valid)
     return valid; // return the valid status
@@ -390,10 +383,6 @@ function validateCard(){
     var validate = true;
     let cardInputs = document.querySelectorAll('input[data-id]');
     let divDataId = document.querySelectorAll('[id^=card_]');
-    // console.log(divDataId)
-    // let checkboxInput = divDataId.querySelectorAll('input[type="checkbox"]');
-    // console.log(divDataId)
-    // console.log(inputAdd);
     let disNone = $('.id.d-flex');
    [...cardInputs].forEach(e=>{
     //   console.log(e);
@@ -460,10 +449,7 @@ function validateCard(){
     // console.log(passLay4)
     return validate;
 }
-////////////////////////////////////////
-const validateCheckBoxs = ()=>{
 
-}
 ////////////////////////////////////////
 // Restricts input for the given textbox to the given inputFilter function.
 function setInputFilter(textbox, inputFilter) {
@@ -486,8 +472,6 @@ function setInputFilter(textbox, inputFilter) {
     return /^-?\d*[.,%]?\d*$/.test(value); });
   setInputFilter(document.getElementById("inputtext4"), function(value) {
     return /^-?\d*[.,%]?\d*$/.test(value); });
-//   setInputFilter(document.getElementById("inputtext6"), function(value) {
-//     return /^-?\d*[.,%]?\d*$/.test(value); });
 
 /////////change progress bar
   
@@ -503,41 +487,6 @@ function setInputFilter(textbox, inputFilter) {
 
     progress.style.width =( (actives.length - 1) / (circles.length - 1) ) * 100 + '%';
 }
-
-//////////////////////render country & flags plugin//////////////
-    //  const input = document.querySelector("#phone");
-    //     window.intlTelInput(input,({
-    //   // options here
-      
-    // // initialCountry:"egypt"
-    // // initialCountry: "Eg",
-    // }));
-    // $(document).ready(function() {
-    //     $('.iti__flag-container').click(function() { 
-    //       var countryCode = $('.iti__selected-flag').attr('title');
-    //       var countryCode = countryCode.replace(/[^0-9]/g,'')
-    //       $('#phone').val("");
-    //       $('#phone').val("+"+countryCode+" "+ $('#phone').val());
-    //    });
-    // });
-
-// /////////////////////language toggle////////////
-// $('.switch-lan .switch-language label').on('click', function(){
-//     var indicator = $(this).parent('.switch-language').find('.switch-language span');
-//     if ( $(this).hasClass('right') ){
-//     $(indicator).addClass('right');
-//         // if(areaPeolple.style.display === 'none'){
-//         //     areaPeolple.style.display = 'block';
-//         //     areaMoney.style.display = 'none';
-//         // }
-//     } else {
-//     $(indicator).removeClass('right');
-//         // if(areaMoney.style.display === 'none'){
-//         //     areaMoney.style.display = 'block';
-//         //     areaPeolple.style.display = 'none';
-//         // }    
-//     }
-//   });
 
 /////////////////////////comp-types---section-1/////////////////////////////////
 ////////chose between comp-types
@@ -626,12 +575,11 @@ function checkboxSelection(){
 
 }
 ////////////////////////////////edit-->3
-const divOneManger = document.getElementById('oneCompDiv');
 function pushToArr(){
     // if(checkbox3.checked || checkbox4.checked){
-        // for(let i=0; i < divs.length; i++){
-            const inputs = oneCompDiv.getElementsByClassName('mangOneInfo');
-            // console.log('mangOneInfo');
+        for(let i=0; i <= divOneManger.length; i++){
+            const inputs = divOneManger[i].getElementsByClassName('mangOneInfo');
+            // console.log([...inputs]);
             // for( j=0; j< inputs.length ; j++){
                 const objectEle = {};
                 const reader  = new FileReader();
@@ -653,7 +601,7 @@ function pushToArr(){
                 arrayEle.push(objectEle);
                 arrayNames.push(objectEle.name);
         // }
-    // }
+    }
 }
 
 ///////////////////////////////comp-info---section-2/////////////////////////////////
@@ -751,12 +699,6 @@ let counter = 0;
                 labelNationValue = 'Shareholder’s Nationality';
                 labelrangeValue = 'Percentage of shares in the capital';
                 btnDelete = 'Remove Shareholder';
-                // [...specFont].forEach((val)=>{
-                //     // console.log(val)
-                //     // val.classList.remove('specFont');
-                //     val.classList.remove('specFont')
-                // })
-               
             } else{
                 labelNameValue = 'Shareholder’s Name';
                 labelNationValue = 'Shareholder’s Nationality';
@@ -801,8 +743,7 @@ let counter = 0;
                             counter++;
                         }
         });
-        // select.selectedIndex = null;
-        // $("#specificSizeSelect").val('').trigger('change');
+        
 
 const inputType6 = document.getElementsByClassName("inputtext6");
 const erroPercentage = document.getElementsByClassName('erroPercentage')
@@ -834,13 +775,12 @@ let arrayEle = [];
 let arrayNames = [];
 function getFormData(){
     let i;
-    
     for( i=0; i < divs.length; i++){
         const inputs = divs[i].getElementsByClassName('mangInfo');
         // for( j=0; j< inputs.length ; j++){
             const objectEle = {};
             const reader  = new FileReader();
-
+            // console.log([...inputs]);
             objectEle['name'] = inputs[0].value;
             objectEle['nationality'] = inputs[1].value;
             objectEle['idPath'] = inputs[2].files[0];
@@ -1436,9 +1376,6 @@ btnAddMang.addEventListener('click',(e)=>{
     // })
    })
 });
-// let chooseCeo = false;
-//    let choosedirMember = false;
-//    let choosedirManager = false;
 function onRest(){
     if(parentCard.getElementsByTagName('div').length == 0 ){
         chooseCeo = false;
@@ -1591,20 +1528,6 @@ $('#autocompleteinput').on('focus', function(e){
     // console.log(autoComplete(autocompleteinput,arrayNames));
     autoComplete(autocompleteinput,arrayNames);
 });
-// autoComplete.addEventListener('focus',(e)=>{
-//     e.preventDefault();
-//     autoComplete(autocompleteinput,arrayNames);
-// })
-///////////////////////calender--section-5/////////////////////////////////
-
-// $(function() {
-
-//     // rome(inline_cal, { time: false });  
-//       rome(inline_cal, {time: false, inputFormat: 'MMMM DD, YYYY'}).on('data', function (value) {
-//         result.value = value;
-//       });
-  
-//     });
     //////////////////file uploda area
 function arabicValue(txt) {
     yas = txt.value;

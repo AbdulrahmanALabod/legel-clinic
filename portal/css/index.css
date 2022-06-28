@@ -280,7 +280,7 @@ input.invalid{
 } 
 /* layer---->0 */
 .welcome-img{
-    background-image: url('../assets/images/main/Incorporation-SEM-BG-Cover-B.jpg');
+    background-image: url('../assets/images/main/Incorporation-Cover.png');
     background-size: cover;
     background-position: 70%;
     background-repeat: no-repeat;
@@ -313,11 +313,7 @@ input.invalid{
     /* height: 2rem; */
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
-@media screen and (max-width: 767.5px) {
-    .switch{
-        width: 100%;
-    }
-}
+
   .switch label {
     float: left;
     width: 50%;
@@ -370,6 +366,21 @@ input.invalid{
     border-radius: 24px;
     transition: all 200ms ease;
   }
+  @media screen and (max-width: 767.5px) {
+    .switch{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .switch label{
+        border-radius: 10px;
+    }
+    .switch span{
+        border-radius: 10px;
+    }
+    .switch span.right{
+        border-radius: 10px;
+    }
+}
 .text-align{
     text-align: unset !important;
     right: 0 !important;

@@ -25,7 +25,7 @@
                       </div>
                     <div class="social-icons form-icon col-auto dash ps-2">
                       <div class=" social-icons-light mb-0 d-flex align-items-center">
-                      <a class="turn-ar pe-2" href="<?php echo base_url('payment/index/form'); ?>"><i class="fa-solid fa-globe"></i>Turn-Ar</a>
+                      <a class="turn-ar pe-2" href="<?php echo base_url('payment/index/form'); ?>"></a>
 
                           <?php if (isset($_SESSION['client_logged_in'])) { ?>
                           <div class="dropdown" >
@@ -300,25 +300,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="oneComp" id="oneCompDiv">
-                            <div class="row g-3 justify-content-between pt-3" data-id="item_0">
-                                <div class="col-md-4">
-                                    <label for="inputtext1" class="form-label mang" id="mangName">Owner’s Name</label>
-                                    <input type="text" class="form-control mangSolo mangOneInfo" id="name" name="malek_name">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputtext2" class="form-label mang">Owner’s Nationality</label>
-                                    <input type="text" class="form-control mangSolo mangOneInfo" id="nation" name="malek_nationality">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="formFileMultiple" class="form-label">Add National ID</label>
-                                    <input class="form-control mangSolo mangOneInfo" name="malek_personal_id" type="file" id="id" accept="image/png, image/gif, image/jpeg ,application/pdf">
-                                </div>
-                                <div class="col-md-4 x-last align-self-center">
-                                    <button class="btn btn-outline-danger" type="reset" id="partCompDel">Remove owner</button>
-                                </div>
-                                <hr>
-                            </div>
+                        <div class="" id="oneCompDiv">   
                         </div>
                         <div id="part-form" class="container"></div>
                         <div id="error-manger" class="error"></div>
