@@ -96,20 +96,21 @@ if((curr == 3 && checkbox3.checked) || (curr == 3 && checkbox4.checked)){
         e.style.display='block';
        });
        divOneComp.classList.add('row', 'g-3', 'justify-content-between' ,'pt-3');
+       divOneComp.setAttribute('dir','rtl');
        divOneComp.innerHTML=`<div class="col-md-4">
-       <label for="inputtext1" class="form-label mang" id="mangName">Owner’s Name</label>
+       <label for="inputtext1" class="form-label mang" id="mangName">اسم المالك</label>
        <input type="text" class="form-control mangSolo mangOneInfo" id="name" name="malek_name">
    </div>
    <div class="col-md-4">
-       <label for="inputtext2" class="form-label mang">Owner’s Nationality</label>
+       <label for="inputtext2" class="form-label mang">جنسيه المالك</label>
        <input type="text" class="form-control mangSolo mangOneInfo" id="nation" name="malek_nationality">
    </div>
    <div class="col-md-6 mb-3">
-       <label for="formFileMultiple" class="form-label">Add National ID</label>
+       <label for="formFileMultiple" class="form-label">اضافه البطاقه الشخصية</label>
        <input class="form-control mangSolo mangOneInfo" name="malek_personal_id" type="file" id="id" accept="image/png, image/gif, image/jpeg ,application/pdf">
    </div>
    <div class="col-md-4 x-last align-self-center">
-       <button class="btn btn-outline-danger" type="reset" id="partCompDel">Remove owner</button>
+       <button class="btn btn-outline-danger" type="reset" id="partCompDel">حذف المالك</button>
    </div>`;
    divOneManger.appendChild(divOneComp);
 
@@ -118,9 +119,10 @@ if((curr == 3 && checkbox3.checked) || (curr == 3 && checkbox4.checked)){
     [...oneComp].forEach(e =>{
     e.style.display='none';
    });
-   divOneComp.innerHTML='';
 }
-
+    if((curr == 3 && checkbox1.checked) || (curr == 3 && checkbox2.checked) || (curr == 3 && checkbox5.checked) || (curr == 3 && checkbox6.checked)){
+        divOneManger.innerHTML='';
+    }
     if(curr == 4 && checkbox2.checked){
         partName.innerHTML = 'ادخل اسماء اعضاء مجلس الاداره';
             
@@ -384,10 +386,6 @@ function validateCard(){
     var validate = true;
     let cardInputs = document.querySelectorAll('input[data-id]');
     let divDataId = document.querySelectorAll('[id^=card_]');
-    // console.log(divDataId)
-    // let checkboxInput = divDataId.querySelectorAll('input[type="checkbox"]');
-    // console.log(divDataId)
-    // console.log(inputAdd);
     let disNone = $('.id.d-flex');
    [...cardInputs].forEach(e=>{
     //   console.log(e);
@@ -454,27 +452,7 @@ function validateCard(){
     // console.log(passLay4)
     return validate;
 }
-// /////////////////////language toggle////////////
-// $('.switch-lan .switch-language label').on('click', function(){
-//     var indicator = $(this).parent('.switch-language').find('.switch-language span');
-//     if ( $(this).hasClass('right') ){
-//     $(indicator).addClass('right');
-//         // if(areaPeolple.style.display === 'none'){
-//         //     areaPeolple.style.display = 'block';
-//         //     areaMoney.style.display = 'none';
-//         // }
-//     } else {
-//     $(indicator).removeClass('right');
-//         // if(areaMoney.style.display === 'none'){
-//         //     areaMoney.style.display = 'block';
-//         //     areaPeolple.style.display = 'none';
-//         // }    
-//     }
-//   });
-////////////////////////////////////////
-const validateCheckBoxs = ()=>{
 
-}
 ////////////////////////////////////////
 // Restricts input for the given textbox to the given inputFilter function.
 function setInputFilter(textbox, inputFilter) {
@@ -602,8 +580,8 @@ function checkboxSelection(){
 ////////////////////////////////edit-->3
 function pushToArr(){
     // if(checkbox3.checked || checkbox4.checked){
-        for(let i=0; i <= divOneManger.length; i++){
-            const inputs = divOneManger[i].getElementsByClassName('mangOneInfo');
+        // for(let i=0; i <= divOneManger.length; i++){
+            const inputs = divOneManger.getElementsByClassName('mangOneInfo');
             // console.log('mangOneInfo');
             // for( j=0; j< inputs.length ; j++){
                 const objectEle = {};
@@ -626,7 +604,7 @@ function pushToArr(){
                 arrayEle.push(objectEle);
                 arrayNames.push(objectEle.name);
         // }
-    }
+    // }
 }
 
 ///////////////////////////////comp-info---section-2/////////////////////////////////

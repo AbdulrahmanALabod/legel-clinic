@@ -1,3 +1,6 @@
+/*
+////// i messed with this file :( /////////////
+*/
 //////////////////////main variables//////////////////////////////////
 const form = document.getElementById('form');
 
@@ -88,8 +91,6 @@ function showLayer(curr){
     }
 //////////////////////edit--->2
 if((curr == 3 && checkbox3.checked) || (curr == 3 && checkbox4.checked)){
-    // oneCompbuild();
-    // buildOneOwner();
     parentCountEl.innerHTML = '';
     document.getElementById('soloComp').style.display = 'block';
     document.getElementById('specificSizeSelect').style.display = 'none';
@@ -118,9 +119,10 @@ if((curr == 3 && checkbox3.checked) || (curr == 3 && checkbox4.checked)){
     [...oneComp].forEach(e =>{
     e.style.display='none';
    });
-   divOneComp.innerHTML='';
 }
-
+    if((curr == 3 && checkbox1.checked) || (curr == 3 && checkbox2.checked) || (curr == 3 && checkbox5.checked) || (curr == 3 && checkbox6.checked)){
+        divOneManger.innerHTML='';
+    }
     if(curr == 4 && checkbox2.checked){
         partName.innerHTML = 'Add Board of Directors Names';
             
@@ -577,8 +579,10 @@ function checkboxSelection(){
 ////////////////////////////////edit-->3
 function pushToArr(){
     // if(checkbox3.checked || checkbox4.checked){
-        for(let i=0; i <= divOneManger.length; i++){
-            const inputs = divOneManger[i].getElementsByClassName('mangOneInfo');
+        // console.log('enter function');
+        // console.log(divOneManger)
+        // for(let i=0; i <= divOneManger.length; i++){
+            const inputs = divOneManger.getElementsByClassName('mangOneInfo');
             // console.log([...inputs]);
             // for( j=0; j< inputs.length ; j++){
                 const objectEle = {};
@@ -601,7 +605,7 @@ function pushToArr(){
                 arrayEle.push(objectEle);
                 arrayNames.push(objectEle.name);
         // }
-    }
+    // }
 }
 
 ///////////////////////////////comp-info---section-2/////////////////////////////////

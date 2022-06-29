@@ -25,7 +25,8 @@
                       </div>
                     <div class="social-icons form-icon col-auto dash ps-2">
                       <div class=" social-icons-light mb-0 d-flex align-items-center">
-                      <a class="turn-ar pe-2" href="<?php echo base_url('payment/index/form'); ?>"></a>
+                      <a class="turn-ar me-3" href="<?php echo base_url('payment/index/form'); ?>">
+                      <img src="<?php echo base_url('assets/images/main/ar.svg')?>" alt=""></a>
 
                           <?php if (isset($_SESSION['client_logged_in'])) { ?>
                           <div class="dropdown" >

@@ -89,14 +89,6 @@ input.invalid{
 .error{
     display: none;
 }
-@media screen and (max-width: 400px) {
-  header .navbar{
-    justify-content: center !important;
-  }
-  .social-icons-light{
-    padding-top: .5rem;
-  }   
-}
 /* language toggl */
 .switch-lan {
     position: relative;
