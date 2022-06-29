@@ -1355,52 +1355,63 @@ btnAddMang.addEventListener('click',(e)=>{
 
 //    const directorManager = document.getElementsByClassName('director_manager');
     //let arrayChoosen = [];
-   [...selectValue].forEach((val)=>{
-    //    console.log(val);
-    val.addEventListener('click',(e)=>{
-        e.preventDefault();
-        // console.log(chooseCeo);
-        if(val.value == 'ceo'){
-            chooseCeo = true;
-            // choosedirMember = false;
-            // console.log(chooseCeo);  
-        }
-        if(chooseCeo){
-            [...ceo].forEach((v)=>{
-                // console.log(v);
-                // v.setAttribute('readonly',StatusAttr);
-                // v.style.display = 'none';
-                v.hidden = true;
-
-            })
-        }else{
-            [...ceo].forEach((v)=>{
-                // console.log('disceo');
-                // v.removeAttribute('readonly');
-                // v.style.display = 'block';
-                v.hidden = false;
-            })
-        }
-        if(val.value == 'director_member'){
-            choosedirMember = true;
-            // chooseCeo = false;
-            // console.log(choosedirMember)
-        }
-        if(choosedirMember){
-            [...directorMember].forEach((v)=>{
-                // console.log(v);
-                // v.setAttribute('readonly',StatusAttr);
-                v.hidden = true;
-            })
-        }else{
-            [...directorMember].forEach((v)=>{
-                // console.log(v); 
-                // v.removeAttribute('readonly');
-                v.hidden = false;
-            })
-        }
-    })
-   })
+    [...selectValue].forEach((val)=>{
+        //    console.log(val);
+        val.addEventListener('click',(e)=>{
+            e.preventDefault();
+            // console.log(chooseCeo);
+            if(val.value == 'ceo'){
+                chooseCeo = true;
+                // choosedirMember = false;
+                // console.log(chooseCeo);  
+            }
+            if(chooseCeo){
+                [...ceo].forEach((v)=>{
+                    // console.log(v);
+                    // v.setAttribute('readonly',StatusAttr);
+                    // v.style.display = 'none';
+                    // v.hidden = true;
+                    // v.style.pointerEvents = 'none';
+                    v.style.display = 'none';
+                });
+                // [...directorMember].forEach((v)=>{
+                //     v.style.display = 'block';
+                // })
+            }else{
+                [...ceo].forEach((v)=>{
+                    // console.log('disceo');
+                    // v.removeAttribute('readonly');
+                    // v.style.display = 'block';
+                    // v.style.pointerEvents = 'all';
+                    v.style.display = 'block';
+    
+                })
+            }
+            if(val.value == 'director_member'){
+                choosedirMember = true;
+                // chooseCeo = false;
+                // console.log(choosedirMember)
+            }
+            if(choosedirMember){
+                [...directorMember].forEach((v)=>{
+                    // console.log(v);
+                    // v.setAttribute('readonly',StatusAttr);
+                    // v.hidden = true;
+                    // v.style.pointerEvents = 'none';
+                    v.style.display = 'none';
+                })
+            }else{
+                [...directorMember].forEach((v)=>{
+                    // console.log(v); 
+                    // v.removeAttribute('readonly');
+                    // v.hidden = false;
+                    // v.style.pointerEvents = 'all';
+                    v.style.display = 'block';
+    
+                })
+            }
+        })
+       })
 });
 // let chooseCeo = false;
 //    let choosedirMember = false;

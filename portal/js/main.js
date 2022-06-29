@@ -1335,15 +1335,21 @@ btnAddMang.addEventListener('click',(e)=>{
                 // console.log(v);
                 // v.setAttribute('readonly',StatusAttr);
                 // v.style.display = 'none';
-                v.hidden = true;
-
-            })
+                // v.hidden = true;
+                // v.style.pointerEvents = 'none';
+                v.style.display = 'none';
+            });
+            // [...directorMember].forEach((v)=>{
+            //     v.style.display = 'block';
+            // })
         }else{
             [...ceo].forEach((v)=>{
                 // console.log('disceo');
                 // v.removeAttribute('readonly');
                 // v.style.display = 'block';
-                v.hidden = false;
+                // v.style.pointerEvents = 'all';
+                v.style.display = 'block';
+
             })
         }
         if(val.value == 'director_member'){
@@ -1355,29 +1361,21 @@ btnAddMang.addEventListener('click',(e)=>{
             [...directorMember].forEach((v)=>{
                 // console.log(v);
                 // v.setAttribute('readonly',StatusAttr);
-                v.hidden = true;
+                // v.hidden = true;
+                // v.style.pointerEvents = 'none';
+                v.style.display = 'none';
             })
         }else{
             [...directorMember].forEach((v)=>{
                 // console.log(v); 
                 // v.removeAttribute('readonly');
-                v.hidden = false;
+                // v.hidden = false;
+                // v.style.pointerEvents = 'all';
+                v.style.display = 'block';
+
             })
         }
     })
-    // val.addEventListener('change',(e)=>{
-    //     e.preventDefault();
-    //     if(val.value == 'ceo'){
-    //         chooseCeo = true;
-    //     } else{
-    //          chooseCeo = false;
-    //     }
-    //     if(val.value == 'director_member'){
-    //         choosedirMember = true;
-    //     } else{
-    //         choosedirMember = false;
-    //     }
-    // })
    })
 });
 function onRest(){
