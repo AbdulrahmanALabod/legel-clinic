@@ -388,3 +388,11 @@
     border-radius: 30em;
 
 }
+@media screen and (max-width: 767px) {
+    .program-case .card .card-header{
+        display: none;
+    }
+    .program-case .card{
+        border: 2px solid var(--org-color) !important;
+    }
+}

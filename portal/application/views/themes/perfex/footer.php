@@ -123,18 +123,20 @@
 
 	$(document).ready(function() {
 		$('#sidebarCollapse').on('click', function() {
-			$('#sidebar').toggleClass('active');
+			$('#sidebar').toggleClass('hide');
 			$(".hamburger").toggleClass("is-active");
 		});
 	});
 
 	function changewidth(stylesidenav) {
 		if (stylesidenav.matches) {
-			$('#sidebar').toggleClass('responsive');
-			$('#sidebar').toggleClass('active');
+			// $('#sidebar').toggleClass('responsive');
+			// $('#sidebar').toggleClass('active');
+			$('#sidebar').toggleClass('hide');
 			$(".page").toggleClass("resp");
 		} else {
-			$('#sidebar').removeClass('responsive');
+			// $('#sidebar').removeClass('responsive');
+			$('#sidebar').removeClass('hide');
 			$(".page").removeClass("resp");
 		}
 	}
