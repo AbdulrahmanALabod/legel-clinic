@@ -5,17 +5,27 @@ $database_instance = Database::getInstance();
 $connection = $database_instance->getConnection();
 
 
-function payload()
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Payload extends ClientsController
 {
-    $rawData = file_get_contents("php://input");
-    $result = json_decode($rawData, true);
-    $payment = [];
-    $payment['status'] = $result['payload']['status'];
-    $payment['payload'] = $rawData;
-    global $connection;
-    $connection->query("UPDATE `payments` SET `status`='" . $payment['status'] . "',`payload`='" . $payment['payload'] . "' where reference ='" . $_GET['reference'] . "' ");
+    public function __construct()
+    {
+        parent::__construct();
 
-    return http_response_code(200);
+        $this->load->helper('url');
+    }
+
+    public function index()
+    {
+        global $connection;
+        $rawData = file_get_contents("php://input");
+        $result = json_decode($rawData, true);
+        $payment = [];
+        $payment['status'] = $result['payload']['status'];
+        $payment['payload'] = $rawData;
+        $connection->query("UPDATE `payments` SET `status`='" . $payment['status'] . "',`payload`='" . $payment['payload'] . "' where reference ='" . $_GET['reference'] . "' ");
+
+        return http_response_code(200);
+    }
 }
-
-payload();
