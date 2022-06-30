@@ -348,6 +348,9 @@
 .program-case .card .card-header{
     padding: 0 1.7rem .5rem ;
 }
+.program-case .card .card-header img{
+    border-radius: 10px;
+}
 .program-case .card-body h4{
     color: var(--sec-color);
 }
@@ -384,4 +387,12 @@
     padding: .5rem 2rem;
     border-radius: 30em;
 
+}
+@media screen and (max-width: 767px) {
+    .program-case .card .card-header{
+        display: none;
+    }
+    .program-case .card{
+        border: 2px solid var(--org-color) !important;
+    }
 }

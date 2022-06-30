@@ -248,13 +248,13 @@
         <section class="program-case">
           <div class="container">
             <div class="text-center">
-              <h2>the case by case</h2>
+              <h2>The case by case</h2>
             </div>
-            <div class="selection-sort d-flex justify-content-between pt-5">
-              <div class="select-pages">
+            <div class="selection-sort d-flex justify-content-between">
+              <!-- <div class="select-pages">
                 <p style="margin-top: 1rem;">Showing 1–16 of 23 results</p>
-              </div>
-              <div class="select-sort">
+              </div> -->
+              <!-- <div class="select-sort">
                 <div class="dropdown">
                   <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                     Default sorting
@@ -267,13 +267,13 @@
                     <li><a class="dropdown-item" href="#">Sort by price: high to low</a></li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="program-row row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 justify-content-center">
+            <div class="program-row row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 justify-content-center">
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                    <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -03.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Basic agency agreement</h4>
@@ -289,7 +289,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -01.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Basic distribution agreement</h4>
@@ -305,7 +305,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -04.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Basic employment contract template</h4>
@@ -321,7 +321,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -05.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Basic memorandum of understanding template</h4>
@@ -337,7 +337,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -06.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Basic non-disclosure agreement</h4>
@@ -353,7 +353,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -07.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Capital completion</h4>
@@ -369,7 +369,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -09.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Capital increase ( JSC )</h4>
@@ -385,7 +385,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -08.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Capital increase ( LLC )</h4>
@@ -401,7 +401,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -11.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Copyrights registration</h4>
@@ -417,7 +417,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -10.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Freelance agreement</h4>
@@ -433,7 +433,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -20.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Joint Stock Company Incorporation</h4>
@@ -449,7 +449,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -21.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Limited liability company incorporation</h4>
@@ -465,39 +465,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
-                  </div>
-                  <div class="card-body text-center">
-                    <h4>Monthly Payment for 12 Month</h4>
-                  </div>
-                  <div class="card-footer text-center">
-                    <h4>EGP 14500</h4>
-                  </div>
-                  <div class="get d-flex justify-content-center align-items-center">
-                    <button class="btn btn-get">Get</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card ">
-                  <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
-                  </div>
-                  <div class="card-body text-center">
-                    <h4>Monthly Payment for 6 Month</h4>
-                  </div>
-                  <div class="card-footer text-center">
-                    <h4>EGP 13000</h4>
-                  </div>
-                  <div class="get d-flex justify-content-center align-items-center">
-                    <button class="btn btn-get">Get</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card ">
-                  <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -13.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>One person company incorporation</h4>
@@ -513,23 +481,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
-                  </div>
-                  <div class="card-body text-center">
-                    <h4>One Time Payment</h4>
-                  </div>
-                  <div class="card-footer text-center">
-                    <h4>EGP 12500</h4>
-                  </div>
-                  <div class="get d-flex justify-content-center align-items-center">
-                    <button class="btn btn-get">Get</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card ">
-                  <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -14.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>SAAS Agreement</h4>
@@ -545,7 +497,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -15.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Services agreement</h4>
@@ -561,7 +513,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -17.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Supply agreement</h4>
@@ -577,7 +529,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -16.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Tax ID Renewal</h4>
@@ -593,7 +545,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -12.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Trademark registration</h4>
@@ -609,7 +561,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -19.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Transfer of shares ( JSC )</h4>
@@ -625,7 +577,7 @@
               <div class="col">
                 <div class="card ">
                   <div class="card-header text-center">
-                    <img src="<?php echo base_url('assets/images/main/cardimg1.svg')?>" alt="cardimg1" width="100%">                
+                  <img src="<?php echo base_url('assets/images/main/price-case/TLC SERVICES V. -18.jpg')?>" alt="cardimg1" width="100%">                
                   </div>
                   <div class="card-body text-center">
                     <h4>Transfer of shares ( LLC )</h4>
@@ -639,7 +591,7 @@
                 </div>
               </div>
             </div>            
-          <div class="ptt-5 pb-5">
+          <!-- <div class="ptt-5 pb-5">
             <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center" id="pagination">
                 <li class="page-item disabled">
@@ -647,13 +599,12 @@
                 </li>
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <!-- <li class="page-item"><a class="page-link" href="#">3</a></li> -->
                 <li class="page-item">
                   <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
                 </li>
               </ul>
             </nav>
-          </div>
+          </div> -->
           </div>
         </section>
       </div>
