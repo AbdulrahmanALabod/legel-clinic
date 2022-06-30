@@ -846,6 +846,7 @@ let x = 0 , i = 0 , z = 0 , y = 0;
 
 let displayٍSelect , lname , lnation , h6Name;
 btnAddMang.addEventListener('click',(e)=>{
+    let random = Math.floor(Math.random() * Math.floor(99999));
     e.preventDefault();
     if(checkbox2.checked){
         displayٍSelect = 'block';
@@ -887,11 +888,11 @@ btnAddMang.addEventListener('click',(e)=>{
                           <div class=" g-3 justify-content-around">
                               <div class="">
                                 <label for="inputtext1" class="form-label mang">${lname}</label>
-                                <input type="text" class="form-control" id="inputtext1" value="${e.name}" name = "manager_name[]" readonly>
+                                <input type="text" class="form-control" id="inputtext1" value="${e.name}" name = "manager_name[]">
                               </div>
                               <div class="">
                                   <label for="inputtext2" class="form-label mang">${lnation}</label>
-                                  <input type="text" class="form-control" id="inputtext2" value="${e.nationality}" name = "manager_nationality[]" readonly>
+                                  <input type="text" class="form-control" id="inputtext2" value="${e.nationality}" name = "manager_nationality[]">
                               </div>
                           </div>
                       </div>
@@ -906,15 +907,15 @@ btnAddMang.addEventListener('click',(e)=>{
                   <h6 class="h6part">${h6Name}</h6>
                   <div class="form-check">
                   <label class="form-check-label" for="flexCheckDefault1">Signing before banks, opening bank accounts and operate on the company’s account.</label>
-                  <input class="form-check-input allow" type="checkbox" value="1" name = "perm1[]">
+                  <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm1]">
                     </div>
                     <div class="form-check">
                     <label class="form-check-label" for="flexCheckChecked2">Signing contracts on behalf of the company</label>
-                    <input class="form-check-input allow" type="checkbox" value="1" name = "perm2[]">
+                    <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm2]">
                     </div>
                     <div class="form-check">
                     <label class="form-check-label" for="flexCheckChecked3">Appear on behalf of the company before the governmental entities.</label>
-                    <input class="form-check-input allow" type="checkbox" value="1" name = "perm3[]">
+                    <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm3]">
                     </div>
               </div>
               <div class="card-footer align-self-center" style="display:none;">
@@ -940,7 +941,7 @@ btnAddMang.addEventListener('click',(e)=>{
         </div>
         <div class="mt-3 mb-3" style="display:${displayٍSelect};"> 
             <label class="visually-hidden" for="specificSizeSelect2">Preference</label>
-            <select class="form-select selectMangerSpec" name = "manager_type_upload[]" id="specificSizeSelect2">
+            <select class="form-select selectMangerSpec" name = "manager_type[]" id="specificSizeSelect2">
                 <option selected disabled>Please select the position</option>
                 <option value = "ceo" class="ceo">Chairman of The Board</option>
                 <option value = "director_member" class="director_member">Member of the Board </option> 
@@ -952,11 +953,11 @@ btnAddMang.addEventListener('click',(e)=>{
                 <div class=" g-3 justify-content-around">
                     <div class="">
                       <label for="input1" class="form-label mang">${lname}</label>
-                      <input type="text" class="form-control" id="input1" value="${autocompleteinput.value}"  name = "manager_name_upload[]" data-id="input_${x}">
+                      <input type="text" class="form-control" id="input1" value="${autocompleteinput.value}"  name = "manager_name[]" data-id="input_${x}">
                     </div>
                     <div class="">
                         <label for="inputtext2" class="form-label mang">${lnation}</label>
-                        <input type="text" class="form-control" id="inputtext2" name = "manager_nationality_upload[]" data-id="input_${x}">
+                        <input type="text" class="form-control" id="inputtext2" name = "manager_nationality[]" data-id="input_${x}">
                     </div>
                 </div>
             </div>
@@ -985,15 +986,15 @@ btnAddMang.addEventListener('click',(e)=>{
         <h6 class="h6part">${h6Name}</h6>
         <div class="form-check">
         <label class="form-check-label" for="flexCheckDefault1">Signing before banks, opening bank accounts and operate on the company’s account.</label>
-        <input class="form-check-input allow" type="checkbox" value="1" name = "perm1_upload[]">
+        <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm1]">
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked2">Signing contracts on behalf of the company</label>
-          <input class="form-check-input allow" type="checkbox" value="1" name = "perm2_upload[]">
+          <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm2]">
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked3">Appear on behalf of the company before the governmental entities.</label>
-          <input class="form-check-input allow" type="checkbox" value="1" name = "perm3_upload[]">
+          <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm3]">
           </div>
         </div>
         <div class="card-footer align-self-center" style="display:none;">
@@ -1017,7 +1018,7 @@ btnAddMang.addEventListener('click',(e)=>{
         </div>
         <div class="mt-3 mb-3"  style="display:${displayٍSelect};"> 
             <label class="visually-hidden" for="specificSizeSelect2">Preference</label>
-            <select class="form-select selectMangerSpec" name = "manager_type_upload[]" id="specificSizeSelect2">
+            <select class="form-select selectMangerSpec" name = "manager_type[]" id="specificSizeSelect2">
                 <option selected disabled>Please select the position</option>
                 <option value = "ceo" class="ceo">Chairman of The Board</option>
                 <option value = "director_member" class="director_member">Member of the Board </option> 
@@ -1029,11 +1030,11 @@ btnAddMang.addEventListener('click',(e)=>{
                 <div class=" g-3 justify-content-around">
                     <div class="">
                       <label for="inputtext1" class="form-label mang">${lname}</label>
-                      <input type="text" class="form-control" id="inputtext1" value="${autocompleteinput.value}"  name = "manager_name_upload[]" data-id="input_${y}">
+                      <input type="text" class="form-control" id="inputtext1" value="${autocompleteinput.value}"  name = "manager_name[]" data-id="input_${y}">
                     </div>
                     <div class="">
                         <label for="inputtext2" class="form-label mang">${lnation}</label>
-                        <input type="text" class="form-control" id="inputtext2"   name = "manager_nationality_upload[]" data-id="input_${y}">
+                        <input type="text" class="form-control" id="inputtext2"   name = "manager_nationality[]" data-id="input_${y}">
                     </div>
                 </div>
             </div>
@@ -1061,15 +1062,15 @@ btnAddMang.addEventListener('click',(e)=>{
         <h6 class="h6part">${h6Name}</h6>
         <div class="form-check">
         <label class="form-check-label" for="flexCheckDefault1">Signing before banks, opening bank accounts and operate on the company’s account.</label>
-        <input class="form-check-input allow" type="checkbox" name = "perm1_upload[]" value = "1" >
+        <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm1]" value = "1" >
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked2">Signing contracts on behalf of the company</label>
-          <input class="form-check-input allow" type="checkbox" name = "perm2_upload[]" value = "1" >
+          <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm2]" value = "1" >
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked3">Appear on behalf of the company before the governmental entities.</label>
-          <input class="form-check-input allow" type="checkbox" name = "perm3_upload[]" value = "1" >
+          <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm3]" value = "1" >
           </div>
         </div>
         <div class="card-footer align-self-center" style="display:none;">
@@ -1116,11 +1117,11 @@ btnAddMang.addEventListener('click',(e)=>{
                           <div class=" g-3 justify-content-around" >
                               <div class="">
                                 <label for="inputtext1" class="form-label mang">${lname}</label>
-                                <input type="text" class="form-control" id="inputtext1" value="${e.name}" name = "manager_name[]" readonly>
+                                <input type="text" class="form-control" id="inputtext1" value="${e.name}" name = "manager_name[]">
                               </div>
                               <div class="">
                                   <label for="inputtext2" class="form-label mang">${lnation}</label>
-                                  <input type="text" class="form-control" id="inputtext2" value="${e.nationality}" name = "manager_nationality[]" readonly>
+                                  <input type="text" class="form-control" id="inputtext2" value="${e.nationality}" name = "manager_nationality[]">
                               </div>
                           </div>
                       </div>
@@ -1135,15 +1136,15 @@ btnAddMang.addEventListener('click',(e)=>{
                   <h6 class="h6part">${h6Name}</h6>
                   <div class="form-check">
                   <label class="form-check-label" for="flexCheckDefault1">Signing before banks, opening bank accounts and operate on the company’s account.</label>
-                  <input class="form-check-input allow" type="checkbox" value="1" name = "perm1[]">
+                  <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm1]">
                     </div>
                     <div class="form-check">
                     <label class="form-check-label" for="flexCheckChecked2">Signing contracts on behalf of the company</label>
-                    <input class="form-check-input allow" type="checkbox" value="1" name = "perm2[]">
+                    <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm2]">
                     </div>
                     <div class="form-check">
                     <label class="form-check-label" for="flexCheckChecked3">Appear on behalf of the company before the governmental entities.</label>
-                    <input class="form-check-input allow" type="checkbox" value="1" name = "perm3[]">
+                    <input class="form-check-input allow" type="checkbox" value="1" name = "manager[${random}][perm3]">
                     </div>
               </div>
               <div class="card-footer align-self-center" style="display:none;">
@@ -1197,7 +1198,7 @@ btnAddMang.addEventListener('click',(e)=>{
                 <div class="form-group">
                 <div class="form-line">
                     <div class="btn-file align-items-center">
-                    <input type="file" id="event_image" accept="image/png, image/gif, image/jpeg"  value="" onchange="onFileSelected(event,${i})" data-id="input_${x}">
+                    <input type="file" id="event_image" accept="image/png, image/gif, image/jpeg" name = "upload_manager[]"  value="" onchange="onFileSelected(event,${i})" data-id="input_${x}">
                         <div class=" change-file-ico">
                            <img src="${iconupload.value}" width="25%" class="disNone">
                            </div>
@@ -1216,15 +1217,15 @@ btnAddMang.addEventListener('click',(e)=>{
         <h6 class="h6part">${h6Name}</h6>
         <div class="form-check">
         <label class="form-check-label" for="flexCheckDefault1">Signing before banks, opening bank accounts and operate on the company’s account.</label>
-        <input class="form-check-input allow" type="checkbox" name = "perm1[]"  value="1" >
+        <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm1]"  value="1" >
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked2">Signing contracts on behalf of the company</label>
-          <input class="form-check-input allow" type="checkbox" name = "perm2[]" value="1" >
+          <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm2]" value="1" >
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked3">Appear on behalf of the company before the governmental entities.</label>
-          <input class="form-check-input allow" type="checkbox" name = "perm3[]" value="1" >
+          <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm3]" value="1" >
           </div>
         </div>
         <div class="card-footer align-self-center" style="display:none;">
@@ -1292,15 +1293,15 @@ btnAddMang.addEventListener('click',(e)=>{
         <h6 class="h6part">${h6Name}</h6>
         <div class="form-check">
         <label class="form-check-label" for="flexCheckDefault1">Signing before banks, opening bank accounts and operate on the company’s account.</label>
-        <input class="form-check-input allow" type="checkbox" name = "perm1_upload[]" value="1">
+        <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm1]" value="1">
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked2">Signing contracts on behalf of the company</label>
-          <input class="form-check-input allow" type="checkbox" name = "perm2_upload[]" value="1" >
+          <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm2]" value="1" >
           </div>
           <div class="form-check">
           <label class="form-check-label" for="flexCheckChecked3">Appear on behalf of the company before the governmental entities.</label>
-          <input class="form-check-input allow" type="checkbox" name = "perm3_upload[]" value="1" >
+          <input class="form-check-input allow" type="checkbox" name = "manager[${random}][perm3]" value="1" >
           </div>
         </div>
         <div class="card-footer align-self-center" style="display:none;">

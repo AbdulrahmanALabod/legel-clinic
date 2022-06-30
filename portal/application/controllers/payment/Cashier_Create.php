@@ -19,13 +19,12 @@ class Cashier_Create extends ClientsController
     {
         parent::__construct();
 
-        $root  = ("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s" : "") . "://" . $_SERVER['HTTP_HOST'] . "/legel-form/portal/");
 
 
         $this->paymentConfig =  [
             'testCredentials' => [
-                'merchantId' => '281821120732136',
-                'publickey' => 'OPAYPUB16388855997950.39843277853359504',
+                'merchantId' => '281822042050146',
+                'publickey' => 'OPAYPUB16504486183970.8911503494758192',
                 'url' => 'https://sandboxapi.opaycheckout.com/api/v1/international/cashier/create',
             ],
 
@@ -39,8 +38,8 @@ class Cashier_Create extends ClientsController
             'currency' => 'EGP',
 
             'returnUrl' => site_url('payment/thanks'),
-            'callbackUrl' =>  $root . 'payment/payload.php',
-            'cancelUrl' =>  $root,
+            'callbackUrl' => site_url('payment/payload'),
+            'cancelUrl' =>  site_url(''),
 
             'expireAt' => 30,
 
@@ -113,7 +112,15 @@ class Cashier_Create extends ClientsController
         $header = ['Content-Type:application/json', 'Authorization:Bearer ' . $this->publickey, 'MerchantId:' . $this->merchantId];
         $response = $this->http_post($this->url, $header, json_encode($data));
         $result = $response ? $response : null;
-        return $result;
+
+        $result = json_decode($result, true);
+        if ($result && $result["data"]) {
+            header("Location: " . $result["data"]['cashierUrl']);
+            exit;
+        } else {
+            header("Location: " . site_url(""));
+            exit;
+        }
     }
 
     private function http_post($url, $header, $data)
@@ -180,30 +187,11 @@ class Cashier_Create extends ClientsController
     private function storeForm()
     {
         global  $connection;
+        $managers = [];
+        $shareholders = [];
 
-        if (isset($_POST['userid'])) {
-            $formdata["userid"] = $_POST['userid'];
-        }
-        if (isset($_POST["signdate"]) && !empty($_POST["signdate"])) {
-            $formdata["signdate"] = $_POST["signdate"];
-            $update_date = "UPDATE `users` SET `signdate`='" . $formdata["signdate"] . "'WHERE `id`='" . $formdata["userid"] . "'";
-            $result_date = $connection->query($update_date);
-        }
         if (isset($_POST['company_type']) && !empty($_POST['company_type'])) {
-            $company_radio = $_POST['company_type'];
-            if ($company_radio == 'LimitedLiabilityCompany') {
-                $formdata["company_type"] = "LimitedLiabilityCompany";
-            } elseif ($company_radio == 'JointStockIncorporation') {
-                $formdata["company_type"]  = "JointStockIncorporation";
-            } elseif ($company_radio == 'OPCrequirements') {
-                $formdata["company_type"]  = "OPCrequirements";
-            } elseif ($company_radio == 'SoleEntity') {
-                $formdata["company_type"]  = "SoleEntity";
-            } elseif ($company_radio == 'Generalpartnership') {
-                $formdata["company_type"]  = "Generalpartnership";
-            } elseif ($company_radio == 'LimitedPartnership') {
-                $formdata["company_type"]  = "LimitedPartnership";
-            }
+            $formdata["company_type"] = $_POST['company_type'];
         }
         if (isset($_POST["company_name"]) && !empty($_POST["company_name"])) {
             $formdata["company_name"] = json_encode($_POST["company_name"]);
@@ -276,53 +264,21 @@ class Cashier_Create extends ClientsController
             }
         }
 
-        if (isset($_POST["perm1"]) && !empty($_POST["perm1"])) {
-            for ($i = 0; $i < count($_POST["perm1"]); $i++) {
-                $permessions[$i]["perm1"] = $_POST["perm1"][$i];
+        $managerIndex = 0;
+        foreach($_POST['manager'] ?? [] as  $value) {
+            if(isset($value['perm1'])){
+                $permessions[$managerIndex]["perm1"] = $value['perm1'];
             }
-        }
-        if (isset($_POST["perm2"]) && !empty($_POST["perm2"])) {
-            for ($i = 0; $i < count($_POST["perm2"]); $i++) {
-                $permessions[$i]["perm2"] = $_POST["perm2"][$i];
+            if(isset($value['perm2'])){
+                $permessions[$managerIndex]["perm2"] = $value['perm2'];
             }
-        }
-        if (isset($_POST["perm3"]) && !empty($_POST["perm3"])) {
-            for ($i = 0; $i < count($_POST["perm3"]); $i++) {
-                $permessions[$i]["perm3"] = $_POST["perm3"][$i];
+            if(isset($value['perm3'])){
+                $permessions[$managerIndex]["perm3"] = $value['perm3'];
             }
+            $managerIndex++;
         }
 
-        if (isset($_POST["manager_name_upload"]) && !empty($_POST["manager_name_upload"])) {
-            for ($i = 0; $i < count($_POST["manager_name_upload"]); $i++) {
-                $managers[$i]["manager_name_upload"] = $_POST["manager_name_upload"][$i];
-            }
-        }
-        if (isset($_POST["manager_nationality_upload"]) && !empty($_POST["manager_nationality_upload"])) {
-            for ($i = 0; $i < count($_POST["manager_nationality_upload"]); $i++) {
-                $managers[$i]["manager_nationality_upload"] = $_POST["manager_nationality_upload"][$i];
-            }
-        }
-        if (isset($_POST["manager_type_upload"]) && !empty($_POST["manager_type_upload"])) {
-            for ($i = 0; $i < count($_POST["manager_type_upload"]); $i++) {
-                $managers[$i]["manager_type_upload"] = $_POST["manager_type_upload"][$i];
-            }
-        }
 
-        if (isset($_POST["perm1_upload"]) && !empty($_POST["perm1_upload"])) {
-            for ($i = 0; $i < count($_POST["perm1_upload"]); $i++) {
-                $permessions[$i]["perm1_upload"] = $_POST["perm1_upload"][$i];
-            }
-        }
-        if (isset($_POST["perm2_upload"]) && !empty($_POST["perm2_upload"])) {
-            for ($i = 0; $i < count($_POST["perm2_upload"]); $i++) {
-                $permessions[$i]["perm2_upload"] = $_POST["perm2_upload"][$i];
-            }
-        }
-        if (isset($_POST["perm3_upload"]) && !empty($_POST["perm3_upload"])) {
-            for ($i = 0; $i < count($_POST["perm3_upload"]); $i++) {
-                $permessions[$i]["perm3_upload"] = $_POST["perm3_upload"][$i];
-            }
-        }
         global $managers_file_names;
         $managers_file_names = array();
         if (isset($_FILES['upload_manager'])) {
@@ -345,9 +301,9 @@ class Cashier_Create extends ClientsController
 
         $insert_company = "INSERT INTO `companies`(`company_type`,`company_name` , `company_address`, `company_activity`, 
                             `capital_value`, `capital_share`,`user_id`) VALUES
-                        ('" . $formdata["company_type"] . "','" . $formdata["company_name"] ?? '' . "','" . $formdata["company_address"] . "'
+                        ('" . $formdata["company_type"] . "','" . $formdata["company_name"]  . "','" . $formdata["company_address"] . "'
                         ,'" . $formdata["company_activity"] . "','" . $formdata["capital_value"] . "','" . $formdata["capital_share"] . "'
-                        ,'" . $formdata["userid"] . "')";
+                        ,'" . $_SESSION['client_user_id'] . "')";
         $result1 = $connection->query($insert_company);
         $formdata["company_id"] = $connection->insert_id;
 
@@ -360,47 +316,28 @@ class Cashier_Create extends ClientsController
                                '" . $shareholders[$i]["personal_id"] . "','" . $formdata["company_id"] . "');";
             $result = $connection->query($insert_shareholder);
         }
-
         /////////////////////////////// insert managers to database ////////////////////////////////
         for ($i = 0; $i < count($managers); $i++) {
             $insert_manager = "INSERT INTO `managers`(`manager_name`,`manager_nationality` ,
                            `manager_personal_id`,`perm1`,`perm2`,`perm3`,`manager_type`,`company_id`)
                             VALUES ('" . $managers[$i]["manager_name"] . "','" . $managers[$i]["manager_nationality"] . "',
-                            '" . $shareholders[$i]["personal_id"] . "','" . $permessions[$i]["perm1"] . "','" . $permessions[$i]["perm2"] . "',
-                            '" . $permessions[$i]["perm3"] . "','" . $managers[$i]["manager_type"] . "','" . $formdata["company_id"] . "')";
+                            '" .  $managers[$i]["upload_manager"] . "','" . (isset($permessions[$i]) ? ($permessions[$i]["perm1"] ?? "NULL") : "NULL") . "','" . (isset($permessions[$i]) ? $permessions[$i]["perm2"] ?? "NULL" : "NULL") . "',
+                            '" . (isset($permessions[$i]) ? ($permessions[$i]["perm3"] ?? "NULL") : "NULL") . "','" . ($managers[$i]["manager_type"] ?? "NULL") . "','" . $formdata["company_id"] . "')";
             $result1 = $connection->query($insert_manager);
         }
 
-        if (isset($_POST["manager_name_upload"][0]) && !empty($_POST["manager_name_upload"][0])) {
-            for ($i = 0; $i < count($_POST["manager_name_upload"]); $i++) {
-                $insert_manager = "INSERT INTO `managers`(`manager_name`,`manager_nationality` , `manager_personal_id`,
-                            `perm1`,`perm2`,`perm3`,`manager_type`,`company_id`) 
-                            VALUES ('" . $managers[$i]["manager_name_upload"] . "','" . $managers[$i]["manager_nationality_upload"] . "',
-                            '" . $managers[$i]["upload_manager"] . "','" . $permessions[$i]["perm1_upload"] . "',
-                            '" . $permessions[$i]["perm2_upload"] . "','" . $permessions[$i]["perm3_upload"] . "','" . $managers[$i]["manager_type_upload"] . "',
-                            '" . $formdata["company_id"] . "')";
-                $result1 = $connection->query($insert_manager);
-            }
-        }
         ///////////////////////////////////////// insert malek in database ////////////////////////////
-        if (isset($_POST["malek_name"]) && isset($_POST["malek_nationality"]) && isset($_POST["malek_personal_id"])) {
+        if ((!empty($_POST["malek_name"])) && (!empty($_POST["malek_nationality"])) && (!empty($_FILES["malek_personal_id"]))) {
+            $file_tmp = $_FILES['malek_personal_id']['tmp_name'];
+            $file_name = $key . $this->generateRandomString() . $_FILES['malek_personal_id']['name'];
+            move_uploaded_file($file_tmp, 'uploads/' . $file_name);
+
+
             $insert_malek = "INSERT INTO `managers`(`manager_name`,`manager_nationality` , `manager_personal_id`,
                            `company_id`) VALUES ('" . $_POST["malek_name"] . "','" . $_POST["malek_nationality"] . "',
-                           '" . $_POST["malek_personal_id"] . "','" . $formdata["company_id"] . "')";
+                           '" . $file_name . "','" . $formdata["company_id"] . "')";
             $result = $connection->query($insert_malek);
         }
     }
 }
 
-
-$caher = new Cashier_Create();
-$result = $caher->index();
-$result = json_decode($result, true);
-if ($result && $result["data"]) {
-    header("Location: " . $result["data"]['cashierUrl']);
-    exit;
-} else {
-    header("Location: " . site_url(""));
-    exit;
-}
-$database_instance->destructConnection();

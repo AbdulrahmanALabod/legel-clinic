@@ -103,9 +103,9 @@
                     <div class="layer">
                         <div class="buttons-tog">
                             <div class="switch">
-                                <input name="radio" type="radio" value="optionone" id="optionone" checked>
+                                <input type="radio" value="optionone" id="optionone" checked>
                                 <label for="optionone">Corporations</label>
-                                <input name="radio" type="radio" value="optiontwo" id="optiontwo">
+                                <input type="radio" value="optiontwo" id="optiontwo">
                                 <label for="optiontwo" class="right">Partnerships</label>
                                 <span aria-hidden="true" id="span-right"></span>
                             </div>
