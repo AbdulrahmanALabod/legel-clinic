@@ -101,9 +101,9 @@
                     <div class="layer">
                         <div class="buttons-tog">
                             <div class="switch">
-                                <input name="radio" type="radio" value="optionone" id="optionone" checked>
+                                <input type="radio" value="optionone" id="optionone" checked>
                                 <label for="optionone">شركات الاموال</label>
-                                <input name="radio" type="radio" value="optiontwo" id="optiontwo">
+                                <input type="radio" value="optiontwo" id="optiontwo">
                                 <label for="optiontwo" class="right">شركات الأشخاص</label>
                                 <span aria-hidden="true" id="span-right"></span>
                             </div>
@@ -347,7 +347,7 @@
                                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-center">
                                     <div class="col">
                                         <label for="radio_1">
-                                            <input type="radio" name="plan_id" value="2" class="card-input-element hidden" id="radio_1" name="radio" />
+                                            <input type="radio" name="plan_id" value="2" class="card-input-element hidden" id="radio_1" />
                                             <div class="card h-100">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <h2 class="text-center">Online Incorporation</h2>
@@ -414,7 +414,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="radio_2">
-                                            <input type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2" name="radio" checked />
+                                            <input type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2" checked />
                                             <div class="card h-100 card-x">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <svg width="83" height="41" viewBox="0 0 83 41" fill="none" xmlns="http://www.w3.org/2000/svg">
