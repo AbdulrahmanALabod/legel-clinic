@@ -348,6 +348,9 @@
 .program-case .card .card-header{
     padding: 0 1.7rem .5rem ;
 }
+.program-case .card .card-header img{
+    border-radius: 10px;
+}
 .program-case .card-body h4{
     color: var(--sec-color);
 }
