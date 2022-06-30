@@ -23,9 +23,11 @@
                           <img src="<?php echo base_url('assets/images/main/logo-nav.svg')?>" alt=""></a>  
                         <!-- Logo End --> 
                       </div>
-                    <div class="social-icons form-icon col-auto ">
-                      <div class=" social-icons-light mb-0 d-flex">
-                        
+                    <div class="social-icons form-icon col-auto dash ps-2">
+                        <div class=" social-icons-light mb-0 d-flex align-items-center">
+                          <a class="turn-en me-3" href="<?php echo base_url('payment/index'); ?>">
+                          <img src="<?php echo base_url('assets/images/main/en.svg')?>"></a>
+
                           <?php if (isset($_SESSION['client_logged_in'])) { ?>
                           <div class="dropdown" >
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
@@ -34,7 +36,6 @@
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="dropdownMenuLink">
                               <li><a class="dropdown-item" href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a></li>
                               <li><a class="dropdown-item" href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url('payment/index'); ?>"><i class="fa-solid fa-globe"></i>Turn-En</a></li>
 
                       <li><a class="dropdown-item"  href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a></li>
                       </ul>
@@ -79,11 +80,7 @@
     </div>
     <section>
         <!-- btn-languages -->
-        <div class="turn-en">
-            <div class="cir-4">
-            <a href="<?php echo base_url('payment/index'); ?>"></a>
-            </div>
-        </div>
+       
         <form action="<?php echo site_url('payment/Cashier_Create'); ?>" id="form" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
             <input type="hidden" name="userid" id="userid" value="">
             <div class="main-content" id="main">
@@ -91,7 +88,7 @@
                 <div class="layer  mt-5">
                         <div class="welcome-img d-flex">
                             <div class="text-welcome d-flex  align-items-center align-self-end p-5">
-                                <div class="col-6 p-5 ">
+                                <div class="col-12 col-md-8 py-5 pe-4 ps-2">
                                     <h1 class="">بنسھل علیك اجراءات تأسیس شركتك الناشئة</h1>
                                     <div class="d-flex justify-content-center">
                                     <button type="button" class="btn btn-start" id="btnSubmit" onclick="changeLayer(1)">ابدا الان</button>
@@ -310,25 +307,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="oneComp" id="oneCompDiv">
-                            <div class="row g-3 justify-content-between pt-3" dir="rtl" data-id="item_0">
-                                <div class="col-md-4">
-                                    <label for="inputtext1" class="form-label mang" id="mangName">اسم المالك</label>
-                                    <input type="text" class="form-control mangSolo mangOneInfo" id="name" name="malek_name">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="inputtext2" class="form-label mang">جنسيه المالك</label>
-                                    <input type="text" class="form-control mangSolo mangOneInfo" id="nation" name="malek_nationality">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="formFileMultiple" class="form-label">اضافه البطاقه الشخصية</label>
-                                    <input class="form-control mangSolo mangOneInfo" name="malek_personal_id" type="file" id="id" accept="image/png, image/gif, image/jpeg">
-                                </div>
-                                <div class="col-md-4 x-last align-self-center">
-                                    <button class="btn btn-outline-danger" type="reset" id="partCompDel">حذف المالك</button>
-                                </div>
-                                <hr>
-                            </div>
+                        <div class="" id="oneCompDiv">
                         </div>
                         <div id="part-form" class="container"></div>
                         <div id="error-manger" class="error"></div>
@@ -336,6 +315,8 @@
                     <!-- layer---4 mangers names -->
                     <div class="layer">
                         <div class="mang-names pt-4">
+                        <input type="hidden"  id="imgclose" value="<?php echo site_url('assets/images/main/x-icon.svg') ?>">
+                        <input type="hidden"  id="iconupload" value="<?php echo site_url('assets/images/main/upload.svg') ?>">
                             <div class="row g-3 justify-content-center" dir="rtl">
                                 <div class="col-md-6">
                                     <label for="autocompleteinput" class="form-label" id="partName">ادخل اسماء المديرين</label>

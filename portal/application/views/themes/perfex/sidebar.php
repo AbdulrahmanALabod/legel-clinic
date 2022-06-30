@@ -7,7 +7,7 @@
         <li class="nav-item pcoded-hasmenu">
           <a href="#!" class="nav-link justify-content-between">
             <span class="pcoded-micon">
-              <img src="<?php echo base_url('assets/images/main/companyprofile.svg"') ?>" alt="companyprofile">
+              <img src="<?php echo base_url('assets/images/main/comp-profile.svg"') ?>" alt="companyprofile">
               <span class="pcoded-mtext">My Company</span>
             </span>
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
@@ -40,10 +40,40 @@
           </ul>
         </li>
         <li class="nav-item pcoded-hasmenu">
+          <a href="#!" class="nav-link justify-content-between">
+            <span class="pcoded-micon">
+              <img src="<?php echo base_url('assets/images/main/companyprofile.svg"') ?>"alt="companyprofile">
+              <span class="pcoded-mtext">Company Documents</span>
+            </span>
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+          </a>
+          <ul class="pcoded-submenu" style="display: none;">
+            <li class="inner-list">
+              <a href="freeContracts.html" class="">
+                <img src="<?php echo base_url('assets/images/main/freecontract.svg"') ?>"alt="freecontract" class="img-inner">
+                <span>Official documents</span>
+              </a>
+            </li>
+            <li class="inner-list">
+              <a href="" class="">
+                <img src="<?php echo base_url('assets/images/main/paidcontract.svg"') ?>"alt="paidcontract">
+                <span>Internal documents</span>
+              </a>
+            </li>
+            <li class="inner-list">
+              <a href="" class="">
+                <img src="<?php echo base_url('assets/images/main/paidcontract.svg"') ?>"alt="paidcontract">
+                <span>Due diligence</span>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
           <a href="<?php echo site_url('payment/index')?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
               <img src="<?php echo base_url('assets/images/main/onlineinco.svg"') ?>"alt="onlineinco">
-              <span class="pcoded-mtext">Online Incorporation</span>
+              <span class="pcoded-mtext">Start a Company</span>
             </span>
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
           </a>
@@ -51,7 +81,7 @@
         <li class="nav-item pcoded-hasmenu">
           <a href="<?php echo site_url('clients/calendar'); ?>" class="nav-link justify-content-between">
             <span class="pcoded-micon">
-              <img src="<?php echo base_url('assets/images/main/onlineinco.svg"') ?>"alt="calendar">
+              <img src="<?php echo base_url('assets/images/main/calender.svg"') ?>"alt="calendar">
               <span class="pcoded-mtext">Calender</span>
             </span>
             <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
@@ -107,7 +137,7 @@
             <li class="inner-list">
               <a href="<?php echo base_url('surveys/survey/4/65035651fac36c08126dae358f71f335'); ?>" class="">
               <img src="<?php echo base_url('assets/images/main/companyprofile.svg"') ?>" alt="Receive Documents">
-                <span> Receive Documents</span>
+                <span> Request Documents</span>
               </a>
             </li>
           </ul>

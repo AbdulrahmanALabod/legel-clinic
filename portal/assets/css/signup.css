@@ -42,7 +42,11 @@
   padding: 0px 50px;
   text-align: center;
 }
-
+@media screen and (max-width: 375px) {
+  .overlay-signup .box{
+    padding: 0;
+  }
+}
 .overlay-signup h2, .overlay-signup p{
     margin-bottom: 1rem ;
 }
@@ -197,9 +201,14 @@
     top: 250px;
   }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width:400px) {
   .px-5,.py-5{
-    padding: 3.5rem !important;
+    padding: 0 !important;
+  }
+  .form .sign-in , .form .sign-up ,.form .forget-pass{
+    --padding: 20px; 
+    padding: 0 var(--padding); 
+    width: 100%;
   }
 } 
 .backtohome{
