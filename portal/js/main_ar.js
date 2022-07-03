@@ -845,6 +845,7 @@ let x = 0 , i = 0 , z = 0 , y = 0;
 
 let displayٍSelect , lname , lnation , h6Name;
 btnAddMang.addEventListener('click',(e)=>{
+    let random = Math.floor(Math.random() * Math.floor(99999));
     e.preventDefault();
     if(checkbox2.checked){
         displayٍSelect = 'block';
