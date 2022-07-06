@@ -53,34 +53,32 @@
                             <li class="nav-item"><a class="nav-link" href="<?php echo site_url('index/contact'); ?>">Contact us</a></li>
                             <li class="nav-item search-toggler at-spec-width">
                               <a class="nav-link" href="#">Search</a></li>
-                              <li class="nav-item dropdown at-spec-width">
                               <?php if (isset($_SESSION['client_logged_in'])) { ?>
-                                <a href="" class="pro-spec">Profile
-                                  <button aria-label="dropdown toggler" id="drop-menu-profile" type="button">
-                                    <i class="fa fa-angle-down"></i>
-                                  </button>
-                                </a>
-                                <?php } else { ?>
-                                  <a class="nav-link" href="<?php echo site_url('authentication/login'); ?>">Login</a>
-                                <?php } ?>  
-                                <ul style="display: none;" id="ul-menu-profile">
-                                  <li class="drop-item">
-                                    <a href="<?php echo site_url('clients'); ?>"><i class="fa-solid fa-table-columns"></i>Dashboard</a>
-                                  </li>
-                                  <li class="drop-item">
-                                    <a href="<?php echo site_url('clients/profile'); ?>"><i class="fa-solid fa-gear"></i>Account setting</a>
-                                  </li>
-                                  <?php   if(isset($_SESSION['client_logged_in'])){?>
-                                    <li class="drop-item">
-                                      <a href="<?php echo site_url('authentication/logout'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Sign Out</a>
+                                <li class="nav-item  at-spec-width">
+                                    <a class="nav-link" href="<?php echo site_url('clients'); ?>">Dashboard</a>
+                                </li>
+                                <li class="nav-item  at-spec-width">
+                                    <a class="nav-link" href="<?php echo site_url('clients/profile'); ?>">Account setting</a>
+                                </li>
+                                <li class="nav-item  at-spec-width">
+                                      <a class="nav-link" href="<?php echo site_url('authentication/logout'); ?>">Sign Out</a>
                                     </li>
+                                <?php } else { ?>
+                                  <li class="nav-item  at-spec-width">
+                                  <a class="nav-link" href="<?php echo site_url('authentication/login'); ?>">Login</a>
+                                  </li>
+                                <?php } ?>  
+                                <!-- <ul style="display: none;" id="ul-menu-profile">
+                                 
+                                  
+                                  <?php   if(isset($_SESSION['client_logged_in'])){?>
+                                    
                                   <?php }else{?>
                                       <li class="drop-item">
                                         <a href="<?php echo site_url('authentication/login'); ?>"><i class="fa-solid fa-arrow-right-from-bracket"></i>Login</a>
                                       </li>
                                   <?php }?>
-                                </ul>
-                            </li>
+                                </ul> -->
                           </ul>
                         </div>
                       </div>
@@ -151,7 +149,7 @@
                   </div>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="<?php echo base_url('assets/images/main/sliderimg.svg')?>" class="d-block w-100" alt="...">
+                      <img src="<?php echo base_url('assets/images/main/365pro.png')?>" class="d-block w-100" alt="...">
                       <div class="content">
                        <a href="<?php echo site_url('index/price'); ?>" class="more" >More...</a>
                       </div>

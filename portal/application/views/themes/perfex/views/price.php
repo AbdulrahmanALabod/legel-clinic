@@ -119,7 +119,7 @@
                       <path d="M0.0081445 22.6303C1.91922 22.6303 3.79188 22.6303 5.66935 22.6303C5.95745 26.2248 7.62364 28.7959 11.0569 29.7557C14.6197 30.7548 17.1982 29.0799 19.0949 26.1171C19.479 27.1063 19.8055 28.125 20.2665 29.075C20.7323 30.0349 21.3373 30.9213 21.8943 31.8665C19.7959 34.4669 14.3988 37.2436 8.80485 35.2406C2.55304 33.0026 -0.169518 27.0965 0.0081445 22.6303Z" fill="#F6F9FF"/>
                       </svg> program</label>
                     <input name="radio" type="radio" value="optiontwo" id="optiontwo">
-                    <label for="optiontwo" class="right">The case-by-case</label>
+                    <label for="optiontwo" class="right">Case-By-Case</label>
                     <span aria-hidden="true" id="span-right"></span>
                   </div>                
                 </div>
@@ -248,7 +248,7 @@
         <section class="program-case">
           <div class="container">
             <div class="text-center">
-              <h2>The case by case</h2>
+              <h2>Case By Case</h2>
             </div>
             <div class="selection-sort d-flex justify-content-between">
               <!-- <div class="select-pages">
