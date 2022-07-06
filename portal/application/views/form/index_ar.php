@@ -132,7 +132,7 @@
                                         </label>
                                     </div>
                                     <div class="mr-8">
-                                        <button class="btn down" id="down-1" type="button" onclick="download('limited-responsibilites-comp');" style="display: none;">المستندات المطلوبة</button>
+                                     <a  download="limited-responsibilites-comp" class="btn down" id="down-1" style="display: none;" href="<?php echo base_url('assets/files/limited-responsibilites-comp.pdf');?>">المستندات المطلوبة</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex flex-row-reverse mt-3">
@@ -151,7 +151,7 @@
                                         </label>
                                     </div>
                                     <div class="mr-8">
-                                        <button class="btn down" id="down-2" style="display: none;" onclick="download('egy-corporation-comp');" type="button">المستندات المطلوبة</button>
+                                    <a  download="egy-corporation-comp" class="btn down" id="down-2" style="display: none;" href="<?php echo base_url('assets/files/egy-corporation-comp.pdf');?>">المستندات المطلوبة</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex flex-row-reverse mt-3">
@@ -164,7 +164,7 @@
                                         </label>
                                     </div>
                                     <div class="mr-8">
-                                        <button class="btn down" id="down-3" style="display: none;" onclick="download('one-person-comp-with-limited-resp');" type="button">المستندات المطلوبة</button>
+                                    <a  download="one-person-comp-with-limited-resp" class="btn down" id="down-3" style="display: none;" href="<?php echo base_url('assets/files/one-person-comp-with-limited-resp.pdf');?>">المستندات المطلوبة</a>
                                     </div>
                                 </div>
                                 <div class="invalid-feedback">يجب اختيار شركه</div>
@@ -193,7 +193,7 @@
                                         </label>
                                     </div>
                                     <div class="mr-8">
-                                        <button class="btn down" id="down-4" type="button" onclick="download('solo-company');" style="display: none;">المستندات المطلوبة</button>
+                                    <a download="solo-company" class="btn down" id="down-4" style="display: none;" href="<?php echo base_url('assets/files/solo-company.pdf');?>">المستندات المطلوبة</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex flex-row-reverse mt-3">
@@ -210,7 +210,7 @@
                                         </label>
                                     </div>
                                     <div class="mr-8">
-                                        <button class="btn down" id="down-5" style="display: none;" onclick="download('solidarity-comp');" type="button">المستندات المطلوبة</button>
+                                    <a download="solidarity-comp" class="btn down" id="down-5" style="display: none;" href="<?php echo base_url('assets/files/solidarity-comp.pdf');?>">المستندات المطلوبة</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex flex-row-reverse mt-3">
@@ -232,7 +232,7 @@
                                     </div>
                                     <div class="invalid-feedback">يجب اختيار شركه</div>
                                     <div class="mr-8">
-                                        <button class="btn down" id="down-6" style="display: none;" onclick="download('simple-recommendation-comp');" type="button">المستندات المطلوبة</button>
+                                    <a download="simple-recommendation-comp" class="btn down" id="down-6" style="display: none;" href="<?php echo base_url('assets/files/simple-recommendation-comp.pdf');?>">المستندات المطلوبة</a>
                                     </div>
                                 </div>
                             </div>
@@ -338,9 +338,9 @@
                     <div class="layer">
                         <div class="d-flex justify-content-center align-items-center" style="height:20vh">
                             <div class="down-paper text-center">
-                                <button onclick="download_docx('incorporation-poa');" type="button" class="btn btn-down-paper">
-                                    <img src="<?php echo base_url(); ?>/images/Vector (1).svg"> تحميل التوكيل </button>
-                            </div>
+                            <a download="incorporation-poa.docx" class="btn btn-down-paper" href="<?php echo base_url('assets/files/incorporation-poa.docx');?>">
+                            تحميل التوكيل <img src="<?php echo base_url(); ?>/images/Vector (1).svg">
+                            </a>
                         </div>
                         <section class="pricing-365">
                             <div class="container">
