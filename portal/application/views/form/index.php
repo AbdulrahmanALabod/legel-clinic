@@ -131,7 +131,7 @@
                                         </label>
                                     </div>
                                     <div class="ml-8">
-                                        <button class="btn down" id="down-1" type="button" onclick="download('limited-responsibilites-comp');" style="display: none;">Required Documents</button>
+                                        <a  download="limited-responsibilites-comp" class="btn down" id="down-1" style="display: none;" href="<?php echo base_url('assets/files/limited-responsibilites-comp.pdf');?>">Required Documents</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex  mt-3">
@@ -149,7 +149,7 @@
                                         </label>
                                     </div>
                                     <div class="ml-8">
-                                        <button class="btn down" id="down-2" style="display: none;" onclick="download('egy-corporation-comp');" type="button">Required Documents</button>
+                                        <a  download="egy-corporation-comp" class="btn down" id="down-2" style="display: none;" href="<?php echo base_url('assets/files/egy-corporation-comp.pdf');?>">Required Documents</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex mt-3">
@@ -162,7 +162,7 @@
                                         </label>
                                     </div>
                                     <div class="ml-8">
-                                        <button class="btn down" id="down-3" style="display: none;" onclick="download('one-person-comp-with-limited-resp');" type="button">Required Documents</button>
+                                        <a  download="one-person-comp-with-limited-resp" class="btn down" id="down-3" style="display: none;" href="<?php echo base_url('assets/files/one-person-comp-with-limited-resp.pdf');?>">Required Documents</a>
                                     </div>
                                 </div>
                                 <div class="invalid-feedback">You must Choose one company</div>
@@ -189,7 +189,7 @@
                                         </label>
                                     </div>
                                     <div class="ml-8">
-                                        <button class="btn down" id="down-4" type="button" onclick="download('solo-company');" style="display: none;">Required Documents</button>
+                                        <a download="solo-company" class="btn down" id="down-4" style="display: none;" href="<?php echo base_url('assets/files/solo-company.pdf');?>">Required Documents</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex  mt-3">
@@ -205,7 +205,7 @@
                                         </label>
                                     </div>
                                     <div class="ml-8">
-                                        <button class="btn down" id="down-5" style="display: none;" onclick="download('solidarity-comp');" type="button">Required Documents</button>
+                                        <a download="solidarity-comp" class="btn down" id="down-5" style="display: none;" href="<?php echo base_url('assets/files/solidarity-comp.pdf');?>">Required Documents</a>
                                     </div>
                                 </div>
                                 <div class="form-check d-flex  mt-3">
@@ -225,7 +225,7 @@
                                     </div>
                                     <div class="invalid-feedback">You must Choose one company</div>
                                     <div class="ml-8">
-                                        <button class="btn down" id="down-6" style="display: none;" onclick="download('simple-recommendation-comp');" type="button">Required Documents</button>
+                                        <a download="simple-recommendation-comp" class="btn down" id="down-6" style="display: none;" href="<?php echo base_url('assets/files/simple-recommendation-comp.pdf');?>">Required Documents</a>
                                     </div>
                                 </div>
                             </div>
@@ -333,9 +333,9 @@
                     <div class="layer">
                         <div class="d-flex justify-content-center align-items-center" style="height:20vh">
                             <div class="down-paper text-center">
-                                <button onclick="download_docx('incorporation-poa');" type="button" class="btn btn-down-paper">
-                                    Download Power of Attorney <img src="<?php echo base_url(); ?>/images/Vector (1).svg">
-                                </button>
+                            <a download="incorporation-poa.docx" class="btn btn-down-paper" href="<?php echo base_url('assets/files/incorporation-poa.docx');?>">
+                            Download Power of Attorney <img src="<?php echo base_url(); ?>/images/Vector (1).svg">
+                            </a>
                             </div>
                         </div>
                         <section class="pricing-365">
