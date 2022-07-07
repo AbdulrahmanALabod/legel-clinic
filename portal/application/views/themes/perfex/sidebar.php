@@ -49,19 +49,19 @@
           </a>
           <ul class="pcoded-submenu" style="display: none;">
             <li class="inner-list">
-              <a href="freeContracts.html" class="">
+              <a href="<?php echo site_url('pickups/officialDocuments') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/freecontract.svg"') ?>"alt="freecontract" class="img-inner">
                 <span>Official documents</span>
               </a>
             </li>
             <li class="inner-list">
-              <a href="" class="">
+              <a href="<?php echo site_url('pickups/internalDocuments') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/paidcontract.svg"') ?>"alt="paidcontract">
                 <span>Internal documents</span>
               </a>
             </li>
             <li class="inner-list">
-              <a href="" class="">
+              <a href="<?php echo site_url('pickups/dueDiligence') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/paidcontract.svg"') ?>"alt="paidcontract">
                 <span>Due diligence</span>
               </a>
@@ -98,13 +98,13 @@
           </a>
           <ul class="pcoded-submenu" style="display: none;">
             <li class="inner-list">
-              <a href="freeContracts.html" class="">
+              <a href="<?php echo site_url('pickups/freeContracts') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/freecontract.svg"') ?>"alt="freecontract" class="img-inner">
                 <span>Free Contracts</span>
               </a>
             </li>
             <li class="inner-list">
-              <a href="" class="">
+              <a href="<?php echo site_url('pickups/paiedContracts') ?>" class="">
                 <img src="<?php echo base_url('assets/images/main/paidcontract.svg"') ?>"alt="paidcontract">
                 <span>paied contracts</span>
               </a>

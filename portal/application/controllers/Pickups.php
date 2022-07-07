@@ -46,6 +46,38 @@ class Pickups extends ClientsController
         $this->view('request_service');
         $this->layout();
     }
+    public function freeContracts()
+    {
+        $this->title('Free Contracts');
+        $this->view('free_contracts');
+        $this->layout();
+    }
+    public function officialDocuments()
+    {
+        $this->title('Official Documents');
+        $this->view('free_contracts');
+        $this->layout();
+    }
+
+    public function internalDocuments()
+    {
+        $this->title('Internal Documents');
+        $this->view('free_contracts');
+        $this->layout();
+    }
+
+    public function dueDiligence()
+    {
+        $this->title('Due Diligence');
+        $this->view('free_contracts');
+        $this->layout();
+    }
+    public function paiedContracts()
+    {
+        $this->title('Paied Contracts');
+        $this->view('free_contracts');
+        $this->layout();
+    }
 
     public function help()
     {
