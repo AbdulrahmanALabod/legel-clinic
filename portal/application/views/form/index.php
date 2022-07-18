@@ -414,6 +414,7 @@
                                     <div class="col">
                                         <label for="radio_2">
                                             <input onclick="hidePromoDiv()" type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2" checked />
+                                            <input type="radio" name="payment_way" value="BankCard" class="card-input-element hidden" id="bank_card"/>
                                             <div class="card h-100 card-x">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <svg width="83" height="41" viewBox="0 0 83 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -476,7 +477,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="radio_3">
-                                            <input onclick="hidePromoDiv()" type="radio" name="plan_id" value="3" class="card-input-element hidden" id="radio_3"/>
+                                            <input onclick="installment()" type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_3"/>
+                                            <input type="radio" name="payment_way" value="BankInstallment" class="card-input-element hidden" id="bank_installment"/>
                                             <div class="card h-100 card-x">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <svg width="83" height="41" viewBox="0 0 83 41" fill="none" xmlns="http://www.w3.org/2000/svg">

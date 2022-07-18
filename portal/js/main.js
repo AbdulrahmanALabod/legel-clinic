@@ -1549,18 +1549,42 @@ const oldPrice = document.getElementById('oldPrice');
 const promoDiv = document.getElementById('promoDiv');
 const radio1 = document.getElementById('radio_1');
 const radio2 = document.getElementById('radio_2');
+const radio3 = document.getElementById('radio_3');
+const bankCard = document.getElementById('bank_card');
+const bankInstallment = document.getElementById('bank_installment');
 function showPromoDiv(){
     promoDiv.style.display = 'block';
     promocode.value = '';
     codeApp.innerHTML = '';
     radio1.setAttribute('checked','checked');
     radio2.removeAttribute('checked');
+    bankInstallment.removeAttribute('checked');
+    bankCard.removeAttribute('checked');
+}
+function installment(){
+    promoDiv.style.display = 'none';  
+        price.innerHTML = '';
+        oldPrice.style.textDecoration = 'none';
+        oldPrice.style.fontSize = '3rem';
+    bankInstallment.setAttribute('checked','checked');
+    radio3.setAttribute('checked','checked');
+    radio2.removeAttribute('checked');
+    radio1.removeAttribute('checked');
+    bankCard.removeAttribute('checked');
 }
 function hidePromoDiv(){
     promoDiv.style.display = 'none';  
         price.innerHTML = '';
         oldPrice.style.textDecoration = 'none';
         oldPrice.style.fontSize = '3rem';
+        bankCard.setAttribute('checked','checked');
+        bankInstallment.removeAttribute('checked');
+        radio2.setAttribute('checked','checked');
+        radio3.removeAttribute('checked');
+        radio1.removeAttribute('checked');
+        radio1.removeAttribute('checked');
+
+
 }
 promoApply.addEventListener('click',(e)=>{
     e.preventDefault();
