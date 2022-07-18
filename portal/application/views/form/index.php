@@ -413,7 +413,7 @@
                                     </div>
                                     <div class="col">
                                         <label for="radio_2">
-                                            <input onclick="hidePromoDiv()" type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2" checked />
+                                            <input onclick="hidePromoDiv()" type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2"  />
                                             <input type="radio" name="payment_way" value="BankCard" class="card-input-element hidden" id="bank_card"/>
                                             <div class="card h-100 card-x">
                                                 <div class="card-header d-flex justify-content-center">

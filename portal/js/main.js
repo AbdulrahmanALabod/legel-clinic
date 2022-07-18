@@ -1557,7 +1557,8 @@ function showPromoDiv(){
     promocode.value = '';
     codeApp.innerHTML = '';
     radio1.setAttribute('checked','checked');
-    radio2.removeAttribute('checked');
+    // radio2.removeAttribute('checked');
+    // radio3.removeAttribute('checked');
     bankInstallment.removeAttribute('checked');
     bankCard.removeAttribute('checked');
 }
@@ -1582,7 +1583,7 @@ function hidePromoDiv(){
         radio2.setAttribute('checked','checked');
         radio3.removeAttribute('checked');
         radio1.removeAttribute('checked');
-        radio1.removeAttribute('checked');
+        // radio1.removeAttribute('checked');
 
 
 }
