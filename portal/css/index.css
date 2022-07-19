@@ -1026,10 +1026,11 @@ input.invalid{
 }
 .pricing-365 .card ul li{
     padding: .7rem 0;
-    /* display: flex; */
+    display: flex;
+    align-items: baseline;
 }
 .pricing-365 .card ul li svg{
-    align-self: center;
+    /* align-self: center; */
     z-index: 1;
 }
 .pricing-365 .card-header .recomend{
@@ -1040,8 +1041,8 @@ input.invalid{
 .pricing-365 .card ul li span{
     color: var(--main-color);
     font-weight: 500;
-    /* font-size: 1rem;
-    padding-left: .5rem; */
+    font-size: 1rem;
+    padding-left: .5rem;
 }
 /* .pricing-365 .card ul li:nth-child(1) span,
 .pricing-365 .card-x ul li span{
@@ -1083,6 +1084,9 @@ input.invalid{
     font-weight: 400;
     color: var(--secondary-color);
     margin-bottom: 0;
+}
+#invalid{
+    display: none;
 }
 /* end pricing */
 

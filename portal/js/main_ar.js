@@ -189,7 +189,9 @@ const errorUserEmail = document.getElementById('error-email');
 const errorUserPhone = document.getElementById('error-phone');  
 const errorMangerAdd = document.getElementById('error-mangerAdd');
 const errormanger = document.getElementById('error-manger');
-
+const price_365 = document.getElementById('price_365');
+const radios = price_365.getElementsByTagName('input');
+const invalid = document.getElementById('invalid');
 let emailPattern = /^(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}$/;
 let phonePattern = /1?-?\.?\(?\d{3}[\-\)\.\s]?\d{3}[\-\.\s]?\d{4}/;
 let inputVal = document.getElementsByClassName('radioComp');
@@ -323,6 +325,22 @@ if(currLayer == 4){
             inputAdd.style.border = '1px solid #000086';
             errorMangerAdd.innerHTML = '';
             valid = true;
+        }
+    }
+}
+if(currLayer == 5){
+    for(let i=0; i<radios.length; i++){
+        if(radios[i]['type'] == ['radio']){
+            if(radios[i]['checked'] != true){
+                if($('.card-input-element:checked').length == 0)
+                {
+                    invalid.style.display = 'block';
+                    valid = false;
+                }
+            } else {
+                invalid.style.display = 'none';
+                valid = true;
+            }
         }
     }
 }
@@ -1588,23 +1606,41 @@ const oldPrice = document.getElementById('oldPrice');
 const promoDiv = document.getElementById('promoDiv');
 const radio1 = document.getElementById('radio_1');
 const radio2 = document.getElementById('radio_2');
-// console.log(radio1.checked)
-radio1.addEventListener('click',(e)=>{
-        promoDiv.style.display = 'block';
-        promocode.value = '';
-        codeApp.innerHTML = '';
-	radio1.setAttribute('checked','checked');
+const radio3 = document.getElementById('radio_3');
+const bank_id = document.getElementById('bank_id');
+
+radio1.addEventListener('click',()=>{
+    radio1.setAttribute('checked','checked');
         radio2.removeAttribute('checked');
-    });
-radio2.addEventListener('click',(e)=>{
-        promoDiv.style.display = 'none';  
-        price.innerHTML = '';
-        oldPrice.style.textDecoration = 'none';
-        oldPrice.style.fontSize = '3rem';
-radio2.setAttribute('checked','checked');
+        radio3.removeAttribute('checked');
+        bank_id.value = 'BankCard';
+});
+radio2.addEventListener('click',()=>{
+    radio2.setAttribute('checked','checked');
+    hidePromoDiv();
         radio1.removeAttribute('checked');
-})
-// promoDiv.style.display = 'none';
+        radio3.removeAttribute('checked');
+        bank_id.value = 'BanckCard';
+});
+radio3.addEventListener('click',()=>{
+    radio3.setAttribute('checked','checked');
+    hidePromoDiv();
+        radio1.removeAttribute('checked');
+        radio2.removeAttribute('checked');
+        bank_id.value = 'BankInstallment';
+});
+
+function hidePromoDiv(){
+    promoDiv.style.display = 'none';  
+    price.innerHTML = '';
+    oldPrice.style.textDecoration = 'none';
+    oldPrice.style.fontSize = '3rem';
+}
+function showPromoDiv(){
+    promoDiv.style.display = 'block';
+    promocode.value = '';
+    codeApp.innerHTML = '';
+}
 promoApply.addEventListener('click',(e)=>{
     e.preventDefault();
     // console.log(promocode.value);

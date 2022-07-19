@@ -52,11 +52,18 @@ class Cashier_Create extends ClientsController
     public function index()
     {
         global  $connection;
-        $dataInput =  $this->validation();
-        if (($dataInput == false) || (!isset($_SESSION['client_user_id']))) {
+        if (!isset($_SESSION['client_user_id'])) {
             header("Location: " .  site_url("authentication/login"));
             exit;
         }
+
+
+        $dataInput =  $this->validation();
+        if ($dataInput == false) {
+            header("Location: " .  site_url(""));
+            exit;
+        }
+
 
         $this->storeForm();
         $user = $connection->query("SELECT * FROM `tblcontacts` WHERE `userid` = " . $_SESSION['client_user_id'] . " limit 1")->fetch_assoc();
@@ -96,7 +103,7 @@ class Cashier_Create extends ClientsController
                     "imageUrl" => 'https://imageUrl.com'
                 ]
             ],
-            'payMethod' => 'BankCard',
+            'payMethod' => $dataInput['payment_way'],
         ];
 
         if ($plan['per'] == 'year') {
@@ -163,6 +170,9 @@ class Cashier_Create extends ClientsController
             $data['promo'] = $_POST["promo"];
         }
 
+        $paymentWay = ['BankCard','BankInstallment'];
+        $data['payment_way'] = in_array($_POST['payment_way'] , $paymentWay) ? $_POST['payment_way']  : 'BankCard';
+        
         if (count($errors) > 0 || count($data) == 0) {
             return false;
         }
