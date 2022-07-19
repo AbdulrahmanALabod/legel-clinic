@@ -1611,6 +1611,7 @@ const bank_id = document.getElementById('bank_id');
 
 radio1.addEventListener('click',()=>{
     radio1.setAttribute('checked','checked');
+    showPromoDiv();
         radio2.removeAttribute('checked');
         radio3.removeAttribute('checked');
         bank_id.value = 'BankCard';
