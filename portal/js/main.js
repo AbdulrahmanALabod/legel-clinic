@@ -1581,7 +1581,7 @@ radio2.addEventListener('click',()=>{
     hidePromoDiv();
         radio1.removeAttribute('checked');
         radio3.removeAttribute('checked');
-        bank_id.value = 'banckCard';
+        bank_id.value = 'BanckCard';
 });
 radio3.addEventListener('click',()=>{
     radio3.setAttribute('checked','checked');

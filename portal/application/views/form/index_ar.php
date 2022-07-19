@@ -412,7 +412,7 @@
                                                 </div>
                                             </label>
                                         </div>
-                                        <input type="hidden" name="bankid" id="bank_id" value="BankCard">
+                                        <input type="hidden" name="payment_way" id="bank_id" value="BankCard">
                                         <div class="col">
                                             <label for="radio_2">
                                                 <input type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2"  />
@@ -496,7 +496,7 @@
                                                         </svg>
                                                     </div>
                                                     <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                        <h2>12500<small>LE/Year</small></h2>
+                                                        <h2>نظام التقسيط</h2>
                                                         <p>الدفع لمره واحده</p>
                                                     </div>
                                                     <div class="card-footer">
