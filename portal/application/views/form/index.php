@@ -338,12 +338,12 @@
                                 </a>
                             </div>
                         </div>
-                        <section class="pricing-365">
+                        <section class="pricing-365" id="price_365">
                             <div class="container">
                                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-center">
                                     <div class="col">
                                         <label for="radio_1">
-                                            <input type="radio" onclick="showPromoDiv()" name="plan_id" value="2" class="card-input-element hidden" id="radio_1" />
+                                            <input type="radio"  name="plan_id" value="2" class="card-input-element hidden" id="radio_1" />
                                             <div class="card h-100">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <h2>Online Incorporation</h2>
@@ -411,10 +411,10 @@
                                             </div>
                                         </label>
                                     </div>
+                                    <input type="hidden" name="bankid" id="bank_id" value="BankCard">
                                     <div class="col">
                                         <label for="radio_2">
-                                            <input onclick="hidePromoDiv()" type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2"  />
-                                            <input type="radio" name="payment_way" value="BankCard" class="card-input-element hidden" id="bank_card"/>
+                                            <input  type="radio"  name="plan_id" value="1" class="card-input-element hidden" id="radio_2"  />
                                             <div class="card h-100 card-x">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <svg width="83" height="41" viewBox="0 0 83 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -477,9 +477,8 @@
                                     </div>
                                     <div class="col">
                                         <label for="radio_3">
-                                            <input onclick="installment()" type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_3"/>
-                                            <input type="radio" name="payment_way" value="BankInstallment" class="card-input-element hidden" id="bank_installment"/>
-                                            <div class="card h-100 card-x">
+                                            <input  type="radio"  name="plan_id" value="1" class="card-input-element hidden" id="radio_3"/>
+                                            <div class="card h-100">
                                                 <div class="card-header d-flex justify-content-center">
                                                     <svg width="83" height="41" viewBox="0 0 83 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M30.6528 21.6461C29.9664 19.1641 28.8815 17.0503 27.315 15.154C28.5881 13.3803 29.8446 11.6346 31.1011 9.88331C33.3374 6.7767 35.5792 3.67566 37.7933 0.557885C38.0811 0.150734 38.38 -0.00543362 38.8837 0.000143789C41.3635 0.0280308 43.8434 0.0112986 46.4948 0.0112986C43.8766 3.59757 41.3359 7.0723 38.7343 10.6363C40.6495 10.7645 42.3986 11.1159 44.0316 11.8968C49.7883 14.6408 52.8603 19.2422 53.0541 25.6451C53.2146 30.8655 57.3495 34.7809 62.381 34.2399C66.3388 33.816 69.5492 30.5365 69.8648 26.5821C70.1913 22.4994 67.6728 18.7737 63.8258 17.6582C60.3551 16.6543 56.569 18.0263 54.5209 21.027C54.4102 21.1887 54.2995 21.3505 54.1169 21.6126C53.4416 19.1809 52.3622 17.0614 50.7957 15.154C51.5042 14.1445 52.2127 13.1517 52.9102 12.1533C55.6225 8.29933 58.3403 4.44534 61.036 0.574617C61.3238 0.161889 61.6282 0.0112986 62.1264 0.0112986C68.9238 0.0224534 75.7211 0.0112986 82.524 0.0057212C82.6513 0.0057212 82.7731 0.0224534 83 0.0336082C82.8339 0.284592 82.7232 0.463069 82.5959 0.635968C81.2453 2.48767 79.8781 4.32264 78.5496 6.19107C78.2452 6.61495 77.9352 6.78785 77.4094 6.78785C73.4682 6.76554 69.5271 6.78785 65.586 6.77112C65.1099 6.77112 64.8221 6.92171 64.5509 7.30655C63.7925 8.39972 62.9899 9.46501 62.1652 10.5972C63.001 10.7199 63.7759 10.8092 64.5453 10.9598C71.3371 12.2983 76.4573 18.5004 76.5293 25.4666C76.6067 33.1188 71.5253 39.332 64.025 40.7599C56.2867 42.2323 48.2827 36.7664 46.7937 28.9469C46.5501 27.6641 46.539 26.3367 46.4062 25.026C46.0353 21.356 43.5611 18.4446 40.0628 17.5522C36.6752 16.6933 33.0772 18.1044 31.0513 21.0828C30.9351 21.2333 30.8354 21.3784 30.6528 21.6461Z" fill="#000086" />
@@ -488,7 +487,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                    <h2>12,500<small>LE/Year</small></h2>
+                                                    <h2>13,500<small>LE/Year</small></h2>
                                                     <p>One Time Payment</p>
                                                 </div>
                                                 <div class="card-footer">
@@ -538,6 +537,7 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div id="invalid" class="text-danger text-center">You Must Choose a Plan</div>
                             </div>
                         </section>
                     </div>

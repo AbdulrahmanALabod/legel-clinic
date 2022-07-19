@@ -861,6 +861,9 @@ input.invalid{
 #promoDiv{
     display: none;
 }
+#invalid{
+    display: none;
+}
 /* end pricing */
 
   

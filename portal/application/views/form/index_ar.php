@@ -347,7 +347,7 @@
                                     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-center">
                                         <div class="col">
                                             <label for="radio_1">
-                                                <input type="radio" onclick="showPromoDiv()" name="plan_id" value="2" class="card-input-element hidden" id="radio_1" />
+                                                <input type="radio"  name="plan_id" value="2" class="card-input-element hidden" id="radio_1" />
                                                 <div class="card h-100">
                                                     <div class="card-header d-flex justify-content-center">
                                                         <h2 class="text-center">Online Incorporation</h2>
@@ -412,10 +412,10 @@
                                                 </div>
                                             </label>
                                         </div>
+                                        <input type="hidden" name="bankid" id="bank_id" value="BankCard">
                                         <div class="col">
                                             <label for="radio_2">
-                                                <input type="radio" onclick="hidePromoDiv()" name="plan_id" value="1" class="card-input-element hidden" id="radio_2"  />
-                                                <input type="radio" name="payment_way" value="BankCard" class="card-input-element hidden" id="bank_card"/>
+                                                <input type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_2"  />
 
                                                 <div class="card h-100 card-x">
                                                     <div class="card-header d-flex justify-content-center">
@@ -485,8 +485,7 @@
                                         </div>
                                         <div class="col">
                                             <label for="radio_3">
-                                                <input type="radio" onclick="installment()" name="plan_id" value="1" class="card-input-element hidden" id="radio_3"/>
-                                                <input type="radio" name="payment_way" value="BankInstallment" class="card-input-element hidden" id="bank_installment"/>
+                                                <input type="radio" name="plan_id" value="1" class="card-input-element hidden" id="radio_3"/>
 
                                                 <div class="card h-100 card-x">
                                                     <div class="card-header d-flex justify-content-center">
@@ -555,6 +554,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div id="invalid" class="text-danger text-center">يجب اختيار خطه للدفع</div>
+
                             </div>
                     </div>
                     <!-- layer preloader -->

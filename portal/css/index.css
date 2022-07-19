@@ -1085,6 +1085,9 @@ input.invalid{
     color: var(--secondary-color);
     margin-bottom: 0;
 }
+#invalid{
+    display: none;
+}
 /* end pricing */
 
    .form-check-input.is-valid:checked, 
