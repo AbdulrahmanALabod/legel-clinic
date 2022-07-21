@@ -353,7 +353,7 @@
                                                         <h2 class="text-center">Online Incorporation</h2>
                                                     </div>
                                                     <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                        <h2><span id="oldPrice">5000</span><span id='price'></span><small>LE</small></h2>
+                                                        <h2><span id="oldPrice">5000 + 10% VAT</span><span id='price'></span><small>LE</small></h2>
                                                         <p>الدفع لمره واحده</p>
                                                         <div id="promoDiv">
                                                             <div class="d-flex">
@@ -429,7 +429,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                        <h2>12500<small>LE/Year</small></h2>
+                                                        <h2>12500 + 10% VAT<small>LE/Year</small></h2>
                                                         <p>الدفع لمره واحده</p>
                                                     </div>
                                                     <div class="card-footer">
@@ -496,7 +496,7 @@
                                                         </svg>
                                                     </div>
                                                     <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                        <h2>نظام التقسيط</h2>
+                                                    <h2>  + 10% VAT نظام التقسيط</h2>
                                                         <p>الدفع لمره واحده</p>
                                                     </div>
                                                     <div class="card-footer">

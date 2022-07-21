@@ -349,7 +349,7 @@
                                                     <h2>Online Incorporation</h2>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                    <h2><span id="oldPrice">5000</span><span id='price'></span><small>LE</small></h2>
+                                                    <h2><span id="oldPrice">5000 + 10% VAT</span><span id='price'></span><small>LE</small></h2>
                                                     <p>One Time Payment</p>
                                                     <div id="promoDiv">
                                                         <div class="d-flex">
@@ -427,7 +427,7 @@
                                                     </span>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                    <h2>12,500<small>LE/Year</small></h2>
+                                                    <h2>12,500 + 10% VAT<small>LE/Year</small></h2>
                                                     <p>One Time Payment</p>
                                                 </div>
                                                 <div class="card-footer">
@@ -487,7 +487,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="card-body d-flex flex-column justify-content-center text-center">
-                                                    <h2>Installment</h2>
+                                                    <h2>Installment + 10% VAT</h2>
                                                     <p>One Time Payment</p>
                                                 </div>
                                                 <div class="card-footer">
